@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0432CF50205438DC002845E1 /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432CF4F205438DC002845E1 /* FirstLaunchViewController.swift */; };
+		0432CF5220543A83002845E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432CF5120543A83002845E1 /* HomeViewController.swift */; };
 		2DA8AC6920468FBE00A95DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6820468FBE00A95DBA /* AppDelegate.swift */; };
-		2DA8AC6B20468FBE00A95DBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6A20468FBE00A95DBA /* ViewController.swift */; };
 		2DA8AC6E20468FBE00A95DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6C20468FBE00A95DBA /* Main.storyboard */; };
 		2DA8AC7120468FBE00A95DBA /* iPark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6F20468FBE00A95DBA /* iPark.xcdatamodeld */; };
 		2DA8AC7320468FBE00A95DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA8AC7220468FBE00A95DBA /* Assets.xcassets */; };
@@ -35,9 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0432CF4F205438DC002845E1 /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
+		0432CF5120543A83002845E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2DA8AC6520468FBE00A95DBA /* iPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA8AC6820468FBE00A95DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2DA8AC6A20468FBE00A95DBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2DA8AC6D20468FBE00A95DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2DA8AC7020468FBE00A95DBA /* iPark.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iPark.xcdatamodel; sourceTree = "<group>"; };
 		2DA8AC7220468FBE00A95DBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0432CF4E205438B1002845E1 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0432CF4F205438DC002845E1 /* FirstLaunchViewController.swift */,
+				0432CF5120543A83002845E1 /* HomeViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
 		2DA8AC5C20468FBE00A95DBA = {
 			isa = PBXGroup;
 			children = (
@@ -99,8 +110,8 @@
 		2DA8AC6720468FBE00A95DBA /* iPark */ = {
 			isa = PBXGroup;
 			children = (
+				0432CF4E205438B1002845E1 /* controllers */,
 				2DA8AC6820468FBE00A95DBA /* AppDelegate.swift */,
-				2DA8AC6A20468FBE00A95DBA /* ViewController.swift */,
 				2DA8AC6C20468FBE00A95DBA /* Main.storyboard */,
 				2DA8AC7220468FBE00A95DBA /* Assets.xcassets */,
 				2DA8AC7420468FBE00A95DBA /* LaunchScreen.storyboard */,
@@ -196,15 +207,18 @@
 				TargetAttributes = {
 					2DA8AC6420468FBE00A95DBA = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					2DA8AC7B20468FBE00A95DBA = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2DA8AC6420468FBE00A95DBA;
 					};
 					2DA8AC8620468FBE00A95DBA = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2DA8AC6420468FBE00A95DBA;
 					};
@@ -263,8 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA8AC7120468FBE00A95DBA /* iPark.xcdatamodeld in Sources */,
-				2DA8AC6B20468FBE00A95DBA /* ViewController.swift in Sources */,
+				0432CF50205438DC002845E1 /* FirstLaunchViewController.swift in Sources */,
 				2DA8AC6920468FBE00A95DBA /* AppDelegate.swift in Sources */,
+				0432CF5220543A83002845E1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +526,7 @@
 				2DA8AC9220468FBE00A95DBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2DA8AC9320468FBE00A95DBA /* Build configuration list for PBXNativeTarget "iParkTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +535,7 @@
 				2DA8AC9520468FBE00A95DBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2DA8AC9620468FBE00A95DBA /* Build configuration list for PBXNativeTarget "iParkUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +544,7 @@
 				2DA8AC9820468FBE00A95DBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
