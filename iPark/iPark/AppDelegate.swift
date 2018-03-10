@@ -23,10 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if launchedBefore  {
-            print("Not first launch.")
+            print("Not first launch")
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let nav = storyboard.instantiateViewController(withIdentifier: "homeView")
+            self.window?.rootViewController = nav
         }
         else {
-            print("First launch, setting UserDefault.")
+            print("First launch")
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let nav = storyboard.instantiateViewController(withIdentifier: "firstLaunchView")
+            self.window?.rootViewController = nav
             UserDefaults.standard.set(true, forKey: "launchedBefore")
         }
         return true
