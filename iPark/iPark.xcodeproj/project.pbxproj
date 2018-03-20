@@ -21,6 +21,7 @@
 		2DA8AC7620468FBE00A95DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA8AC7420468FBE00A95DBA /* LaunchScreen.storyboard */; };
 		2DA8AC8120468FBE00A95DBA /* iParkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC8020468FBE00A95DBA /* iParkTests.swift */; };
 		2DA8AC8C20468FBE00A95DBA /* iParkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC8B20468FBE00A95DBA /* iParkUITests.swift */; };
+		D94478CE20610A38006A1521 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94478CD20610A38006A1521 /* PersonalInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		2DA8AC8720468FBE00A95DBA /* iParkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iParkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA8AC8B20468FBE00A95DBA /* iParkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iParkUITests.swift; sourceTree = "<group>"; };
 		2DA8AC8D20468FBE00A95DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D94478CD20610A38006A1521 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				0432CF4F205438DC002845E1 /* FirstLaunchViewController.swift */,
 				0432CF5120543A83002845E1 /* HomeViewController.swift */,
+				D94478CD20610A38006A1521 /* PersonalInfoViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				04D97ED220611A43001BFAAA /* CoreDataDAOFactory.swift in Sources */,
 				0432CF50205438DC002845E1 /* FirstLaunchViewController.swift in Sources */,
 				04D97ED520611A4B001BFAAA /* PatientModel.swift in Sources */,
+				D94478CE20610A38006A1521 /* PersonalInfoViewController.swift in Sources */,
 				2DA8AC6920468FBE00A95DBA /* AppDelegate.swift in Sources */,
 				04D97ECE206119E8001BFAAA /* CoreDataPatientDAO.swift in Sources */,
 				04D97ECD206119E8001BFAAA /* CoreDataManager.swift in Sources */,
