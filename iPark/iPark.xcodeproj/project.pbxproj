@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0432CF50205438DC002845E1 /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432CF4F205438DC002845E1 /* FirstLaunchViewController.swift */; };
 		0432CF5220543A83002845E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432CF5120543A83002845E1 /* HomeViewController.swift */; };
+		04D97ECD206119E8001BFAAA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D97ECA206119E8001BFAAA /* CoreDataManager.swift */; };
+		04D97ECE206119E8001BFAAA /* CoreDataPatientDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D97ECB206119E8001BFAAA /* CoreDataPatientDAO.swift */; };
+		04D97ECF206119E8001BFAAA /* PatientDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D97ECC206119E8001BFAAA /* PatientDAO.swift */; };
+		04D97ED220611A43001BFAAA /* CoreDataDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D97ED120611A43001BFAAA /* CoreDataDAOFactory.swift */; };
+		04D97ED520611A4B001BFAAA /* PatientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D97ED420611A4B001BFAAA /* PatientModel.swift */; };
 		2DA8AC6920468FBE00A95DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6820468FBE00A95DBA /* AppDelegate.swift */; };
 		2DA8AC6E20468FBE00A95DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6C20468FBE00A95DBA /* Main.storyboard */; };
 		2DA8AC7120468FBE00A95DBA /* iPark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6F20468FBE00A95DBA /* iPark.xcdatamodeld */; };
@@ -38,6 +43,11 @@
 /* Begin PBXFileReference section */
 		0432CF4F205438DC002845E1 /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		0432CF5120543A83002845E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		04D97ECA206119E8001BFAAA /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		04D97ECB206119E8001BFAAA /* CoreDataPatientDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataPatientDAO.swift; sourceTree = "<group>"; };
+		04D97ECC206119E8001BFAAA /* PatientDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDAO.swift; sourceTree = "<group>"; };
+		04D97ED120611A43001BFAAA /* CoreDataDAOFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDAOFactory.swift; sourceTree = "<group>"; };
+		04D97ED420611A4B001BFAAA /* PatientModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
 		2DA8AC6520468FBE00A95DBA /* iPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA8AC6820468FBE00A95DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DA8AC6D20468FBE00A95DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,6 +97,40 @@
 			path = controllers;
 			sourceTree = "<group>";
 		};
+		04D97EC8206119E8001BFAAA /* DAOs */ = {
+			isa = PBXGroup;
+			children = (
+				04D97EC9206119E8001BFAAA /* CoreDataDAO */,
+				04D97ECC206119E8001BFAAA /* PatientDAO.swift */,
+			);
+			path = DAOs;
+			sourceTree = "<group>";
+		};
+		04D97EC9206119E8001BFAAA /* CoreDataDAO */ = {
+			isa = PBXGroup;
+			children = (
+				04D97ECA206119E8001BFAAA /* CoreDataManager.swift */,
+				04D97ECB206119E8001BFAAA /* CoreDataPatientDAO.swift */,
+			);
+			path = CoreDataDAO;
+			sourceTree = "<group>";
+		};
+		04D97ED020611A43001BFAAA /* factories */ = {
+			isa = PBXGroup;
+			children = (
+				04D97ED120611A43001BFAAA /* CoreDataDAOFactory.swift */,
+			);
+			path = factories;
+			sourceTree = "<group>";
+		};
+		04D97ED320611A4B001BFAAA /* models */ = {
+			isa = PBXGroup;
+			children = (
+				04D97ED420611A4B001BFAAA /* PatientModel.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		2DA8AC5C20468FBE00A95DBA = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +154,9 @@
 		2DA8AC6720468FBE00A95DBA /* iPark */ = {
 			isa = PBXGroup;
 			children = (
+				04D97ED320611A4B001BFAAA /* models */,
+				04D97ED020611A43001BFAAA /* factories */,
+				04D97EC8206119E8001BFAAA /* DAOs */,
 				0432CF4E205438B1002845E1 /* controllers */,
 				2DA8AC6820468FBE00A95DBA /* AppDelegate.swift */,
 				2DA8AC6C20468FBE00A95DBA /* Main.storyboard */,
@@ -276,9 +323,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D97ECF206119E8001BFAAA /* PatientDAO.swift in Sources */,
 				2DA8AC7120468FBE00A95DBA /* iPark.xcdatamodeld in Sources */,
+				04D97ED220611A43001BFAAA /* CoreDataDAOFactory.swift in Sources */,
 				0432CF50205438DC002845E1 /* FirstLaunchViewController.swift in Sources */,
+				04D97ED520611A4B001BFAAA /* PatientModel.swift in Sources */,
 				2DA8AC6920468FBE00A95DBA /* AppDelegate.swift in Sources */,
+				04D97ECE206119E8001BFAAA /* CoreDataPatientDAO.swift in Sources */,
+				04D97ECD206119E8001BFAAA /* CoreDataManager.swift in Sources */,
 				0432CF5220543A83002845E1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
