@@ -29,10 +29,8 @@ class FirstLaunchViewController: UIViewController {
         let tab: [UITextField] = [lastName, firstName, adress]
         if formIsValid(tab) {
             let date:NSDate? = birthdate.date as NSDate?
-            let patient: PatientModel = PatientModel(nom: lastName.text!, prenom: firstName.text!, adresse: adress.text!, date_naissance: date)
-            let patientDAO = CoreDataDAOFactory.getInstance().getPatientDAO()
             do {
-                try patientDAO.insert(patient: patient)
+                let patient: PatientModel = try PatientModel(nom: lastName.text!, prenom: firstName.text!, adresse: adress.text!, date_naissance: date)
                 UserDefaults.standard.set(true, forKey: "launchedBefore")
                 let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                 let view = storyboard.instantiateViewController(withIdentifier: "homeView") as! HomeViewController
