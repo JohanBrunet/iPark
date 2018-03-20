@@ -7,49 +7,47 @@
 //
 
 import UIKit
-import CoreData
 
-class FirstLaunchViewController:UIViewController {
+class FirstLaunchViewController: UIViewController {
+    
+    
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var adress: UITextField!
-    @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var birthdate: UIDatePicker!
-    @IBOutlet weak var register: UIButton!
     
     func formIsValid(_ tab:[UITextField]!) -> Bool {
-        var flag: Bool = false
-        if let t = tab {
-            flag = (t.count == filterValues(tab).count)
-        }
-        return flag
+        return (tab.count == filterValues(tab).count)
     }
     
     func filterValues(_ inputs:[UITextField]) -> [UITextField]! {
         return inputs.filter{(item) in !(item.text?.isEmpty ?? true)}
     }
     
-    func createPatient() throws -> Patient {
-        let tab: [UITextField] = [lastName, firstName, adress, phoneNumber]
+    
+    @IBAction func submitForm(_ sender: Any) {
+        let tab: [UITextField] = [lastName, firstName, adress]
         if formIsValid(tab) {
-            let patient: Patient = Patient(context : CoreDataManager.context)
-            patient.nom_patient = lastName.text
-            patient.prenom_patient = firstName.text
-            //patient.date_naissance = birthdate.date
-            patient.adresse = Adresse(context: CoreDataManager.context)
-            patient.telephone = phoneNumber.text
+            let date:NSDate? = birthdate.date as NSDate?
+            let patient: PatientModel = PatientModel(nom: lastName.text!, prenom: firstName.text!, adresse: adress.text!, date_naissance: date)
+            let patientDAO = CoreDataDAOFactory.getInstance().getPatientDAO()
             do {
-                try CoreDataManager.save()
-                return patient
+                try patientDAO.insert(patient: patient)
+                UserDefaults.standard.set(true, forKey: "launchedBefore")
+                let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                let view = storyboard.instantiateViewController(withIdentifier: "homeView") as! HomeViewController
+                self.present(view, animated: true, completion: nil)
             }
-            catch let error as NSError {
-                throw error
+            catch {
+                let alert = UIAlertController(title: "Erreur insertion", message: "Erreur lors de l'insertion des données", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         }
         else {
-            let nilValues = filterValues(tab)
-            throw Error(nilValues)
+            let alert = UIAlertController(title: "Formulaire invalide", message: "Veuillez remplir tous les champs", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
-
 }
