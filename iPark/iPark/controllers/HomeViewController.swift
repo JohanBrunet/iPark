@@ -13,11 +13,10 @@ class HomeViewController:UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     
     override func viewDidLoad() {
-        let patientDAO: PatientDAO = CoreDataDAOFactory.getInstance().getPatientDAO()
         let patient: PatientModel
         do {
-            patient = try patientDAO.get()!
-            usernameLabel.text = "Bonjour " + patient.prenom + " " + patient.nom
+            patient = try PatientModel()
+            usernameLabel.text = patient.prenom + " " + patient.nom
         }
         catch {
             let storyboard = UIStoryboard.init(name: "Main", bundle: nil)

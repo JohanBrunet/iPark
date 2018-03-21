@@ -10,8 +10,9 @@ import Foundation
 
 protocol PatientDAO {
 
-    func get() throws -> PatientModel?
+    func get() throws -> Patient?
     func insert(patient: PatientModel) throws
     func update(patient: PatientModel) throws
+    func delete(patient: PatientModel)
     
 }
