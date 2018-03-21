@@ -33,7 +33,7 @@ class FirstLaunchViewController: UIViewController {
                 let patient: PatientModel = try PatientModel(nom: lastName.text!, prenom: firstName.text!, adresse: adress.text!, date_naissance: date)
                 UserDefaults.standard.set(true, forKey: "launchedBefore")
                 let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                let view = storyboard.instantiateViewController(withIdentifier: "homeView") as! HomeViewController
+                let view = storyboard.instantiateViewController(withIdentifier: "NavController") as! UINavigationController
                 self.present(view, animated: true, completion: nil)
             }
             catch {
