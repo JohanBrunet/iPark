@@ -21,8 +21,8 @@ class CoreDataDAOFactory {
         return instance!
     }
     
-    func getPatientDAO() -> CoreDataPatientDAO {
-        return CoreDataPatientDAO()
+    func getMedecinDAO() -> MedecinDAO {
+        return CoreDataMedecinDAO()
     }
     
 }
