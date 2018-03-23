@@ -12,17 +12,26 @@ import CoreData
 class CoreDataPatientDAO: PatientDAO {
     
     private var entityName: String = "Patient"
-    private var dao: Patient
+    private static var coreDataInstance: Patient?
+    internal static var instance: CoreDataPatientDAO?
     
-    init() {
-        self.dao = Patient(entity: CoreDataManager.entity(forName: self.entityName), insertInto: CoreDataManager.context)
+    private init() {}
+    
+    static func getInstance() -> CoreDataPatientDAO {
+        if CoreDataPatientDAO.instance == nil {
+            instance = CoreDataPatientDAO()
+            if CoreDataPatientDAO.coreDataInstance == nil {
+                CoreDataPatientDAOcoreDataInstance = Patient(entity: CoreDataManager.entity(forName: self.entityName), insertInto: CoreDataManager.context)
+            }
+        }
+        return instance!
     }
     
-    func insert(patient: PatientModel) throws {
-        self.dao.nom_patient = patient.nom
-        self.dao.prenom_patient = patient.prenom
-        self.dao.adresse = patient.adresse
-        self.dao.date_naissance = patient.date_naissance
+    func insert(lastName: String, firstName: String, adress: String, birthdate: NSDate?) throws {
+        self.coreDataInstance!.nom_patient = lastName
+        self.coreDataInstance!.prenom_patient = firstName
+        self.coreDataInstance!.adresse = adress
+        self.coreDataInstance!.date_naissance = birthdate
         do {
             try CoreDataManager.save()
         }
@@ -31,21 +40,32 @@ class CoreDataPatientDAO: PatientDAO {
         }
     }
     
-    func update(patient: PatientModel) throws {
-        do {
-            try self.insert(patient: patient)
-        }
-        catch let error as NSError {
-            throw error
-        }
+    func getLastName() -> String {
+        return self.coreDataInstance!.nom_patient!
     }
     
-    func get() throws -> PatientModel? {
-        let req: NSFetchRequest<Patient> = NSFetchRequest(entityName: self.entityName)
-        let patients: [Patient] = try self.dao.managedObjectContext!.fetch(req)
-        guard let patient: Patient = patients.first else {
-            return nil
-        }
-        return try PatientModel(patient)
+    func getFirstName() -> String {
+        return self.coreDataInstance!.prenom_patient!
     }
+    
+    func getAdress() -> String {
+        return self.coreDataInstance!.adresse!
+    }
+    
+    func getBirthdate() -> NSDate {
+        return self.coreDataInstance!.date_naissance!
+    }
+    
+    func setLastName(lastName: String) {
+        self.coreDataInstance!.nom_patient = lastName
+    }
+    
+    func setFirstName(firstName: String) {
+        self.coreDataInstance!.prenom_patient = firstName
+    }
+    
+    func setAdress(adress: String) {
+        self.coreDataInstance!.adresse = adress
+    }
+    
 }
