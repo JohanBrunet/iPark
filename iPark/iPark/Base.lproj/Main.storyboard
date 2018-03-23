@@ -3063,6 +3063,10 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Zla-P4-kZ7" id="hVU-Rx-60M"/>
+                                            <outlet property="delegate" destination="Zla-P4-kZ7" id="Ql0-wr-6zR"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -3115,7 +3119,7 @@
                             <constraint firstItem="MNM-o4-9vA" firstAttribute="top" secondItem="UuX-QY-vHC" secondAttribute="bottom" constant="230" id="LXw-2n-zdq"/>
                             <constraint firstItem="5z8-L0-Vvj" firstAttribute="top" secondItem="qU5-hJ-7TR" secondAttribute="bottom" constant="10" id="PSe-PX-Xlk"/>
                             <constraint firstItem="xDB-dd-1NO" firstAttribute="top" secondItem="UuX-QY-vHC" secondAttribute="bottom" constant="10" id="QFf-h1-x2D"/>
-                            <constraint firstItem="Fqx-p1-igX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VhY-4r-m7w" secondAttribute="trailing" symbolic="YES" id="QuG-Fl-3bc"/>
+                            <constraint firstItem="Fqx-p1-igX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VhY-4r-m7w" secondAttribute="trailing" constant="8" symbolic="YES" id="QuG-Fl-3bc"/>
                             <constraint firstItem="vRs-sD-DT1" firstAttribute="leading" secondItem="7MF-wC-WbH" secondAttribute="trailing" constant="5" id="VqP-DR-cza"/>
                             <constraint firstItem="MNM-o4-9vA" firstAttribute="leading" secondItem="GgK-ow-rSx" secondAttribute="leadingMargin" id="WRe-gE-NwB"/>
                             <constraint firstItem="xDB-dd-1NO" firstAttribute="top" secondItem="UuX-QY-vHC" secondAttribute="bottom" constant="10" id="Ydn-aU-cf0"/>
@@ -3136,6 +3140,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="jQt-1y-Nkf" secondAttribute="trailing" constant="10" id="zqh-mz-YyF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activities" destination="1zj-ul-ghm" id="M5C-dE-zi2"/>
+                        <outlet property="dateLastActivity" destination="faK-SD-IoU" id="Jgv-l7-c1R"/>
+                        <outlet property="durationLastActivity" destination="hsb-Os-jXm" id="m7s-3h-PqI"/>
+                        <outlet property="lastActivity" destination="Fqx-p1-igX" id="qPc-wi-uTc"/>
+                        <outlet property="proposedActivities" destination="iWj-Yo-8FV" id="gDZ-kl-1P2"/>
+                        <outlet property="proposedActivity" destination="7MF-wC-WbH" id="fEp-WL-y1r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfe-OF-qDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,5 +10,13 @@ import Foundation
 import UIKit
 
 class ActivityViewController:UIViewController{
+    @IBOutlet weak var durationLastActivity: UILabel!
+    @IBOutlet weak var lastActivity: UILabel!
+    @IBOutlet weak var dateLastActivity: UILabel!
+    
+    @IBOutlet weak var proposedActivity: UILabel!
+    @IBOutlet weak var activities: UIButton!
+    
+    @IBOutlet weak var proposedActivities: UITableView!
     
 }
