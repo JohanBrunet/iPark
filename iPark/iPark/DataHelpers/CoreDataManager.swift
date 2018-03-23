@@ -22,11 +22,12 @@ class CoreDataManager : NSObject{
         }
         return entity
     }
-    static func save() throws {
+    static func save() -> NSError? {
         do {
             try CoreDataManager.context.save()
+            return nil
         } catch let error as NSError {
-            throw error
+            return error
         }
     }
 }
