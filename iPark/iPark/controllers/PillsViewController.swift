@@ -18,14 +18,15 @@ class PillsViewController:UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = PillsTableViewController.dequeueReusableCell(withReuseIdentifier: "MedicationCel", for: indexPath) as! MedicationCollectionViewCell
-        cell.MedicamentLabel.text = self.medications[indexPath.row]
+        let cell = PillsTableView.dequeueReusableCell(withReuseIdentifier: "MedicationCell", for: indexPath) as! MedicationCollectionViewCell
+        cell.MedicamentLabel.text = medications[indexPath.row]
         return cell
     }
     
+
     
     @IBOutlet weak var PageLabel: UILabel!
-    @IBOutlet weak var PillsTableViewController: UICollectionView!
+    @IBOutlet weak var PillsTableView: UICollectionView!
     @IBOutlet weak var AddMedicationButton: UIButton!
     
 }

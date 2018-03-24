@@ -14,7 +14,17 @@ class MyActivitiesViewController:UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var AddActivityButton: UIButton!
     @IBOutlet weak var LastActivities: UITableView!
     
-    var activities : [String] = ["Piscine","Jogging"]
+    let activities : [String] =  ["Piscine", "Marche à pied"]
+    
+    func ViewDidLoad() {
+        
+        let activityDAO = CoreDataDAOFactory.getInstance().getActiviteDAO()
+        
+        _ = activityDAO.getAll()
+        
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.activities.count
@@ -26,3 +36,4 @@ class MyActivitiesViewController:UIViewController, UITableViewDataSource, UITabl
         return cell
     }
 }
+
