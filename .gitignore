@@ -2,3 +2,7 @@
 *.xcuserstate
 
 iPark/iPark\.xcodeproj/project\.xcworkspace/xcuserdata/johan\.xcuserdatad/
+
+iPark/iPark/\.DS_Store
+
+iPark/iPark/DAOs/\.DS_Store

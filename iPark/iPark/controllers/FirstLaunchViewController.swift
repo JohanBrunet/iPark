@@ -16,18 +16,9 @@ class FirstLaunchViewController: UIViewController {
     @IBOutlet weak var adress: UITextField!
     @IBOutlet weak var birthdate: UIDatePicker!
     
-    func formIsValid(_ tab:[UITextField]!) -> Bool {
-        return (tab.count == filterValues(tab).count)
-    }
-    
-    func filterValues(_ inputs:[UITextField]) -> [UITextField]! {
-        return inputs.filter{(item) in !(item.text?.isEmpty ?? true)}
-    }
-    
-    
     @IBAction func submitForm(_ sender: Any) {
         let tab: [UITextField] = [lastName, firstName, adress]
-        if formIsValid(tab) {
+        if FormValidator.formIsValid(tab) {
             let date:NSDate? = birthdate.date as NSDate?
             UserDefaults.standard.set(lastName.text!, forKey: "nom")
             UserDefaults.standard.set(firstName.text!, forKey: "prenom")
