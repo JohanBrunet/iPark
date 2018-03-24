@@ -201,7 +201,7 @@
                                 <rect key="frame" x="16" y="264" width="343" height="308"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medecinCell" rowHeight="51" id="D0i-2P-CMs">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MedecinCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="medecinCell" rowHeight="51" id="D0i-2P-CMs" customClass="MedecinsTableViewCell" customModule="iPark" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D0i-2P-CMs" id="ML4-bg-wAo">
@@ -233,10 +233,16 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="DoctorNameLabel" destination="ymc-SA-NCY" id="meS-3k-mE3"/>
+                                            <outlet property="SpecialiteLabel" destination="4sC-mJ-scn" id="MVd-jB-5ul"/>
                                             <segue destination="ntn-mm-Fen" kind="show" id="PLx-ku-9E4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cij-ni-kDM" id="M7V-Kr-5oK"/>
+                                    <outlet property="delegate" destination="cij-ni-kDM" id="MdA-Ou-oak"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 rue des jasmins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgZ-SD-9C7">
                                 <rect key="frame" x="16" y="143.5" width="134.5" height="19.5"/>
@@ -292,6 +298,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Informations Personnelles" id="tf3-rj-vHR"/>
                     <connections>
+                        <outlet property="MedecinsTableView" destination="ZGz-6h-uM1" id="toX-qE-g27"/>
                         <outlet property="adress" destination="YgZ-SD-9C7" id="MH4-ra-9Zr"/>
                         <outlet property="age" destination="zhf-an-szW" id="eAO-C0-m1N"/>
                         <outlet property="fullName" destination="Wop-ve-j34" id="kZb-k5-pGW"/>
@@ -326,7 +333,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="368"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rdvCell" rowHeight="92" id="pG6-py-wmX">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AppointmentCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="rdvCell" rowHeight="92" id="pG6-py-wmX" customClass="AppointmentTableViewCell" customModule="iPark" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="295" height="92"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pG6-py-wmX" id="Vkh-VH-Bec">
@@ -380,6 +387,10 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="DateLabel" destination="DeI-PG-0ol" id="z4h-r3-OIq"/>
+                                                    <outlet property="DoctorNameLabel" destination="4Qv-aG-WB7" id="2N8-Oc-LZP"/>
+                                                    <outlet property="SpecialityLabel" destination="bJ9-nd-QNa" id="oh4-nn-dIn"/>
+                                                    <outlet property="TimeLabel" destination="mO9-Hf-x6H" id="R2Y-LL-340"/>
                                                     <segue destination="fM4-7h-u7Q" kind="show" id="1BC-2A-Nfl"/>
                                                 </connections>
                                             </tableViewCell>
@@ -400,6 +411,10 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="QXA-wA-Lhr" id="QxI-HB-gz3"/>
+                                            <outlet property="delegate" destination="QXA-wA-Lhr" id="iUq-iQ-bhh"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -436,10 +451,15 @@
                             <constraint firstItem="Ta4-zj-1OA" firstAttribute="centerX" secondItem="0dL-Hf-U1g" secondAttribute="centerX" id="tGq-Rp-mS4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addAppointment" destination="sCp-y5-gw5" id="Dht-Mz-d8Q"/>
+                        <outlet property="appointmentTableView" destination="8eo-TX-rgU" id="57Z-7a-JN7"/>
+                        <outlet property="pageLabel" destination="i2n-ms-7hP" id="sVW-A2-UB9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qoe-gy-11r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3286" y="1387"/>
+            <point key="canvasLocation" x="-3287.1999999999998" y="1386.656671664168"/>
         </scene>
         <!--New Appointment View Controller-->
         <scene sceneID="Pbc-1l-7SN">
@@ -969,7 +989,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DPZ-Ds-QzR">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MedicationCell" insetsLayoutMarginsFromSafeArea="NO" id="DPZ-Ds-QzR" customClass="MedicationCollectionViewCell" customModule="iPark" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="101"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1007,6 +1027,11 @@
                                                     <constraint firstItem="SKU-hC-wV3" firstAttribute="centerX" secondItem="DPZ-Ds-QzR" secondAttribute="centerX" id="y7g-A5-VdN"/>
                                                 </constraints>
                                                 <size key="customSize" width="90" height="101"/>
+                                                <connections>
+                                                    <outlet property="DosageLabel" destination="SgZ-oF-yao" id="FMf-AS-ei8"/>
+                                                    <outlet property="HourLabel" destination="SKU-hC-wV3" id="3im-ao-zhB"/>
+                                                    <outlet property="MedicamentLabel" destination="2Qi-x8-X1N" id="sKI-qX-TfJ"/>
+                                                </connections>
                                             </collectionViewCell>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sMV-X5-8ps">
                                                 <rect key="frame" x="101.5" y="0.0" width="90" height="101"/>
@@ -1906,6 +1931,10 @@
                                                 <size key="customSize" width="90" height="101"/>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="d8D-Fu-x6O" id="mtf-1M-Mzk"/>
+                                            <outlet property="delegate" destination="d8D-Fu-x6O" id="krB-4W-52E"/>
+                                        </connections>
                                     </collectionView>
                                 </subviews>
                                 <constraints>
@@ -1925,6 +1954,11 @@
                             <constraint firstItem="cid-KB-LRg" firstAttribute="centerX" secondItem="c7x-TC-Imn" secondAttribute="centerX" id="weL-pu-77E"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="AddMedicationButton" destination="cid-KB-LRg" id="cD1-RY-f9h"/>
+                        <outlet property="PageLabel" destination="7eB-88-Uch" id="qNF-py-TFI"/>
+                        <outlet property="PillsTableViewController" destination="iDq-Bx-d5P" id="kpP-X3-Vl8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dN0-Ql-lJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2064,12 +2098,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jw7-B1-n61" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-295" y="557"/>
+            <point key="canvasLocation" x="-240" y="717"/>
         </scene>
         <!--New Medicament View Controller-->
         <scene sceneID="Z1s-gY-hys">
             <objects>
-                <viewController storyboardIdentifier="newPrise" id="b83-gv-2Dg" customClass="NewMedicamentViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newMedicament" id="b83-gv-2Dg" customClass="NewMedicamentViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EhG-0V-wt0"/>
                         <viewControllerLayoutGuide type="bottom" id="5bI-sf-ohP"/>
@@ -2507,7 +2541,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="378"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rdvCell" rowHeight="92" id="6PI-eS-Yif">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SymptomCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="rdvCell" rowHeight="92" id="6PI-eS-Yif" customClass="SymptomTableViewCell" customModule="iPark" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="295" height="92"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6PI-eS-Yif" id="tcJ-SG-55t">
@@ -2550,6 +2584,11 @@
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oI1-b7-G5c" secondAttribute="trailingMargin" id="efA-n7-PxQ"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="DateLabel" destination="tPC-OR-BDk" id="yul-du-og7"/>
+                                                    <outlet property="StateLabel" destination="oI1-b7-G5c" id="UbA-dK-IA2"/>
+                                                    <outlet property="TimeLabel" destination="bgb-7o-kco" id="cUm-Fy-WHU"/>
+                                                </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="AXm-UJ-RqZ">
                                                 <rect key="frame" x="0.0" y="120" width="295" height="120"/>
@@ -2568,6 +2607,10 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="AoH-f9-wzZ" id="sLN-vU-8MD"/>
+                                            <outlet property="delegate" destination="AoH-f9-wzZ" id="n1C-ad-F92"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -2604,6 +2647,11 @@
                             <constraint firstItem="lND-Yr-hk9" firstAttribute="top" secondItem="NtX-zv-0BZ" secondAttribute="bottom" constant="50" id="nea-J2-mOg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="AddSymptoms" destination="lND-Yr-hk9" id="Twk-41-hm3"/>
+                        <outlet property="PageLabel" destination="fua-hp-9uu" id="sXf-jb-0Hd"/>
+                        <outlet property="Symptoms" destination="GlB-jg-lCI" id="9A0-bm-5dh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ik-AL-GnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2995,71 +3043,67 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jQt-1y-Nkf">
-                                <rect key="frame" x="186" y="133" width="154" height="114"/>
+                                <rect key="frame" x="149" y="133" width="200" height="114"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iWj-Yo-8FV">
-                                        <rect key="frame" x="0.0" y="0.0" width="154" height="114"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="114"/>
                                         <color key="backgroundColor" red="0.95840754533678751" green="0.16884559368232221" blue="0.084119884376448351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="agR-xj-VFM"/>
+                                        </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="28" id="7R1-Da-enX">
-                                                <rect key="frame" x="0.0" y="28" width="154" height="28"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="activityCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="28" id="7R1-Da-enX" customClass="ActivityTableViewCell" customModule="iPark" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="200" height="28"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7R1-Da-enX" id="qfn-bp-TDC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="154" height="27.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="27.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activité proposée 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa1-yd-cLQ">
-                                                            <rect key="frame" x="11.5" y="5" width="131" height="18"/>
+                                                            <rect key="frame" x="15" y="5" width="131" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-5" translatesAutoresizingMaskIntoConstraints="NO" id="RXW-EB-C1A">
+                                                            <rect key="frame" x="165" y="5" width="20" height="17.5"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                                            </accessibility>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="20" id="v1F-MV-8KF"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="qa1-yd-cLQ" firstAttribute="centerY" secondItem="qfn-bp-TDC" secondAttribute="centerY" id="NPw-yj-KrI"/>
-                                                        <constraint firstItem="qa1-yd-cLQ" firstAttribute="centerX" secondItem="qfn-bp-TDC" secondAttribute="centerX" id="aaI-Up-3zw"/>
+                                                        <constraint firstItem="RXW-EB-C1A" firstAttribute="centerY" secondItem="qfn-bp-TDC" secondAttribute="centerY" id="0kp-xv-kZn"/>
+                                                        <constraint firstItem="qa1-yd-cLQ" firstAttribute="centerY" secondItem="qfn-bp-TDC" secondAttribute="centerY" id="Bjg-Qf-99d"/>
+                                                        <constraint firstAttribute="bottom" secondItem="RXW-EB-C1A" secondAttribute="bottom" constant="5" id="DpV-X7-zRf"/>
+                                                        <constraint firstItem="qa1-yd-cLQ" firstAttribute="leading" secondItem="qfn-bp-TDC" secondAttribute="leading" constant="15" id="a6Q-hF-K1E"/>
+                                                        <constraint firstAttribute="trailing" secondItem="RXW-EB-C1A" secondAttribute="trailing" constant="15" id="sW8-uc-CFH"/>
+                                                        <constraint firstItem="RXW-EB-C1A" firstAttribute="top" secondItem="qfn-bp-TDC" secondAttribute="top" constant="5" id="toh-me-5zV"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="activityName" destination="qa1-yd-cLQ" id="eve-nE-uev"/>
+                                                    <outlet property="activityTrash" destination="RXW-EB-C1A" id="n8G-8G-kMA"/>
+                                                </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="28" id="LUd-i8-4b7">
-                                                <rect key="frame" x="0.0" y="56" width="154" height="28"/>
+                                                <rect key="frame" x="0.0" y="56" width="200" height="28"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LUd-i8-4b7" id="nsP-cm-QlR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="154" height="27.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="27.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activité proposée 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fo-Jf-d3v">
-                                                            <rect key="frame" x="11.5" y="5" width="131" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="9fo-Jf-d3v" firstAttribute="centerX" secondItem="nsP-cm-QlR" secondAttribute="centerX" id="CKs-9p-ecZ"/>
-                                                        <constraint firstItem="9fo-Jf-d3v" firstAttribute="centerY" secondItem="nsP-cm-QlR" secondAttribute="centerY" id="iEp-PL-rbe"/>
-                                                    </constraints>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="28" id="BCB-3d-qDU">
-                                                <rect key="frame" x="0.0" y="84" width="154" height="28"/>
+                                                <rect key="frame" x="0.0" y="84" width="200" height="28"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BCB-3d-qDU" id="bMD-lQ-t6N">
-                                                    <rect key="frame" x="0.0" y="0.0" width="154" height="27.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="27.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activité proposée 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFL-bc-0eE">
-                                                            <rect key="frame" x="11.5" y="5" width="131" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="yFL-bc-0eE" firstAttribute="centerY" secondItem="bMD-lQ-t6N" secondAttribute="centerY" id="I41-3O-2nw"/>
-                                                        <constraint firstItem="yFL-bc-0eE" firstAttribute="centerX" secondItem="bMD-lQ-t6N" secondAttribute="centerX" id="Oi2-Rq-gAH"/>
-                                                    </constraints>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
@@ -3069,9 +3113,6 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="jQt-1y-Nkf" secondAttribute="height" multiplier="77:57" id="7zY-uT-b0K"/>
-                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vos activités" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDB-dd-1NO">
                                 <rect key="frame" x="119.5" y="74" width="136" height="30"/>
@@ -3092,7 +3133,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNn-43-jJK">
-                                <rect key="frame" x="169" y="247" width="190" height="30"/>
+                                <rect key="frame" x="149" y="247" width="200" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Proposer une activité">
                                     <color key="titleColor" red="0.95840754530000005" green="0.16884559369999999" blue="0.084119884379999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3113,6 +3154,7 @@
                             <constraint firstItem="vRs-sD-DT1" firstAttribute="centerY" secondItem="7MF-wC-WbH" secondAttribute="centerY" id="En9-YK-YBB"/>
                             <constraint firstItem="faK-SD-IoU" firstAttribute="leading" secondItem="BsL-t7-74y" secondAttribute="trailing" constant="5" id="Gbb-to-ivK"/>
                             <constraint firstItem="hsb-Os-jXm" firstAttribute="leading" secondItem="MNM-o4-9vA" secondAttribute="trailing" constant="5" id="HUm-gf-Jeu"/>
+                            <constraint firstItem="iNn-43-jJK" firstAttribute="leading" secondItem="jQt-1y-Nkf" secondAttribute="leading" id="Hhg-4b-VWJ"/>
                             <constraint firstItem="qU5-hJ-7TR" firstAttribute="leading" secondItem="MNM-o4-9vA" secondAttribute="leading" id="IAJ-aK-Ovk"/>
                             <constraint firstItem="5z8-L0-Vvj" firstAttribute="leading" secondItem="MNM-o4-9vA" secondAttribute="leading" id="Iei-ck-Kxp"/>
                             <constraint firstItem="1zj-ul-ghm" firstAttribute="centerX" secondItem="GgK-ow-rSx" secondAttribute="centerX" id="LSs-fr-eE1"/>
@@ -3130,6 +3172,7 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5z8-L0-Vvj" secondAttribute="trailing" constant="20" symbolic="YES" id="eyF-of-jjB"/>
                             <constraint firstAttribute="trailing" secondItem="6Bz-hS-YZt" secondAttribute="trailing" constant="117" id="hsg-9Z-Mdd"/>
                             <constraint firstItem="6Bz-hS-YZt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MNM-o4-9vA" secondAttribute="leading" id="huk-hS-Wza"/>
+                            <constraint firstItem="iNn-43-jJK" firstAttribute="trailing" secondItem="jQt-1y-Nkf" secondAttribute="trailing" id="m86-6x-Wx6"/>
                             <constraint firstItem="faK-SD-IoU" firstAttribute="centerY" secondItem="BsL-t7-74y" secondAttribute="centerY" id="o9d-zu-CgS"/>
                             <constraint firstItem="7MF-wC-WbH" firstAttribute="leading" secondItem="MNM-o4-9vA" secondAttribute="leading" id="oMx-Xu-Xh8"/>
                             <constraint firstItem="iNn-43-jJK" firstAttribute="top" secondItem="jQt-1y-Nkf" secondAttribute="bottom" id="obi-JR-hRP"/>
@@ -3178,7 +3221,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="368"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rdvCell" rowHeight="92" id="A1H-qI-0oj">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LastActivity" selectionStyle="default" indentationWidth="10" reuseIdentifier="rdvCell" rowHeight="92" id="A1H-qI-0oj" customClass="LastActivityTableViewCell" customModule="iPark" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="295" height="92"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A1H-qI-0oj" id="NiI-TI-4vM">
@@ -3231,6 +3274,12 @@
                                                         <constraint firstItem="Ae2-3y-hJa" firstAttribute="centerY" secondItem="NiI-TI-4vM" secondAttribute="centerY" id="ngA-tc-1IJ"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="ActivityNameLabel" destination="2VG-63-fs0" id="rrx-jc-Vmv"/>
+                                                    <outlet property="DateLabel" destination="yUV-r2-o1i" id="zLJ-Dk-fCU"/>
+                                                    <outlet property="DurationLabel" destination="fGM-le-MNT" id="Uwl-n7-jWz"/>
+                                                    <outlet property="TimeLabel" destination="1Vs-Dq-rLE" id="e9O-55-wK9"/>
+                                                </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="RBD-Lt-yJR">
                                                 <rect key="frame" x="0.0" y="120" width="295" height="120"/>
@@ -3249,6 +3298,10 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="obL-QU-eKk" id="9V2-c2-JA1"/>
+                                            <outlet property="delegate" destination="obL-QU-eKk" id="dYR-0Y-8b9"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -3285,6 +3338,11 @@
                             <constraint firstItem="qRd-Of-tEO" firstAttribute="top" secondItem="eOB-3V-yhx" secondAttribute="bottom" constant="50" id="yPv-am-jmK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="AddActivityButton" destination="EsP-Bt-NqV" id="w2L-4D-MGS"/>
+                        <outlet property="LastActivities" destination="jJ8-Ir-EDE" id="pRl-EN-isZ"/>
+                        <outlet property="PageLabel" destination="eOB-3V-yhx" id="Jyf-5V-bCE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ufz-f1-taU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3571,9 +3629,10 @@
         <image name="Image-2" width="128" height="128"/>
         <image name="Image-3" width="128" height="128"/>
         <image name="Image-4" width="128" height="128"/>
+        <image name="Image-5" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u23-VP-67P"/>
+        <segue reference="LNg-CD-xwD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.60387165831962519" green="1" blue="0.40962909594737573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -35,6 +35,12 @@
 		D981D8AC206539F100101FD4 /* NewSymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981D8AB206539F100101FD4 /* NewSymptomsViewController.swift */; };
 		D981D8AE20653BCB00101FD4 /* NewMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981D8AD20653BCB00101FD4 /* NewMedicationViewController.swift */; };
 		D981D8B02065422700101FD4 /* ProposedActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981D8AF2065422700101FD4 /* ProposedActivitiesTableViewController.swift */; };
+		D9FE6A832065AA71004D985A /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A822065AA71004D985A /* ActivityTableViewCell.swift */; };
+		D9FE6A852065B815004D985A /* AppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A842065B815004D985A /* AppointmentTableViewCell.swift */; };
+		D9FE6A872065BFB2004D985A /* LastActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A862065BFB1004D985A /* LastActivityTableViewCell.swift */; };
+		D9FE6A8B2065C522004D985A /* MedicationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A8A2065C522004D985A /* MedicationCollectionViewCell.swift */; };
+		D9FE6A8D2065C84D004D985A /* MedecinsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A8C2065C84D004D985A /* MedecinsTableViewCell.swift */; };
+		D9FE6A8F2065CBF0004D985A /* SymptomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A8E2065CBF0004D985A /* SymptomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +98,12 @@
 		D981D8AB206539F100101FD4 /* NewSymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSymptomsViewController.swift; sourceTree = "<group>"; };
 		D981D8AD20653BCB00101FD4 /* NewMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMedicationViewController.swift; sourceTree = "<group>"; };
 		D981D8AF2065422700101FD4 /* ProposedActivitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposedActivitiesTableViewController.swift; sourceTree = "<group>"; };
+		D9FE6A822065AA71004D985A /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		D9FE6A842065B815004D985A /* AppointmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentTableViewCell.swift; sourceTree = "<group>"; };
+		D9FE6A862065BFB1004D985A /* LastActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastActivityTableViewCell.swift; sourceTree = "<group>"; };
+		D9FE6A8A2065C522004D985A /* MedicationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationCollectionViewCell.swift; sourceTree = "<group>"; };
+		D9FE6A8C2065C84D004D985A /* MedecinsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedecinsTableViewCell.swift; sourceTree = "<group>"; };
+		D9FE6A8E2065CBF0004D985A /* SymptomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +236,12 @@
 				0432CF4E205438B1002845E1 /* controllers */,
 				2DA8AC6820468FBE00A95DBA /* AppDelegate.swift */,
 				2DA8AC6C20468FBE00A95DBA /* Main.storyboard */,
+				D9FE6A8E2065CBF0004D985A /* SymptomTableViewCell.swift */,
+				D9FE6A8C2065C84D004D985A /* MedecinsTableViewCell.swift */,
+				D9FE6A8A2065C522004D985A /* MedicationCollectionViewCell.swift */,
+				D9FE6A862065BFB1004D985A /* LastActivityTableViewCell.swift */,
+				D9FE6A842065B815004D985A /* AppointmentTableViewCell.swift */,
+				D9FE6A822065AA71004D985A /* ActivityTableViewCell.swift */,
 				2DA8AC7220468FBE00A95DBA /* Assets.xcassets */,
 				2DA8AC7420468FBE00A95DBA /* LaunchScreen.storyboard */,
 				2DA8AC7720468FBE00A95DBA /* Info.plist */,
@@ -388,19 +406,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				D96224A52062A151003E9D93 /* CalendarViewController.swift in Sources */,
+				D9FE6A8D2065C84D004D985A /* MedecinsTableViewCell.swift in Sources */,
 				D981D8AE20653BCB00101FD4 /* NewMedicationViewController.swift in Sources */,
 				D96224A32062A058003E9D93 /* NewDoctorViewController.swift in Sources */,
 				D981D8AA2065396600101FD4 /* SymptomsViewController.swift in Sources */,
 				04D97ECF206119E8001BFAAA /* MedecinDAO.swift in Sources */,
 				D981D8A62065389400101FD4 /* PillsViewController.swift in Sources */,
 				D981D8A42065373F00101FD4 /* NewActivityViewController.swift in Sources */,
+				D9FE6A852065B815004D985A /* AppointmentTableViewCell.swift in Sources */,
+				D9FE6A872065BFB2004D985A /* LastActivityTableViewCell.swift in Sources */,
 				2DA8AC7120468FBE00A95DBA /* iPark.xcdatamodeld in Sources */,
 				D962249D20629F37003E9D93 /* MyActivitiesViewController.swift in Sources */,
 				04D97ED220611A43001BFAAA /* CoreDataDAOFactory.swift in Sources */,
+				D9FE6A8F2065CBF0004D985A /* SymptomTableViewCell.swift in Sources */,
 				04E69FF62064E3FE003E9AA4 /* Medecin.swift in Sources */,
+				D9FE6A8B2065C522004D985A /* MedicationCollectionViewCell.swift in Sources */,
 				0432CF50205438DC002845E1 /* FirstLaunchViewController.swift in Sources */,
 				D96224A92062A6FA003E9D93 /* MyAppointmentViewController.swift in Sources */,
 				D94478CE20610A38006A1521 /* PersonalInfoViewController.swift in Sources */,
+				D9FE6A832065AA71004D985A /* ActivityTableViewCell.swift in Sources */,
 				D96224A72062A1D4003E9D93 /* NewAppointmentViewController.swift in Sources */,
 				2DA8AC6920468FBE00A95DBA /* AppDelegate.swift in Sources */,
 				D981D8B02065422700101FD4 /* ProposedActivitiesTableViewController.swift in Sources */,
@@ -575,10 +599,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iPark/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Polytech.iPark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -587,6 +613,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iPark/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Polytech.iPark;
