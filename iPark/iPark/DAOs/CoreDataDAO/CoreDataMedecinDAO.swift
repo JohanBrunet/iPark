@@ -11,25 +11,23 @@ import CoreData
 
 class CoreDataMedecinDAO: MedecinDAO {
 
-    private let request : NSFetchRequest<Medecin> = Medecin.fetchRequest()
+    private let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Medecin")
     
     func save() {
         CoreDataManager.save()
     }
     
-    func insert(lastName: String, firstName: String, adress: String, phone: String) -> Medecin {
+    func insert(lastName: String, adress: String, phone: String) -> Medecin {
         let dao = self.create()
         dao.nom_medecin = lastName
-        dao.prenom_medecin = firstName
         dao.adresse = adress
         dao.telephone = phone
         return dao
     }
     
-    func insert(lastName: String, firstName: String, adress: String, phone: String, specialty: Specialite) -> Medecin {
+    func insert(lastName: String, adress: String, phone: String, specialty: Specialite) -> Medecin {
         let dao = self.create()
         dao.nom_medecin = lastName
-        dao.prenom_medecin = firstName
         dao.adresse = adress
         dao.telephone = phone
         dao.specialite = specialty
@@ -41,9 +39,9 @@ class CoreDataMedecinDAO: MedecinDAO {
     }
     
     func getByName(for lastName: String) -> [Medecin]? {
-        self.request.predicate = NSPredicate(format: "firstname == %@", lastName)
+        self.request.predicate = NSPredicate(format: "nom_medecin == %@", lastName)
         do{
-            let result = try CoreDataManager.context.fetch(request) as [Medecin]
+            let result = try CoreDataManager.context.fetch(self.request) as! [Medecin]
             guard result.count != 0 else { return nil }
             return result
         }
@@ -52,10 +50,10 @@ class CoreDataMedecinDAO: MedecinDAO {
         }
     }
     
-    func search(forFirstname firstname: String, lastname: String,  phone: String) -> Medecin? {
-        self.request.predicate = NSPredicate(format: "firstname == %@ AND lastname == %@ AND phone == %@", firstname, lastname, phone)
+    func search(forLastname lastname: String,  phone: String) -> Medecin? {
+        self.request.predicate = NSPredicate(format: "nom_medecin == %@ AND telephone == %@", lastname, phone)
         do{
-            let result = try CoreDataManager.context.fetch(request) as [Medecin]
+            let result = try CoreDataManager.context.fetch(self.request) as! [Medecin]
             guard result.count != 0 else { return nil }
             return result[0]
         }
@@ -65,20 +63,12 @@ class CoreDataMedecinDAO: MedecinDAO {
     }
     
     func search(forMedecin medecin: Medecin) -> Medecin? {
-        self.request.predicate = NSPredicate(format: "firstname == %@ AND lastname == %@ AND phone = %@", medecin.prenom_medecin!, medecin.nom_medecin!, medecin.telephone!)
-        do{
-            let result = try CoreDataManager.context.fetch(request) as [Medecin]
-            guard result.count != 0 else { return nil }
-            return result[0]
-        }
-        catch{
-            return nil
-        }
+        return self.search(forLastname: medecin.nom, phone: medecin.tel)
     }
     
     func getAll() -> [Medecin]? {
         do{
-            return try CoreDataManager.context.fetch(self.request)
+            return try CoreDataManager.context.fetch(self.request) as? [Medecin]
         }
         catch{
             return nil
@@ -90,15 +80,15 @@ class CoreDataMedecinDAO: MedecinDAO {
     }
     
     func add(medecin: Medecin) {
-        if let _ = self.search(forFirstname: medecin.prenom_medecin!, lastname: medecin.nom_medecin!, phone: medecin.telephone!) {
+        if let _ = self.search(forLastname: medecin.nom_medecin!, phone: medecin.telephone!) {
             self.save()
         }
         else {
             if let specialty = medecin.specialite {
-                let _ = self.insert(lastName: medecin.nom_medecin!, firstName: medecin.prenom_medecin!, adress: medecin.adresse!, phone: medecin.telephone!, specialty: specialty)
+                let _ = self.insert(lastName: medecin.nom_medecin!, adress: medecin.adresse!, phone: medecin.telephone!, specialty: specialty)
             }
             else{
-                let _ = self.insert(lastName: medecin.nom_medecin!, firstName: medecin.prenom_medecin!, adress: medecin.adresse!, phone: medecin.telephone!)
+                let _ = self.insert(lastName: medecin.nom_medecin!, adress: medecin.adresse!, phone: medecin.telephone!)
             }
             self.save()
         }

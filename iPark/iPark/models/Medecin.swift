@@ -19,15 +19,6 @@ extension Medecin {
         }
     }
     
-    var prenom: String {
-        get {
-            return self.prenom_medecin!
-        }
-        set {
-            self.prenom_medecin = newValue
-        }
-    }
-    
     var adr: String {
         get {
             return self.adresse!
@@ -50,22 +41,20 @@ extension Medecin {
         return self.specialite
     }
     
-    var fullName: String {
-        let fn = self.prenom + " " + self.nom
-        return fn
+    var titledName: String {
+        let tn = "Dr. " + self.nom
+        return tn
     }
     
-    convenience init(fn: String, ln: String, addr: String, ph: String) {
+    convenience init(ln: String, addr: String, ph: String) {
         self.init(context: CoreDataManager.context)
-        self.prenom_medecin = fn
         self.nom_medecin = ln
         self.adresse = addr
         self.telephone = ph
     }
     
-    convenience init(fn: String, ln: String, addr: String, ph: String, sp: Specialite) {
+    convenience init(ln: String, addr: String, ph: String, sp: Specialite) {
         self.init(context: CoreDataManager.context)
-        self.prenom_medecin = fn
         self.nom_medecin = ln
         self.adresse = addr
         self.telephone = ph

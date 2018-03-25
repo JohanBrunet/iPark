@@ -12,13 +12,13 @@ import CoreData
 protocol MedecinDAO {
     
     func save()
-    func insert(lastName: String, firstName: String, adress: String, phone: String) -> Medecin
-    func insert(lastName: String, firstName: String, adress: String, phone: String, specialty: Specialite) -> Medecin
+    func insert(lastName: String, adress: String, phone: String) -> Medecin
+    func insert(lastName: String, adress: String, phone: String, specialty: Specialite) -> Medecin
     func create() -> Medecin
     func getByName(for lastName: String) -> [Medecin]?
     func getAll() -> [Medecin]?
     func delete(for medecin: Medecin)
     func search(forMedecin medecin: Medecin) -> Medecin?
-    func search(forFirstname firstname: String, lastname: String,  phone: String) -> Medecin?
-    
+    func search(forLastname lastname: String,  phone: String) -> Medecin?
+    func add(medecin: Medecin)
 }

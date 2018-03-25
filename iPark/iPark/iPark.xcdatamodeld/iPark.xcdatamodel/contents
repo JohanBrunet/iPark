@@ -15,13 +15,12 @@
     <entity name="Medecin" representedClassName="Medecin" syncable="YES" codeGenerationType="class">
         <attribute name="adresse" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nom_medecin" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="prenom_medecin" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="telephone" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="rdv" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RendezVous" inverseName="medecin" inverseEntity="RendezVous" syncable="YES"/>
         <relationship name="specialite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Specialite" inverseName="medecin" inverseEntity="Specialite" syncable="YES"/>
     </entity>
     <entity name="Medicament" representedClassName="Medicament" syncable="YES" codeGenerationType="class">
-        <attribute name="dose" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="dose" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="nom_commercial" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nom_generique" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="prise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Prise" inverseName="medicament" inverseEntity="Prise" syncable="YES"/>
@@ -55,7 +54,7 @@
         <element name="Activite" positionX="-297" positionY="-207" width="128" height="120"/>
         <element name="Conclusion" positionX="-333" positionY="27" width="128" height="30"/>
         <element name="Evenement" positionX="-81" positionY="-9" width="128" height="75"/>
-        <element name="Medecin" positionX="-369" positionY="-106" width="128" height="135"/>
+        <element name="Medecin" positionX="-369" positionY="-106" width="128" height="120"/>
         <element name="Medicament" positionX="-558" positionY="209" width="128" height="105"/>
         <element name="Observation" positionX="-342" positionY="18" width="128" height="30"/>
         <element name="Prise" positionX="-522" positionY="110" width="128" height="75"/>

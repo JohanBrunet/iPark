@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0411913420667A5700DC4473 /* MedecinSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E69FF72064E413003E9AA4 /* MedecinSet.swift */; };
+		0411913520667A5D00DC4473 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E69FFE20650B3D003E9AA4 /* Seeder.swift */; };
+		04119136206681CE00DC4473 /* iPark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6F20468FBE00A95DBA /* iPark.xcdatamodeld */; };
 		0432CF50205438DC002845E1 /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432CF4F205438DC002845E1 /* FirstLaunchViewController.swift */; };
 		0432CF5220543A83002845E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432CF5120543A83002845E1 /* HomeViewController.swift */; };
+		046669A920664C32002E60BA /* FormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046669A820664C32002E60BA /* FormValidator.swift */; };
+		046669AB20665355002E60BA /* CoreDataMedecinDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046669AA20665355002E60BA /* CoreDataMedecinDAO.swift */; };
+		046669AE20667278002E60BA /* MedecinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046669AD20667278002E60BA /* MedecinCell.swift */; };
 		04D97ECD206119E8001BFAAA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D97ECA206119E8001BFAAA /* CoreDataManager.swift */; };
 		04D97ECF206119E8001BFAAA /* MedecinDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D97ECC206119E8001BFAAA /* MedecinDAO.swift */; };
 		04D97ED220611A43001BFAAA /* CoreDataDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D97ED120611A43001BFAAA /* CoreDataDAOFactory.swift */; };
 		04E69FF62064E3FE003E9AA4 /* Medecin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E69FF52064E3FE003E9AA4 /* Medecin.swift */; };
 		2DA8AC6920468FBE00A95DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6820468FBE00A95DBA /* AppDelegate.swift */; };
 		2DA8AC6E20468FBE00A95DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6C20468FBE00A95DBA /* Main.storyboard */; };
-		2DA8AC7120468FBE00A95DBA /* iPark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6F20468FBE00A95DBA /* iPark.xcdatamodeld */; };
 		2DA8AC7320468FBE00A95DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA8AC7220468FBE00A95DBA /* Assets.xcassets */; };
 		2DA8AC7620468FBE00A95DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA8AC7420468FBE00A95DBA /* LaunchScreen.storyboard */; };
 		2DA8AC8120468FBE00A95DBA /* iParkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC8020468FBE00A95DBA /* iParkTests.swift */; };
@@ -67,12 +72,14 @@
 /* Begin PBXFileReference section */
 		0432CF4F205438DC002845E1 /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		0432CF5120543A83002845E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		046669A820664C32002E60BA /* FormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidator.swift; sourceTree = "<group>"; };
+		046669AA20665355002E60BA /* CoreDataMedecinDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataMedecinDAO.swift; sourceTree = "<group>"; };
+		046669AD20667278002E60BA /* MedecinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedecinCell.swift; sourceTree = "<group>"; };
 		04D97ECA206119E8001BFAAA /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		04D97ECC206119E8001BFAAA /* MedecinDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedecinDAO.swift; sourceTree = "<group>"; };
 		04D97ED120611A43001BFAAA /* CoreDataDAOFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDAOFactory.swift; sourceTree = "<group>"; };
 		04E69FF52064E3FE003E9AA4 /* Medecin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medecin.swift; sourceTree = "<group>"; };
 		04E69FF72064E413003E9AA4 /* MedecinSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedecinSet.swift; sourceTree = "<group>"; };
-		04E69FF92064E585003E9AA4 /* CoreDataMedecinDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMedecinDAO.swift; sourceTree = "<group>"; };
 		04E69FFE20650B3D003E9AA4 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		2DA8AC6520468FBE00A95DBA /* iPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA8AC6820468FBE00A95DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +169,14 @@
 			path = controllers;
 			sourceTree = "<group>";
 		};
+		046669AC20666BEB002E60BA /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				046669AD20667278002E60BA /* MedecinCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		0475C596206298A3002CBD09 /* sets */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +198,7 @@
 		04D97EC9206119E8001BFAAA /* CoreDataDAO */ = {
 			isa = PBXGroup;
 			children = (
-				04E69FF92064E585003E9AA4 /* CoreDataMedecinDAO.swift */,
+				046669AA20665355002E60BA /* CoreDataMedecinDAO.swift */,
 				D9F993352066753600814AF3 /* CoreDataActiviteDAO.swift */,
 			);
 			path = CoreDataDAO;
@@ -211,6 +226,7 @@
 			children = (
 				04D97ECA206119E8001BFAAA /* CoreDataManager.swift */,
 				04E69FFE20650B3D003E9AA4 /* Seeder.swift */,
+				046669A820664C32002E60BA /* FormValidator.swift */,
 			);
 			path = DataHelpers;
 			sourceTree = "<group>";
@@ -238,6 +254,7 @@
 		2DA8AC6720468FBE00A95DBA /* iPark */ = {
 			isa = PBXGroup;
 			children = (
+				046669AC20666BEB002E60BA /* cells */,
 				04E69FFB2064ED36003E9AA4 /* DataHelpers */,
 				0475C596206298A3002CBD09 /* sets */,
 				04D97ED320611A4B001BFAAA /* models */,
@@ -424,19 +441,24 @@
 				D981D8A62065389400101FD4 /* PillsViewController.swift in Sources */,
 				D9F99338206675B000814AF3 /* ActiviteDAO.swift in Sources */,
 				D981D8A42065373F00101FD4 /* NewActivityViewController.swift in Sources */,
+				046669AE20667278002E60BA /* MedecinCell.swift in Sources */,
 				D9FE6A852065B815004D985A /* AppointmentTableViewCell.swift in Sources */,
 				D9FE6A872065BFB2004D985A /* LastActivityTableViewCell.swift in Sources */,
 				2DA8AC7120468FBE00A95DBA /* iPark.xcdatamodeld in Sources */,
 				D962249D20629F37003E9D93 /* MyActivitiesViewController.swift in Sources */,
+				04119136206681CE00DC4473 /* iPark.xcdatamodeld in Sources */,
 				04D97ED220611A43001BFAAA /* CoreDataDAOFactory.swift in Sources */,
+				0411913520667A5D00DC4473 /* Seeder.swift in Sources */,
 				D9FE6A8F2065CBF0004D985A /* SymptomTableViewCell.swift in Sources */,
 				04E69FF62064E3FE003E9AA4 /* Medecin.swift in Sources */,
 				D9FE6A8B2065C522004D985A /* MedicationCollectionViewCell.swift in Sources */,
 				0432CF50205438DC002845E1 /* FirstLaunchViewController.swift in Sources */,
 				D96224A92062A6FA003E9D93 /* MyAppointmentViewController.swift in Sources */,
+				0411913420667A5700DC4473 /* MedecinSet.swift in Sources */,
 				D94478CE20610A38006A1521 /* PersonalInfoViewController.swift in Sources */,
 				D9FE6A832065AA71004D985A /* ActivityTableViewCell.swift in Sources */,
 				D96224A72062A1D4003E9D93 /* NewAppointmentViewController.swift in Sources */,
+				046669AB20665355002E60BA /* CoreDataMedecinDAO.swift in Sources */,
 				D9F9933A2066762900814AF3 /* Activite.swift in Sources */,
 				2DA8AC6920468FBE00A95DBA /* AppDelegate.swift in Sources */,
 				D9F9933B20668F3300814AF3 /* CoreDataMedecinDAO.swift in Sources */,
@@ -446,6 +468,7 @@
 				04D97ECD206119E8001BFAAA /* CoreDataManager.swift in Sources */,
 				D962249F20629F82003E9D93 /* DoctorViewController.swift in Sources */,
 				D981D8AC206539F100101FD4 /* NewSymptomsViewController.swift in Sources */,
+				046669A920664C32002E60BA /* FormValidator.swift in Sources */,
 				0432CF5220543A83002845E1 /* HomeViewController.swift in Sources */,
 				D962249B20629D88003E9D93 /* ActivityViewController.swift in Sources */,
 			);
