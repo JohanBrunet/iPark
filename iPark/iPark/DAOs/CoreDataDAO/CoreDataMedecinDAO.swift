@@ -79,7 +79,7 @@ class CoreDataMedecinDAO: MedecinDAO {
         CoreDataManager.context.delete(medecin)
     }
     
-    func add(_ medecin: Medecin) {
+    func add( medecin: Medecin) {
         if let _ = self.search(forLastname: medecin.nom_medecin!, phone: medecin.telephone!) {
             self.save()
         }
