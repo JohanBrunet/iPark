@@ -42,8 +42,7 @@ extension Medecin {
     }
     
     var titledName: String {
-        let tn = "Dr. " + self.nom
-        return tn
+        return "Dr. " + self.nom
     }
     
     convenience init(ln: String, addr: String, ph: String) {

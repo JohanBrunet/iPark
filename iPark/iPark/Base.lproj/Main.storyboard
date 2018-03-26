@@ -104,7 +104,7 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="klm-aL-BVJ">
                                 <rect key="frame" x="0.0" y="338" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="542711608.02056301">
-                                    <!--2018-03-14 09:13:28 +0000-->
+                                    <!--2018-03-14 9:13:28 AM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr_FR"/>
                             </datePicker>
@@ -201,7 +201,7 @@
                                 <rect key="frame" x="16" y="264" width="343" height="308"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MedecinCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="medecinCell" rowHeight="51" id="D0i-2P-CMs" customClass="MedecinsTableViewCell" customModule="iPark" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MedecinCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="medecinCell" rowHeight="51" id="D0i-2P-CMs" customClass="MedecinCell" customModule="iPark">
                                         <rect key="frame" x="0.0" y="28" width="343" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D0i-2P-CMs" id="ML4-bg-wAo">
@@ -231,15 +231,11 @@
                                                 <constraint firstItem="4sC-mJ-scn" firstAttribute="bottom" secondItem="ML4-bg-wAo" secondAttribute="bottomMargin" id="i2r-Bc-qCr"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ymc-SA-NCY" secondAttribute="trailingMargin" id="teA-SB-qmC"/>
                                             </constraints>
-                                            <connections>
-                                                <outlet property="name" destination="ymc-SA-NCY" id="tNW-9o-68M"/>
-                                                <outlet property="specialty" destination="4sC-mJ-scn" id="pWb-Xe-wzc"/>
-                                            </connections>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="name" destination="ymc-SA-NCY" id="Yfn-e7-Bzh"/>
-                                            <outlet property="specialty" destination="4sC-mJ-scn" id="dLd-3f-vUx"/>
-                                            <segue destination="ntn-mm-Fen" kind="show" id="PLx-ku-9E4"/>
+                                            <outlet property="name" destination="ymc-SA-NCY" id="ez3-tw-Qm4"/>
+                                            <outlet property="specialty" destination="4sC-mJ-scn" id="Z3P-nf-tgX"/>
+                                            <segue destination="ntn-mm-Fen" kind="show" identifier="showDoctorView" id="PLx-ku-9E4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -303,11 +299,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Informations Personnelles" id="tf3-rj-vHR"/>
                     <connections>
-                        <outlet property="MedecinsTableView" destination="ZGz-6h-uM1" id="toX-qE-g27"/>
                         <outlet property="adress" destination="YgZ-SD-9C7" id="MH4-ra-9Zr"/>
                         <outlet property="age" destination="zhf-an-szW" id="eAO-C0-m1N"/>
                         <outlet property="fullName" destination="Wop-ve-j34" id="kZb-k5-pGW"/>
-                        <outlet property="medecinTableView" destination="ZGz-6h-uM1" id="wrN-i3-GuW"/>
+                        <outlet property="medecinTableView" destination="ZGz-6h-uM1" id="hs1-zf-wK9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3I-FM-5mG" sceneMemberID="firstResponder"/>
@@ -494,7 +489,7 @@
                                     <constraint firstAttribute="width" secondItem="BVL-97-ypb" secondAttribute="height" multiplier="49:25" id="8A3-od-aCQ"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="542714521.85017204">
-                                    <!--2018-03-14 10:02:01 +0000-->
+                                    <!--2018-03-14 10:02:01 AM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr_FR"/>
                             </datePicker>
@@ -1118,6 +1113,9 @@
                                 <state key="normal" title="Supprimer Medecin">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteMedecin:" destination="ntn-mm-Fen" eventType="touchUpInside" id="Zpn-pX-Whg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neurologue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRP-di-R19">
                                 <rect key="frame" x="137" y="184.5" width="101.5" height="24"/>
@@ -1196,8 +1194,16 @@
                             <constraint firstItem="r9t-Ee-JXI" firstAttribute="leading" secondItem="ZDY-K4-n6U" secondAttribute="leading" id="wnm-AR-SJh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adress" destination="NeO-cN-zKU" id="egR-y7-oRk"/>
+                        <outlet property="lastAppointment" destination="cWa-6b-OyR" id="83c-aG-LQ1"/>
+                        <outlet property="specialty" destination="gRP-di-R19" id="nHJ-DN-6rC"/>
+                        <outlet property="titledName" destination="ke8-Uq-iSg" id="UOk-EP-wkP"/>
+                        <segue destination="27v-Xd-7ak" kind="unwind" identifier="showPatientInfos" unwindAction="unwindFromDeleteMedecinWithSegue:" id="YYR-i6-uuy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jw7-B1-n61" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="27v-Xd-7ak" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-240" y="717"/>
         </scene>
@@ -1522,7 +1528,7 @@
                                     <constraint firstAttribute="height" constant="179" id="iqq-Th-Otg"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="543225695.85734999">
-                                    <!--2018-03-20 08:01:35 +0000-->
+                                    <!--2018-03-20 8:01:35 AM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>
@@ -2552,7 +2558,7 @@
                                     <constraint firstAttribute="height" constant="130" id="9WE-Zl-rI8"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="543241750.40723705">
-                                    <!--2018-03-20 12:29:10 +0000-->
+                                    <!--2018-03-20 12:29:10 PM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>
@@ -2635,7 +2641,7 @@
                                     <constraint firstAttribute="height" constant="173" id="hAP-nZ-OOf"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="543193414.20015001">
-                                    <!--2018-03-19 23:03:34 +0000-->
+                                    <!--2018-03-19 11:03:34 PM +0000-->
                                 </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jour(s) de la prise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsY-7I-hWE">

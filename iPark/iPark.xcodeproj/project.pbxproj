@@ -48,7 +48,6 @@
 		D9FE6A852065B815004D985A /* AppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A842065B815004D985A /* AppointmentTableViewCell.swift */; };
 		D9FE6A872065BFB2004D985A /* LastActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A862065BFB1004D985A /* LastActivityTableViewCell.swift */; };
 		D9FE6A8B2065C522004D985A /* MedicationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A8A2065C522004D985A /* MedicationCollectionViewCell.swift */; };
-		D9FE6A8D2065C84D004D985A /* MedecinsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A8C2065C84D004D985A /* MedecinsTableViewCell.swift */; };
 		D9FE6A8F2065CBF0004D985A /* SymptomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A8E2065CBF0004D985A /* SymptomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -116,7 +115,6 @@
 		D9FE6A842065B815004D985A /* AppointmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentTableViewCell.swift; sourceTree = "<group>"; };
 		D9FE6A862065BFB1004D985A /* LastActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastActivityTableViewCell.swift; sourceTree = "<group>"; };
 		D9FE6A8A2065C522004D985A /* MedicationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationCollectionViewCell.swift; sourceTree = "<group>"; };
-		D9FE6A8C2065C84D004D985A /* MedecinsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedecinsTableViewCell.swift; sourceTree = "<group>"; };
 		D9FE6A8E2065CBF0004D985A /* SymptomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +171,11 @@
 			isa = PBXGroup;
 			children = (
 				046669AD20667278002E60BA /* MedecinCell.swift */,
+				D9FE6A8E2065CBF0004D985A /* SymptomTableViewCell.swift */,
+				D9FE6A8A2065C522004D985A /* MedicationCollectionViewCell.swift */,
+				D9FE6A862065BFB1004D985A /* LastActivityTableViewCell.swift */,
+				D9FE6A842065B815004D985A /* AppointmentTableViewCell.swift */,
+				D9FE6A822065AA71004D985A /* ActivityTableViewCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -263,12 +266,6 @@
 				0432CF4E205438B1002845E1 /* controllers */,
 				2DA8AC6820468FBE00A95DBA /* AppDelegate.swift */,
 				2DA8AC6C20468FBE00A95DBA /* Main.storyboard */,
-				D9FE6A8E2065CBF0004D985A /* SymptomTableViewCell.swift */,
-				D9FE6A8C2065C84D004D985A /* MedecinsTableViewCell.swift */,
-				D9FE6A8A2065C522004D985A /* MedicationCollectionViewCell.swift */,
-				D9FE6A862065BFB1004D985A /* LastActivityTableViewCell.swift */,
-				D9FE6A842065B815004D985A /* AppointmentTableViewCell.swift */,
-				D9FE6A822065AA71004D985A /* ActivityTableViewCell.swift */,
 				2DA8AC7220468FBE00A95DBA /* Assets.xcassets */,
 				2DA8AC7420468FBE00A95DBA /* LaunchScreen.storyboard */,
 				2DA8AC7720468FBE00A95DBA /* Info.plist */,
@@ -433,7 +430,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D96224A52062A151003E9D93 /* CalendarViewController.swift in Sources */,
-				D9FE6A8D2065C84D004D985A /* MedecinsTableViewCell.swift in Sources */,
 				D981D8AE20653BCB00101FD4 /* NewMedicationViewController.swift in Sources */,
 				D96224A32062A058003E9D93 /* NewDoctorViewController.swift in Sources */,
 				D981D8AA2065396600101FD4 /* SymptomsViewController.swift in Sources */,
@@ -444,7 +440,6 @@
 				046669AE20667278002E60BA /* MedecinCell.swift in Sources */,
 				D9FE6A852065B815004D985A /* AppointmentTableViewCell.swift in Sources */,
 				D9FE6A872065BFB2004D985A /* LastActivityTableViewCell.swift in Sources */,
-				2DA8AC7120468FBE00A95DBA /* iPark.xcdatamodeld in Sources */,
 				D962249D20629F37003E9D93 /* MyActivitiesViewController.swift in Sources */,
 				04119136206681CE00DC4473 /* iPark.xcdatamodeld in Sources */,
 				04D97ED220611A43001BFAAA /* CoreDataDAOFactory.swift in Sources */,

@@ -42,26 +42,26 @@ class PersonalInfoViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     // MARK: - Envoyer le medecin à la vue suivante
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let indexPath = self.medecinTableView.indexPathForSelectedRow {
-//            let medecinViewController = segue.destination as! DoctorViewController
-//            medecinViewController.medecin = self.medecinSet[indexPath.row]
-//            medecinViewController.posMedecin = indexPath.row
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDoctorView" {
+            if let indexPath = self.medecinTableView.indexPathForSelectedRow {
+                let medecinViewController = segue.destination as! DoctorViewController
+                medecinViewController.medecin = self.medecinSet?.get(indexPath.row)
+                medecinViewController.posMedecin = indexPath.row
+            }
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("nb cells to create : ", self.medecinSet!.count)
         return self.medecinSet!.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MedecinCell = medecinTableView.dequeueReusableCell(withIdentifier: "medecinCell", for: indexPath) as! MedecinCell
         let med = self.medecinSet!.get(indexPath.row)!
-        print(med)
         cell.name.text! = med.titledName
         guard let specialty = med.specialite else {
-            cell.specialty.text = ""
+            cell.specialty.text! = ""
             return cell
         }
         cell.specialty.text! = specialty.libelle!
@@ -70,6 +70,10 @@ class PersonalInfoViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @IBAction func unwindFromAddMedecin(segue: UIStoryboardSegue) {
+        self.medecinTableView.reloadData()
+    }
+    
+    @IBAction func unwindFromDeleteMedecin(segue: UIStoryboardSegue) {
         self.medecinTableView.reloadData()
     }
     
