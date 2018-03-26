@@ -61,7 +61,7 @@ class PersonalInfoViewController: UIViewController, UITableViewDelegate, UITable
         let med = self.medecinSet!.get(indexPath.row)!
         cell.name.text! = med.titledName
         guard let specialty = med.specialite else {
-            cell.specialty.text! = ""
+            cell.specialty.text! = "Non renseigné"
             return cell
         }
         cell.specialty.text! = specialty.libelle!
