@@ -56,13 +56,21 @@ class NewDoctorViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBAction func submitForm(_ sender: Any) {
         let tab: [UITextField] = [name, address, phone]
         if FormValidator.formIsValid(tab) {
-            guard let spec = self.specialitePicked else {
-                newMed = Medecin(ln: name.text!, addr: address.text!, ph: phone.text!)
+            if checkPhoneNumber(for: phone.text!) {
+                guard let spec = self.specialitePicked else {
+                    newMed = Medecin(ln: name.text!, addr: address.text!, ph: phone.text!)
+                    self.performSegue(withIdentifier: "showPersonalInfos", sender: self)
+                    return
+                }
+                newMed = Medecin(ln: name.text!, addr: address.text!, ph: phone.text!, sp: spec)
                 self.performSegue(withIdentifier: "showPersonalInfos", sender: self)
-                return
             }
-            newMed = Medecin(ln: name.text!, addr: address.text!, ph: phone.text!, sp: spec)
-            self.performSegue(withIdentifier: "showPersonalInfos", sender: self)
+            else {
+                let alert = UIAlertController(title: "Téléphone invalide", message: "Veuillez saisir un numéro de téléphone valide", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                self.phone.text = ""
+            }
         }
         else {
             let alert = UIAlertController(title: "Formulaire invalide", message: "Veuillez remplir tous les champs", preferredStyle: .alert)
@@ -71,8 +79,22 @@ class NewDoctorViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         }
     }
     
+    private func checkPhoneNumber(for number: String) -> Bool {
+        let regex = "^0([1-7]|9)[0-9]{8}$"
+        do {
+            let regex = try NSRegularExpression(pattern: regex, options: [])
+            let nsString = number as NSString
+            let results = regex.matches(in: number, options: [], range: NSMakeRange(0, nsString.length))
+            return results.count > 0
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            return false
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! PersonalInfoViewController
         destinationVC.medecins?.add(newMed!)
     }
+    
 }

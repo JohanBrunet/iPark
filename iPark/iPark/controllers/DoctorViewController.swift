@@ -15,6 +15,7 @@ class DoctorViewController: UIViewController {
     
     @IBOutlet weak var titledName: UILabel!
     @IBOutlet weak var adress: UILabel!
+    @IBOutlet weak var phoneNumber: UILabel!
     @IBOutlet weak var lastAppointment: UILabel!
     @IBOutlet weak var specialty: UILabel!
     var medecin: Medecin? = nil
@@ -29,6 +30,7 @@ class DoctorViewController: UIViewController {
         else {
             self.specialty.text = "Non renseigné"
         }
+        self.phoneNumber.text = medecin?.tel
         self.lastAppointment.text = "Pas de rendez-vous précédent"
     }
     

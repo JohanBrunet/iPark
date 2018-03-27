@@ -55,8 +55,4 @@ class MedecinSet {
         return self.medSet.contains(where: {$0==medecin})
     }
     
-//    func sort() -> MedecinSet {
-//        
-//    }
-    
 }

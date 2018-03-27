@@ -104,7 +104,7 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="klm-aL-BVJ">
                                 <rect key="frame" x="0.0" y="338" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="542711608.02056301">
-                                    <!--2018-03-14 09:13:28 +0000-->
+                                    <!--2018-03-14 9:13:28 AM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr_FR"/>
                             </datePicker>
@@ -202,7 +202,7 @@
                                 <rect key="frame" x="16" y="264" width="343" height="292"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="MedecinCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="medecinCell" rowHeight="51" id="D0i-2P-CMs" customClass="MedecinCell" customModule="iPark">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MedecinCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="medecinCell" rowHeight="51" id="D0i-2P-CMs" customClass="MedecinCell" customModule="iPark">
                                         <rect key="frame" x="0.0" y="28" width="343" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D0i-2P-CMs" id="ML4-bg-wAo">
@@ -362,7 +362,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NH1-Dj-Dzw">
-                                                            <rect key="frame" x="136.5" y="28" width="78.5" height="36"/>
+                                                            <rect key="frame" x="191.5" y="28" width="78.5" height="36"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18/03/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeI-PG-0ol">
                                                                     <rect key="frame" x="0.0" y="0.0" width="78.5" height="18"/>
@@ -1155,6 +1155,7 @@
                     <connections>
                         <outlet property="adress" destination="NeO-cN-zKU" id="egR-y7-oRk"/>
                         <outlet property="lastAppointment" destination="cWa-6b-OyR" id="83c-aG-LQ1"/>
+                        <outlet property="phoneNumber" destination="yFp-jS-zj0" id="H2f-JE-JJR"/>
                         <outlet property="specialty" destination="gRP-di-R19" id="nHJ-DN-6rC"/>
                         <outlet property="titledName" destination="ke8-Uq-iSg" id="UOk-EP-wkP"/>
                         <segue destination="27v-Xd-7ak" kind="unwind" identifier="showPatientInfos" unwindAction="unwindFromDeleteMedecinWithSegue:" id="YYR-i6-uuy"/>
@@ -1488,7 +1489,7 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9jm-Dc-c0X">
                                 <rect key="frame" x="0.0" y="199.5" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="543225695.85734999">
-                                    <!--2018-03-20 08:01:35 +0000-->
+                                    <!--2018-03-20 8:01:35 AM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>
@@ -1561,7 +1562,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1mm-HS-SgQ">
-                                                            <rect key="frame" x="136.5" y="28" width="78.5" height="36"/>
+                                                            <rect key="frame" x="191.5" y="28" width="78.5" height="36"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18/03/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPC-OR-BDk">
                                                                     <rect key="frame" x="0.0" y="0.0" width="78.5" height="18"/>
@@ -1811,7 +1812,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryI-hG-ian">
-                                <rect key="frame" x="234" y="124.5" width="125" height="30"/>
+                                <rect key="frame" x="234" y="131.5" width="125" height="30"/>
                                 <state key="normal" title="infos personnelles">
                                     <color key="titleColor" red="0.1412163887" green="0.1520974954" blue="0.77248623699999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -1966,7 +1967,7 @@
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="dGZ-0F-jKW">
-                                <rect key="frame" x="247" y="524.5" width="128" height="142.5"/>
+                                <rect key="frame" x="359" y="649" width="16" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dGZ-0F-jKW" secondAttribute="height" multiplier="170:189" id="BJk-z2-cwl"/>
                                 </constraints>
@@ -1996,7 +1997,6 @@
                             <constraint firstItem="Pq9-iG-8rT" firstAttribute="top" secondItem="bmK-N5-gt2" secondAttribute="bottom" constant="35" id="nKc-hH-Ed8"/>
                             <constraint firstItem="pMt-XU-QcS" firstAttribute="centerY" secondItem="w7P-zx-0O9" secondAttribute="centerY" id="qUV-UN-5mo"/>
                             <constraint firstItem="pMt-XU-QcS" firstAttribute="top" secondItem="ZRj-2B-c3G" secondAttribute="bottom" constant="35" id="xN0-Au-Aer"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="h9b-hR-dhq" secondAttribute="trailing" constant="-57" id="z5Q-L2-Fgr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Accueil" id="p2B-qN-R9Y"/>
@@ -2324,7 +2324,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wOy-sJ-RtY">
-                                                            <rect key="frame" x="136.5" y="28" width="78.5" height="36"/>
+                                                            <rect key="frame" x="191.5" y="28" width="78.5" height="36"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18/03/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUV-r2-o1i">
                                                                     <rect key="frame" x="0.0" y="0.0" width="78.5" height="18"/>
@@ -2521,7 +2521,7 @@
                                     <constraint firstAttribute="height" constant="130" id="9WE-Zl-rI8"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="543241750.40723705">
-                                    <!--2018-03-20 12:29:10 +0000-->
+                                    <!--2018-03-20 12:29:10 PM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>
@@ -2591,7 +2591,7 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="RJW-VW-k1k">
                                 <rect key="frame" x="16" y="340.5" width="343" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="543193414.20015001">
-                                    <!--2018-03-19 23:03:34 +0000-->
+                                    <!--2018-03-19 11:03:34 PM +0000-->
                                 </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nouvelle prise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGW-HJ-xAG">
@@ -2872,7 +2872,7 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NBY-kb-cNB">
                                 <rect key="frame" x="16" y="200" width="343" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="542714521.85017204">
-                                    <!--2018-03-14 10:02:01 +0000-->
+                                    <!--2018-03-14 10:02:01 AM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr_FR"/>
                             </datePicker>
@@ -3054,16 +3054,19 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image-1" width="16" height="16"/>
         <image name="activites" width="128" height="128"/>
         <image name="agenda" width="128" height="128"/>
-        <image name="medecin" width="128" height="128"/>
-        <image name="patient" width="128" height="128"/>
         <image name="pilulier" width="128" height="128"/>
         <image name="poubelle" width="32" height="32"/>
         <image name="symptomes" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="UIt-5i-cOO"/>
+        <segue reference="bSW-CV-IbI"/>
+        <segue reference="7gy-6t-LzY"/>
         <segue reference="u23-VP-67P"/>
+        <segue reference="kqH-Ob-Jkj"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.60387165831962519" green="1" blue="0.40962909594737573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
