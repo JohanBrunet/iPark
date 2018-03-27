@@ -41,17 +41,16 @@ class NewDoctorViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        print("nb spec: ", self.specialites!.count)
-        return self.specialites!.count
+        return self.specialites!.count + 1
     }
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.specialites?.get(row)?.label
+        return row == 0 ? "" : self.specialites?.get(row - 1)?.label
     }
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)  {
-        self.specialitePicked = self.specialites?.get(row)
+        self.specialitePicked = row == 0 ? nil : self.specialites?.get(row - 1)
     }
     
     @IBAction func submitForm(_ sender: Any) {

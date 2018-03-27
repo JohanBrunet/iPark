@@ -64,8 +64,14 @@ class PersonalInfoViewController: UIViewController, UITableViewDelegate, UITable
             return cell
         }
         cell.specialty.text! = specialty.libelle!
-
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.medecins?.remove((self.medecins?.get(indexPath.row))!)
+            self.medecinTableView.reloadData()
+        }
     }
     
     @IBAction func unwindFromAddMedecin(segue: UIStoryboardSegue) {
