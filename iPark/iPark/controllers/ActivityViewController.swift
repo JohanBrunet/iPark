@@ -16,7 +16,7 @@ class ActivityViewController:UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.proposedActivities.dequeueReusableCell(withIdentifier: "ActivityCell", for : indexPath) as! ActivityTableViewCell
+        let cell = self.proposedActivities.dequeueReusableCell(withIdentifier: "ActivityCell", for : indexPath) as! ActiviteCell
         cell.activityName.text = self.testActivities[indexPath.row]
         return cell
     }

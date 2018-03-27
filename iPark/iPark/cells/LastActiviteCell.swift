@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LastActivityTableViewCell: UITableViewCell {
+class LastActiviteCell: UITableViewCell {
 
     @IBOutlet weak var DurationLabel: UILabel!
     @IBOutlet weak var ActivityNameLabel: UILabel!

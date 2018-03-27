@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivityTableViewCell: UITableViewCell {
+class ActiviteCell: UITableViewCell {
 
     @IBOutlet weak var activityName: UILabel!
     @IBOutlet weak var activityTrash: UIImageView!
