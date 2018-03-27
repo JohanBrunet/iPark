@@ -919,14 +919,14 @@
                         <outlet property="address" destination="3Wu-ai-PYm" id="Dot-9Z-OSR"/>
                         <outlet property="name" destination="r9Z-2v-gQW" id="8dJ-u9-bHg"/>
                         <outlet property="phone" destination="WW4-EQ-RbZ" id="k6n-v7-K1u"/>
-                        <outlet property="specialty" destination="fTM-Hl-ud7" id="uqg-hf-67s"/>
+                        <outlet property="specialitePicker" destination="fTM-Hl-ud7" id="vZK-AV-QkD"/>
                         <segue destination="K8u-kr-YpQ" kind="unwind" identifier="showPersonalInfos" unwindAction="unwindFromAddMedecinWithSegue:" id="ddB-1Z-gid"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ven-XS-ntL" sceneMemberID="firstResponder"/>
                 <exit id="K8u-kr-YpQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1143" y="1081"/>
+            <point key="canvasLocation" x="-1233" y="1100"/>
         </scene>
         <!--Pills View Controller-->
         <scene sceneID="Bjd-mX-sNu">
