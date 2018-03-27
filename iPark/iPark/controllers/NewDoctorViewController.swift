@@ -10,19 +10,58 @@ import Foundation
 import CoreData
 import UIKit
 
-class NewDoctorViewController:UIViewController{
+class NewDoctorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var specialty: UIPickerView!
+    @IBOutlet weak var specialitePicker: UIPickerView!
     @IBOutlet weak var address: UITextField!
     @IBOutlet weak var phone: UITextField!
     
     var newMed: Medecin? = nil
+    var specialites: SpecialiteSet? = nil
+    var specialitePicked: Specialite? = nil
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.specialites = SpecialiteSet(from: CoreDataDAOFactory.getInstance().getSpecialiteDAO().getAll()!)
+        print("nb specialites : ", self.specialites!.count)
+        self.specialitePicker.delegate = self
+        self.specialitePicker.dataSource = self
+        
+    }
+    
+    // The number of columns of data
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // The number of rows of data
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.specialites!.count + 1
+    }
+    
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return row == 0 ? "" : self.specialites?.get(row - 1)?.label
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)  {
+        self.specialitePicked = row == 0 ? nil : self.specialites?.get(row - 1)
+    }
     
     @IBAction func submitForm(_ sender: Any) {
         let tab: [UITextField] = [name, address, phone]
         if FormValidator.formIsValid(tab) {
-            newMed = Medecin(ln: name.text!, addr: address.text!, ph: phone.text!)
+            guard let spec = self.specialitePicked else {
+                newMed = Medecin(ln: name.text!, addr: address.text!, ph: phone.text!)
+                self.performSegue(withIdentifier: "showPersonalInfos", sender: self)
+                return
+            }
+            newMed = Medecin(ln: name.text!, addr: address.text!, ph: phone.text!, sp: spec)
             self.performSegue(withIdentifier: "showPersonalInfos", sender: self)
         }
         else {
@@ -34,6 +73,6 @@ class NewDoctorViewController:UIViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! PersonalInfoViewController
-        destinationVC.medecinSet?.add(newMed!)
+        destinationVC.medecins?.add(newMed!)
     }
 }

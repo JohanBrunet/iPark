@@ -38,6 +38,6 @@ class DoctorViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! PersonalInfoViewController
-        destinationVC.medecinSet?.remove(medecin!)
+        destinationVC.medecins?.remove(medecin!)
     }
 }

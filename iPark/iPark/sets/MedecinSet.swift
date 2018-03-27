@@ -30,7 +30,7 @@ class MedecinSet {
     func add(_ medecin: Medecin) -> MedecinSet {
         if !self.contains(medecin) {
             self.medSet.append(medecin)
-            self.medecinDAO.add(medecin: medecin)
+            self.medecinDAO.add(medecin)
         }
         return self
     }
@@ -54,5 +54,9 @@ class MedecinSet {
     func contains(_ medecin: Medecin) -> Bool {
         return self.medSet.contains(where: {$0==medecin})
     }
+    
+//    func sort() -> MedecinSet {
+//        
+//    }
     
 }

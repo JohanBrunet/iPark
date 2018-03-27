@@ -16,14 +16,13 @@ class PersonalInfoViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var adress: UILabel!
     @IBOutlet weak var medecinTableView: UITableView!
     
-    var medecinSet: MedecinSet? = nil
+    var medecins: MedecinSet? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         displayPatientInfos()
         
-        self.medecinSet = MedecinSet(from: CoreDataDAOFactory.getInstance().getMedecinDAO().getAll()!)
-        print("nb meds : ", self.medecinSet!.count)
+        self.medecins = MedecinSet(from: CoreDataDAOFactory.getInstance().getMedecinDAO().getAll()!)
         self.medecinTableView.delegate = self
         self.medecinTableView.dataSource = self
     }
@@ -46,27 +45,33 @@ class PersonalInfoViewController: UIViewController, UITableViewDelegate, UITable
         if segue.identifier == "showDoctorView" {
             if let indexPath = self.medecinTableView.indexPathForSelectedRow {
                 let medecinViewController = segue.destination as! DoctorViewController
-                medecinViewController.medecin = self.medecinSet?.get(indexPath.row)
+                medecinViewController.medecin = self.medecins?.get(indexPath.row)
                 medecinViewController.posMedecin = indexPath.row
             }
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.medecinSet!.count
+        return self.medecins!.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MedecinCell = medecinTableView.dequeueReusableCell(withIdentifier: "medecinCell", for: indexPath) as! MedecinCell
-        let med = self.medecinSet!.get(indexPath.row)!
+        let med = self.medecins!.get(indexPath.row)!
         cell.name.text! = med.titledName
         guard let specialty = med.specialite else {
-            cell.specialty.text! = ""
+            cell.specialty.text! = "Non renseigné"
             return cell
         }
         cell.specialty.text! = specialty.libelle!
-
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.medecins?.remove((self.medecins?.get(indexPath.row))!)
+            self.medecinTableView.reloadData()
+        }
     }
     
     @IBAction func unwindFromAddMedecin(segue: UIStoryboardSegue) {

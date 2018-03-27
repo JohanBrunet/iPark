@@ -209,8 +209,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="50.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neurologue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sC-mJ-scn">
-                                                    <rect key="frame" x="229" y="11" width="89" height="29"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Neurologue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sC-mJ-scn">
+                                                    <rect key="frame" x="226" y="11" width="89" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.1412163887" green="0.1520974954" blue="0.77248623699999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -869,7 +869,7 @@
                         <outlet property="address" destination="3Wu-ai-PYm" id="Dot-9Z-OSR"/>
                         <outlet property="name" destination="r9Z-2v-gQW" id="8dJ-u9-bHg"/>
                         <outlet property="phone" destination="WW4-EQ-RbZ" id="k6n-v7-K1u"/>
-                        <outlet property="specialty" destination="fTM-Hl-ud7" id="uqg-hf-67s"/>
+                        <outlet property="specialitePicker" destination="fTM-Hl-ud7" id="vZK-AV-QkD"/>
                         <segue destination="K8u-kr-YpQ" kind="unwind" identifier="showPersonalInfos" unwindAction="unwindFromAddMedecinWithSegue:" id="ddB-1Z-gid"/>
                     </connections>
                 </viewController>
@@ -1163,7 +1163,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jw7-B1-n61" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="27v-Xd-7ak" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-240" y="717"/>
+            <point key="canvasLocation" x="-484" y="573"/>
         </scene>
         <!--New Medicament View Controller-->
         <scene sceneID="Z1s-gY-hys">
@@ -1830,26 +1830,25 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="sI9-IB-PdJ"/>
                                         </constraints>
-                                        <state key="normal" title="Pillulier">
+                                        <state key="normal" title="Pilulier">
                                             <color key="titleColor" red="0.1412163887" green="0.1520974954" blue="0.77248623699999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="d8D-Fu-x6O" kind="show" id="mfS-Qm-WrU"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="a3Y-aa-NmI">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ias-8x-E2X">
                                         <rect key="frame" x="0.0" y="20" width="90" height="81"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" button="YES" link="YES" image="YES" allowsDirectInteraction="YES"/>
-                                        </accessibility>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="81" id="bFA-xz-2qf"/>
-                                            <constraint firstAttribute="width" constant="90" id="pxB-8g-ThK"/>
+                                            <constraint firstAttribute="height" constant="81" id="83q-kM-Zg0"/>
                                         </constraints>
-                                    </imageView>
+                                        <state key="normal" image="pilulier"/>
+                                        <connections>
+                                            <segue destination="d8D-Fu-x6O" kind="show" id="7gy-6t-LzY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="a3Y-aa-NmI" firstAttribute="centerX" secondItem="PPX-rn-dWt" secondAttribute="centerX" id="3Q8-W6-LI4"/>
                                     <constraint firstItem="2rR-oA-N4b" firstAttribute="centerX" secondItem="PPX-rn-dWt" secondAttribute="centerX" id="hVX-XR-QFE"/>
                                 </constraints>
                             </stackView>
@@ -1871,21 +1870,19 @@
                                             <segue destination="QXA-wA-Lhr" kind="show" id="kqH-Ob-Jkj"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-4" translatesAutoresizingMaskIntoConstraints="NO" id="Igh-70-ImU">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QI-f3-GVG">
                                         <rect key="frame" x="0.0" y="20" width="90" height="81"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" button="YES" image="YES"/>
-                                        </accessibility>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="6jN-sL-VLh"/>
-                                            <constraint firstAttribute="height" constant="81" id="Nup-o3-0CY"/>
+                                            <constraint firstAttribute="height" constant="81" id="Uk2-t1-RsO"/>
                                         </constraints>
-                                    </imageView>
+                                        <state key="normal" image="agenda"/>
+                                        <connections>
+                                            <segue destination="QXA-wA-Lhr" kind="show" id="7uA-0h-x4M"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Igh-70-ImU" firstAttribute="centerX" secondItem="bmK-N5-gt2" secondAttribute="centerX" id="0j3-UT-o4s"/>
                                     <constraint firstItem="CDx-4W-neW" firstAttribute="centerX" secondItem="bmK-N5-gt2" secondAttribute="centerX" id="IyC-sT-lKF"/>
-                                    <constraint firstItem="Igh-70-ImU" firstAttribute="centerX" secondItem="CDx-4W-neW" secondAttribute="centerX" id="fKi-Ry-2S5"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Pq9-iG-8rT">
@@ -1906,31 +1903,30 @@
                                             <segue destination="Zla-P4-kZ7" kind="show" id="UIt-5i-cOO"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="iMc-Ph-faj">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rib-bB-EGP">
                                         <rect key="frame" x="0.0" y="20" width="90" height="81"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" button="YES" image="YES"/>
-                                        </accessibility>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="PZQ-ui-S2x"/>
-                                            <constraint firstAttribute="height" constant="81" id="Qee-ah-jS3"/>
+                                            <constraint firstAttribute="height" constant="81" id="JtS-Lw-OAK"/>
                                         </constraints>
-                                    </imageView>
+                                        <state key="normal" image="activites"/>
+                                        <connections>
+                                            <segue destination="Zla-P4-kZ7" kind="show" id="QbN-zt-ui1"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="khg-4w-hpk" firstAttribute="centerX" secondItem="Pq9-iG-8rT" secondAttribute="centerX" id="68i-Wr-GFG"/>
-                                    <constraint firstItem="iMc-Ph-faj" firstAttribute="centerX" secondItem="Pq9-iG-8rT" secondAttribute="centerX" id="RxK-NP-LTx"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonjour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7P-zx-0O9">
-                                <rect key="frame" x="205.5" y="99" width="59.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bonjour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7P-zx-0O9">
+                                <rect key="frame" x="143" y="80" width="90" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMt-XU-QcS" userLabel="userName">
-                                <rect key="frame" x="270" y="99" width="79" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMt-XU-QcS" userLabel="userName">
+                                <rect key="frame" x="234" y="87" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1952,16 +1948,18 @@
                                             <segue destination="AoH-f9-wzZ" kind="show" id="bSW-CV-IbI"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-3" translatesAutoresizingMaskIntoConstraints="NO" id="4fz-0V-XIh">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWw-7P-kzQ">
                                         <rect key="frame" x="0.0" y="20" width="90" height="81"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" button="YES" image="YES"/>
-                                        </accessibility>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="Ha8-e9-r0i"/>
-                                            <constraint firstAttribute="height" constant="81" id="wTd-Nm-6Dx"/>
+                                            <constraint firstAttribute="height" constant="81" id="OYg-q6-Lod"/>
+                                            <constraint firstAttribute="width" constant="90" id="cku-Vy-WXi"/>
                                         </constraints>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <state key="normal" image="symptomes"/>
+                                        <connections>
+                                            <segue destination="AoH-f9-wzZ" kind="show" id="l2I-ux-evK"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="cbv-lH-fCg" firstAttribute="centerX" secondItem="asw-JW-CGR" secondAttribute="centerX" id="4iI-Fr-lob"/>
@@ -1998,6 +1996,7 @@
                             <constraint firstItem="Pq9-iG-8rT" firstAttribute="top" secondItem="bmK-N5-gt2" secondAttribute="bottom" constant="35" id="nKc-hH-Ed8"/>
                             <constraint firstItem="pMt-XU-QcS" firstAttribute="centerY" secondItem="w7P-zx-0O9" secondAttribute="centerY" id="qUV-UN-5mo"/>
                             <constraint firstItem="pMt-XU-QcS" firstAttribute="top" secondItem="ZRj-2B-c3G" secondAttribute="bottom" constant="35" id="xN0-Au-Aer"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h9b-hR-dhq" secondAttribute="trailing" constant="-57" id="z5Q-L2-Fgr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Accueil" id="p2B-qN-R9Y"/>
@@ -2143,29 +2142,20 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-5" translatesAutoresizingMaskIntoConstraints="NO" id="RXW-EB-C1A">
-                                                            <rect key="frame" x="165" y="5" width="20" height="17.5"/>
-                                                            <accessibility key="accessibilityConfiguration">
-                                                                <accessibilityTraits key="traits" button="YES" image="YES"/>
-                                                            </accessibility>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="20" id="v1F-MV-8KF"/>
-                                                            </constraints>
-                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXE-dD-qw8">
+                                                            <rect key="frame" x="173" y="3" width="18" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="Button" image="poubelle"/>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="RXW-EB-C1A" firstAttribute="centerY" secondItem="qfn-bp-TDC" secondAttribute="centerY" id="0kp-xv-kZn"/>
                                                         <constraint firstItem="qa1-yd-cLQ" firstAttribute="centerY" secondItem="qfn-bp-TDC" secondAttribute="centerY" id="Bjg-Qf-99d"/>
-                                                        <constraint firstAttribute="bottom" secondItem="RXW-EB-C1A" secondAttribute="bottom" constant="5" id="DpV-X7-zRf"/>
                                                         <constraint firstItem="qa1-yd-cLQ" firstAttribute="leading" secondItem="qfn-bp-TDC" secondAttribute="leading" constant="15" id="a6Q-hF-K1E"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qa1-yd-cLQ" secondAttribute="trailing" constant="20" symbolic="YES" id="g79-be-YYO"/>
-                                                        <constraint firstAttribute="trailing" secondItem="RXW-EB-C1A" secondAttribute="trailing" constant="15" id="sW8-uc-CFH"/>
-                                                        <constraint firstItem="RXW-EB-C1A" firstAttribute="top" secondItem="qfn-bp-TDC" secondAttribute="top" constant="5" id="toh-me-5zV"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="activityName" destination="qa1-yd-cLQ" id="eve-nE-uev"/>
-                                                    <outlet property="activityTrash" destination="RXW-EB-C1A" id="n8G-8G-kMA"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="28" id="LUd-i8-4b7">
@@ -3064,12 +3054,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="128" height="128"/>
-        <image name="Image-1" width="128" height="128"/>
-        <image name="Image-2" width="128" height="128"/>
-        <image name="Image-3" width="128" height="128"/>
-        <image name="Image-4" width="128" height="128"/>
-        <image name="Image-5" width="32" height="32"/>
+        <image name="activites" width="128" height="128"/>
+        <image name="agenda" width="128" height="128"/>
+        <image name="medecin" width="128" height="128"/>
+        <image name="patient" width="128" height="128"/>
+        <image name="pilulier" width="128" height="128"/>
+        <image name="poubelle" width="32" height="32"/>
+        <image name="symptomes" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="u23-VP-67P"/>

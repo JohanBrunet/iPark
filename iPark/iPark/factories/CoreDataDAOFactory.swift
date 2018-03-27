@@ -29,4 +29,8 @@ class CoreDataDAOFactory {
         return CoreDataActiviteDAO()
     }
     
+    func getSpecialiteDAO() -> SpecialiteDAO {
+        return CoreDataSpecialiteDAO()
+    }
+    
 }

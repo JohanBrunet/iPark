@@ -18,20 +18,20 @@ class CoreDataMedecinDAO: MedecinDAO {
     }
     
     func insert(lastName: String, adress: String, phone: String) -> Medecin {
-        let dao = self.create()
-        dao.nom_medecin = lastName
-        dao.adresse = adress
-        dao.telephone = phone
-        return dao
+        let dto = self.create()
+        dto.nom_medecin = lastName
+        dto.adresse = adress
+        dto.telephone = phone
+        return dto
     }
     
     func insert(lastName: String, adress: String, phone: String, specialty: Specialite) -> Medecin {
-        let dao = self.create()
-        dao.nom_medecin = lastName
-        dao.adresse = adress
-        dao.telephone = phone
-        dao.specialite = specialty
-        return dao
+        let dto = self.create()
+        dto.nom_medecin = lastName
+        dto.adresse = adress
+        dto.telephone = phone
+        dto.specialite = specialty
+        return dto
     }
     
     func create() -> Medecin {
@@ -79,7 +79,7 @@ class CoreDataMedecinDAO: MedecinDAO {
         CoreDataManager.context.delete(medecin)
     }
     
-    func add( medecin: Medecin) {
+    func add(_ medecin: Medecin) {
         if let _ = self.search(forLastname: medecin.nom_medecin!, phone: medecin.telephone!) {
             self.save()
         }

@@ -42,7 +42,24 @@ extension Medecin {
     }
     
     var titledName: String {
-        return "Dr. " + self.nom
+        var title: String = ""
+        let doctors: [String] = [
+            "neuropsychologue","neurologue", "médecin généraliste", "psychiatre", "neurochirurgien", "médecin de structure antidouleur", "gériatre", "médecin spécialiste en médecine physique", "gastro-entérologue", "urologue", "gynécologue", "sexologue", "ORL-phoniatre", "rhumatologue", "chirurgien orthopédique", "pneumologue",
+             "cardiologue", "médecin du travail", "chirurgien-dentiste", "ergothérapeute", "psychomotricien", "orthoptiste"
+            
+        ]
+        if let spec = self.specialite?.label {
+            if doctors.contains(spec) {
+                title = "Dr. "
+            }
+            else {
+                title = "M./Mme. "
+            }
+        }
+        else {
+            title = "M./Mme. "
+        }
+        return title + self.nom
     }
     
     convenience init(ln: String, addr: String, ph: String) {

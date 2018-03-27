@@ -20,5 +20,5 @@ protocol MedecinDAO {
     func delete(for medecin: Medecin)
     func search(forMedecin medecin: Medecin) -> Medecin?
     func search(forLastname lastname: String,  phone: String) -> Medecin?
-    func add(medecin: Medecin)
+    func add(_ medecin: Medecin)
 }
