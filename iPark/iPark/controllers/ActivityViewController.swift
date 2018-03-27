@@ -11,12 +11,18 @@ import UIKit
 
 class ActivityViewController:UIViewController, UITableViewDelegate, UITableViewDataSource{
     var testActivities : [String] = ["Piscine", "Marche à pied"]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.testActivities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.proposedActivities.dequeueReusableCell(withIdentifier: "ActivityCell", for : indexPath) as! ActiviteCell
+        let cell = self.proposedActivities.dequeueReusableCell(withIdentifier: "proposedCell", for : indexPath) as! ActiviteCell
         cell.activityName.text = self.testActivities[indexPath.row]
         return cell
     }
