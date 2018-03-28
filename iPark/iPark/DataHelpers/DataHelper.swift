@@ -12,11 +12,16 @@ public class DataHelper {
     
     fileprivate static let specDAO: SpecialiteDAO = CoreDataDAOFactory.getInstance().getSpecialiteDAO()
     
+    fileprivate static let typeActDAO: TypeActiviteDAO = CoreDataDAOFactory.getInstance().getTypeActiviteDAO()
+
+    
     /// Lancer les seeds pour remplir la base de données
     static func seedCoreData() {
         //seedMedicament()
         seedSpecialite()
         specDAO.save()
+        seedTypeActivite()
+        typeActDAO.save()
     }
     
     /// Remplir la base avec la liste des médicaments
@@ -38,6 +43,16 @@ public class DataHelper {
         
         for spec in specialites {
             let _: Specialite = specDAO.insert(label: spec)
+        }
+    }
+    
+    
+    /// Remplir la base avec des activités proposées de baset
+    fileprivate static func seedTypeActivite(){
+        let typeActivites = TypeActiviteSeeder().typeActivites
+        
+        for typAct in typeActivites {
+            let _: TypeActivite = typeActDAO.insert(nomActivite: typAct)
         }
     }
 

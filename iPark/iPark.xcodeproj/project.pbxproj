@@ -25,6 +25,10 @@
 		04D97ECF206119E8001BFAAA /* MedecinDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D97ECC206119E8001BFAAA /* MedecinDAO.swift */; };
 		04D97ED220611A43001BFAAA /* CoreDataDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D97ED120611A43001BFAAA /* CoreDataDAOFactory.swift */; };
 		04E69FF62064E3FE003E9AA4 /* Medecin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E69FF52064E3FE003E9AA4 /* Medecin.swift */; };
+		2D408144206BB5C900F94B1B /* TypeActiviteSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D408143206BB5C900F94B1B /* TypeActiviteSeeder.swift */; };
+		2D408146206BB74000F94B1B /* CoreDataTypeActiviteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D408145206BB74000F94B1B /* CoreDataTypeActiviteDAO.swift */; };
+		2D408148206BB7B400F94B1B /* TypeActiviteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D408147206BB7B400F94B1B /* TypeActiviteDAO.swift */; };
+		2D40814A206BC14500F94B1B /* TypeActiviteSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D408149206BC14500F94B1B /* TypeActiviteSet.swift */; };
 		2DA8AC6920468FBE00A95DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6820468FBE00A95DBA /* AppDelegate.swift */; };
 		2DA8AC6E20468FBE00A95DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6C20468FBE00A95DBA /* Main.storyboard */; };
 		2DA8AC7320468FBE00A95DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA8AC7220468FBE00A95DBA /* Assets.xcassets */; };
@@ -93,6 +97,10 @@
 		04D97ED120611A43001BFAAA /* CoreDataDAOFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDAOFactory.swift; sourceTree = "<group>"; };
 		04E69FF52064E3FE003E9AA4 /* Medecin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medecin.swift; sourceTree = "<group>"; };
 		04E69FF72064E413003E9AA4 /* MedecinSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedecinSet.swift; sourceTree = "<group>"; };
+		2D408143206BB5C900F94B1B /* TypeActiviteSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeActiviteSeeder.swift; sourceTree = "<group>"; };
+		2D408145206BB74000F94B1B /* CoreDataTypeActiviteDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTypeActiviteDAO.swift; sourceTree = "<group>"; };
+		2D408147206BB7B400F94B1B /* TypeActiviteDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeActiviteDAO.swift; sourceTree = "<group>"; };
+		2D408149206BC14500F94B1B /* TypeActiviteSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeActiviteSet.swift; sourceTree = "<group>"; };
 		2DA8AC6520468FBE00A95DBA /* iPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA8AC6820468FBE00A95DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DA8AC6D20468FBE00A95DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -200,6 +208,7 @@
 				04E69FF72064E413003E9AA4 /* MedecinSet.swift */,
 				04A7AAA42069B7F800C5A746 /* SpecialiteSet.swift */,
 				D963BDCC206A71FD009B1466 /* ActiviteSet.swift */,
+				2D408149206BC14500F94B1B /* TypeActiviteSet.swift */,
 			);
 			path = sets;
 			sourceTree = "<group>";
@@ -209,6 +218,7 @@
 			children = (
 				04A7AA9D2069B34700C5A746 /* SpecialiteSeeder.swift */,
 				04A7AAA22069B67C00C5A746 /* MedicamentSeeder.swift */,
+				2D408143206BB5C900F94B1B /* TypeActiviteSeeder.swift */,
 			);
 			path = seeders;
 			sourceTree = "<group>";
@@ -218,6 +228,7 @@
 			children = (
 				04D97EC9206119E8001BFAAA /* CoreDataDAO */,
 				04D97ECC206119E8001BFAAA /* MedecinDAO.swift */,
+				2D408147206BB7B400F94B1B /* TypeActiviteDAO.swift */,
 				D9F99337206675B000814AF3 /* ActiviteDAO.swift */,
 				04A7AA9A2069AF5E00C5A746 /* SpecialiteDAO.swift */,
 			);
@@ -230,6 +241,7 @@
 				046669AA20665355002E60BA /* CoreDataMedecinDAO.swift */,
 				D9F993352066753600814AF3 /* CoreDataActiviteDAO.swift */,
 				04A7AA982069AF4E00C5A746 /* CoreDataSpecialiteDAO.swift */,
+				2D408145206BB74000F94B1B /* CoreDataTypeActiviteDAO.swift */,
 			);
 			path = CoreDataDAO;
 			sourceTree = "<group>";
@@ -465,6 +477,7 @@
 				04D97ECF206119E8001BFAAA /* MedecinDAO.swift in Sources */,
 				D981D8A62065389400101FD4 /* PillsViewController.swift in Sources */,
 				D9F99338206675B000814AF3 /* ActiviteDAO.swift in Sources */,
+				2D40814A206BC14500F94B1B /* TypeActiviteSet.swift in Sources */,
 				D981D8A42065373F00101FD4 /* NewActivityViewController.swift in Sources */,
 				04A7AAA02069B4DD00C5A746 /* DataHelper.swift in Sources */,
 				046669AE20667278002E60BA /* MedecinCell.swift in Sources */,
@@ -481,6 +494,7 @@
 				D96224A92062A6FA003E9D93 /* MyAppointmentViewController.swift in Sources */,
 				0411913420667A5700DC4473 /* MedecinSet.swift in Sources */,
 				D94478CE20610A38006A1521 /* PersonalInfoViewController.swift in Sources */,
+				2D408148206BB7B400F94B1B /* TypeActiviteDAO.swift in Sources */,
 				D9FE6A832065AA71004D985A /* ActiviteCell.swift in Sources */,
 				D96224A72062A1D4003E9D93 /* NewAppointmentViewController.swift in Sources */,
 				04A7AAA32069B67C00C5A746 /* MedicamentSeeder.swift in Sources */,
@@ -490,6 +504,8 @@
 				D9F9933B20668F3300814AF3 /* (null) in Sources */,
 				D981D8B02065422700101FD4 /* ProposedActivitiesTableViewController.swift in Sources */,
 				04A7AA9E2069B34700C5A746 /* SpecialiteSeeder.swift in Sources */,
+				2D408146206BB74000F94B1B /* CoreDataTypeActiviteDAO.swift in Sources */,
+				2D408144206BB5C900F94B1B /* TypeActiviteSeeder.swift in Sources */,
 				04A7AA9B2069AF5E00C5A746 /* SpecialiteDAO.swift in Sources */,
 				04A7AA992069AF4E00C5A746 /* CoreDataSpecialiteDAO.swift in Sources */,
 				D96224AB2062A739003E9D93 /* NewMedicamentViewController.swift in Sources */,

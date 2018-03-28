@@ -33,4 +33,8 @@ class CoreDataDAOFactory {
         return CoreDataSpecialiteDAO()
     }
     
+    func getTypeActiviteDAO() -> TypeActiviteDAO{
+        return CoreDataTypeActiviteDAO()
+    }
+    
 }
