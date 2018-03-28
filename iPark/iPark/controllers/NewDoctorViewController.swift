@@ -24,7 +24,6 @@ class NewDoctorViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         self.specialites = SpecialiteSet(from: CoreDataDAOFactory.getInstance().getSpecialiteDAO().getAll()!)
-        print("nb specialites : ", self.specialites!.count)
         self.specialitePicker.delegate = self
         self.specialitePicker.dataSource = self
         

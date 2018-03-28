@@ -312,7 +312,7 @@
         <!--Calendar View Controller-->
         <scene sceneID="EOg-sK-7v3">
             <objects>
-                <viewController storyboardIdentifier="Agenda" id="QXA-wA-Lhr" customClass="CalendarViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Agenda" id="QXA-wA-Lhr" customClass="CalendarViewController" customModule="iPark" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Qo-N4-zuS"/>
                         <viewControllerLayoutGuide type="bottom" id="mY5-is-g24"/>
@@ -334,7 +334,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="368"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AppointmentCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="rdvCell" rowHeight="92" id="pG6-py-wmX" customClass="AppointmentTableViewCell" customModule="iPark" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AppointmentCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="rdvCell" rowHeight="92" id="pG6-py-wmX" customClass="RendezVousCell" customModule="iPark">
                                                 <rect key="frame" x="0.0" y="28" width="295" height="92"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pG6-py-wmX" id="Vkh-VH-Bec">
@@ -388,11 +388,11 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="DateLabel" destination="DeI-PG-0ol" id="z4h-r3-OIq"/>
-                                                    <outlet property="DoctorNameLabel" destination="4Qv-aG-WB7" id="2N8-Oc-LZP"/>
-                                                    <outlet property="SpecialityLabel" destination="bJ9-nd-QNa" id="oh4-nn-dIn"/>
-                                                    <outlet property="TimeLabel" destination="mO9-Hf-x6H" id="R2Y-LL-340"/>
-                                                    <segue destination="fM4-7h-u7Q" kind="show" id="1BC-2A-Nfl"/>
+                                                    <outlet property="dateRDV" destination="DeI-PG-0ol" id="T02-zd-Jnl"/>
+                                                    <outlet property="heureRDV" destination="mO9-Hf-x6H" id="qXy-76-T8I"/>
+                                                    <outlet property="nomMedecin" destination="4Qv-aG-WB7" id="Paz-r0-GRf"/>
+                                                    <outlet property="specialiteMedecin" destination="bJ9-nd-QNa" id="31w-LP-GrA"/>
+                                                    <segue destination="fM4-7h-u7Q" kind="show" identifier="showRDVDetails" id="iOF-V7-Ujc"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="DjP-pp-UEg">
@@ -438,6 +438,18 @@
                                     <segue destination="Z6C-Ft-KlP" kind="show" id="LNg-CD-xwD"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qky-KQ-kaU">
+                                <rect key="frame" x="122" y="112" width="166" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Passés"/>
+                                    <segment title="Futurs"/>
+                                </segments>
+                                <color key="tintColor" red="0.019806025182103948" green="0.092630436044259357" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="filterResults:" destination="QXA-wA-Lhr" eventType="valueChanged" id="ayF-mc-kuM"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.7980760643" green="0.84822734239999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -454,19 +466,19 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addAppointment" destination="sCp-y5-gw5" id="Dht-Mz-d8Q"/>
-                        <outlet property="appointmentTableView" destination="8eo-TX-rgU" id="57Z-7a-JN7"/>
-                        <outlet property="pageLabel" destination="i2n-ms-7hP" id="sVW-A2-UB9"/>
+                        <outlet property="filterButton" destination="qky-KQ-kaU" id="wx8-2f-bX0"/>
+                        <outlet property="pageTitle" destination="i2n-ms-7hP" id="kC9-0g-kgr"/>
+                        <outlet property="rdvTableView" destination="8eo-TX-rgU" id="wAP-Ai-B2L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qoe-gy-11r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3287.1999999999998" y="1386.656671664168"/>
         </scene>
-        <!--New Appointment View Controller-->
+        <!--New Appointment Medecin View Controller-->
         <scene sceneID="Pbc-1l-7SN">
             <objects>
-                <viewController storyboardIdentifier="ajoutRDV" id="Z6C-Ft-KlP" customClass="NewAppointmentViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ajoutRDV" id="Z6C-Ft-KlP" customClass="NewAppointmentMedecinViewController" customModule="iPark" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hGF-DA-D5K"/>
                         <viewControllerLayoutGuide type="bottom" id="73c-OZ-jk1"/>
@@ -509,7 +521,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lsE-u6-5FV" kind="show" id="zHW-6R-DyH"/>
+                                    <segue destination="lsE-u6-5FV" kind="show" identifier="selectRDVDate" id="zHW-6R-DyH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -531,6 +543,9 @@
                             <constraint firstItem="h2z-MP-xh3" firstAttribute="top" secondItem="2B4-8d-luW" secondAttribute="bottom" constant="100" id="tfc-0Q-hc6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="medecinPicker" destination="2B4-8d-luW" id="6hX-wv-zk9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YIt-IF-m7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2835,10 +2850,10 @@
             </objects>
             <point key="canvasLocation" x="649" y="-143"/>
         </scene>
-        <!--New Appointment View Controller-->
+        <!--New Appointment Date View Controller-->
         <scene sceneID="9gf-kc-WNE">
             <objects>
-                <viewController storyboardIdentifier="ajoutDateRDV" id="lsE-u6-5FV" customClass="NewAppointmentViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ajoutDateRDV" id="lsE-u6-5FV" customClass="NewAppointmentDateViewController" customModule="iPark" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CMv-pR-EfO"/>
                         <viewControllerLayoutGuide type="bottom" id="dv5-4b-VRQ"/>
@@ -2880,6 +2895,9 @@
                                 <state key="normal" title="Ajouter RDV">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitForm:" destination="lsE-u6-5FV" eventType="touchUpInside" id="zbK-Hy-Hvn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rappel  :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wa-Vi-aEm">
                                 <rect key="frame" x="41" y="441" width="66.5" height="20"/>
@@ -2923,8 +2941,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="NBY-kb-cNB" secondAttribute="trailing" id="zbF-iC-JgN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="NBY-kb-cNB" id="wkg-et-Z5B"/>
+                        <outlet property="rappel" destination="4NV-xD-pCO" id="FJJ-xV-bdn"/>
+                        <segue destination="Lwi-cS-CyD" kind="unwind" identifier="showRDVList" unwindAction="unwindFromAddRDVWithSegue:" id="yeQ-xJ-AJ9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5cP-qe-Zg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Lwi-cS-CyD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-2724" y="2887.1064467766118"/>
         </scene>

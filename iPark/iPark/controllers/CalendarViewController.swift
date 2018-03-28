@@ -9,20 +9,114 @@
 import Foundation
 import UIKit
 
-class CalendarViewController:UIViewController,  UITableViewDelegate, UITableViewDataSource{
-    var appointments : [String] = ["Martin","Dupont"]
+class CalendarViewController:UIViewController,  UITableViewDelegate, UITableViewDataSource {
+    
+    let PAST_TITLE: String = "Vos précédents rendez-vous"
+    let FUTUR_TITLE: String = "Vos prochains rendez-vous"
+
+    @IBOutlet weak var filterButton: UISegmentedControl!
+    @IBOutlet weak var pageTitle: UILabel!
+    @IBOutlet weak var rdvTableView: UITableView!
+    var rdvs: RendezVousSet? = nil
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.filterButton.selectedSegmentIndex = 1
+        self.rdvs = RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: false)
+        self.rdvs?.sortByDate()
+        self.rdvTableView.delegate = self
+        self.rdvTableView.dataSource = self
+    }
+    
+    @IBAction func filterResults(_ sender: Any) {
+        switch self.filterButton.selectedSegmentIndex {
+            case 0:
+                self.pageTitle.text = PAST_TITLE
+                self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: true)
+            case 1:
+                self.pageTitle.text = FUTUR_TITLE
+                self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: false)
+            default:
+                self.pageTitle.text = PAST_TITLE
+                self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: true)
+        }
+        
+        self.rdvs?.sortByDate()
+        self.rdvTableView.reloadData()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - Envoyer le medecin à la vue suivante
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRDVDetails" {
+            if let indexPath = self.rdvTableView.indexPathForSelectedRow {
+                let appointmentViewController = segue.destination as! MyAppointmentViewController
+                appointmentViewController.rdv = self.rdvs?.get(indexPath.row)
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.appointments.count
+        return self.rdvs!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.appointmentTableView.dequeueReusableCell(withIdentifier: "AppointmentCell", for : indexPath) as! AppointmentTableViewCell
-        cell.DoctorNameLabel.text = self.appointments[indexPath.row]
+        let cell: RendezVousCell = rdvTableView.dequeueReusableCell(withIdentifier: "rdvCell", for: indexPath) as! RendezVousCell
+        let rdv = self.rdvs!.get(indexPath.row)!
+        if let med = rdv.med {
+            cell.nomMedecin.text! = med.titledName
+        }
+        // Create date formatter
+        let dateFormatter: DateFormatter = DateFormatter()
+        
+        // Set date format
+        dateFormatter.locale = Locale(identifier: "fr_FR")
+        dateFormatter.timeZone = NSTimeZone(name: "UTC+1") as TimeZone!
+        
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        // Apply date format
+        let dateRDV = dateFormatter.string(from: rdv.dateRDV)
+        
+        // Change date format
+        dateFormatter.dateFormat = "HH:mm"
+        let heureRDV = dateFormatter.string(from: rdv.dateRDV)
+        
+        cell.dateRDV.text = dateRDV
+        cell.heureRDV.text = heureRDV
+        guard let specialty = rdv.med?.spe else {
+            cell.specialiteMedecin.text! = "Non renseigné"
+            return cell
+        }
+        cell.specialiteMedecin.text! = specialty.libelle!
         return cell
     }
     
-    @IBOutlet weak var pageLabel: UILabel!
-    @IBOutlet weak var appointmentTableView: UITableView!
-    @IBOutlet weak var addAppointment: UIButton!
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.rdvs?.remove((self.rdvs?.get(indexPath.row))!)
+            self.rdvTableView.reloadData()
+        }
+    }
     
+    @IBAction func unwindFromAddRDV(segue: UIStoryboardSegue) {
+        switch self.filterButton.selectedSegmentIndex {
+            case 0:
+                self.pageTitle.text = PAST_TITLE
+                self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: true)
+            case 1:
+                self.pageTitle.text = FUTUR_TITLE
+                self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: false)
+            default:
+                self.pageTitle.text = PAST_TITLE
+                self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: true)
+        }
+        
+        self.rdvs?.sortByDate()
+        self.rdvTableView.reloadData()
+    }
+
 }

@@ -11,4 +11,6 @@ import UIKit
 
 class MyAppointmentViewController:UIViewController{
     
+    var rdv: RendezVous? = nil
+    
 }

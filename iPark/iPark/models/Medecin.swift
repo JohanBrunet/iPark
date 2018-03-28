@@ -76,4 +76,8 @@ extension Medecin {
         self.telephone = ph
         self.specialite = sp
     }
+    
+    static func == (lhs: Medecin, rhs: Medecin) -> Bool {
+        return lhs.nom == rhs.nom && lhs.tel == rhs.tel && lhs.adr == rhs.adr
+    }
 }
