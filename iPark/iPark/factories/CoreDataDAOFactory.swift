@@ -37,7 +37,7 @@ class CoreDataDAOFactory {
         return CoreDataRendezVousDAO()
     }
     
-    func getTypeActiviteDAO() -> TypeActiviteDAO{
+    func getTypeActiviteDAO() -> TypeActiviteDAO {
         return CoreDataTypeActiviteDAO()
     }
     

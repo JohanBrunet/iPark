@@ -20,6 +20,7 @@ class NewAppointmentMedecinViewController:UIViewController, UIPickerViewDelegate
     override func viewDidLoad() {
     super.viewDidLoad()
     self.medecins = MedecinSet(from: CoreDataDAOFactory.getInstance().getMedecinDAO().getAll()!)
+    self.medecins?.sortByName()
     self.medecinPicker.delegate = self
     self.medecinPicker.dataSource = self
     

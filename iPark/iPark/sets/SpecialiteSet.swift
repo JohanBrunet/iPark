@@ -54,4 +54,10 @@ class SpecialiteSet {
         return self.specSet.contains(where: {$0==specialite})
     }
     
+    func sortByName() {
+        return self.specSet.sort(by: { (spec1, spec2) -> Bool in
+            spec1.label < spec2.label
+        })
+    }
+    
 }

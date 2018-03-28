@@ -37,7 +37,7 @@
     </entity>
     <entity name="Specialite" representedClassName="Specialite" syncable="YES" codeGenerationType="class">
         <attribute name="libelle" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="medecin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medecin" inverseName="specialite" inverseEntity="Medecin" syncable="YES"/>
+        <relationship name="medecin" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Medecin" inverseName="specialite" inverseEntity="Medecin" syncable="YES"/>
     </entity>
     <entity name="TypeActivite" representedClassName="TypeActivite" syncable="YES" codeGenerationType="class">
         <attribute name="libelle" optional="YES" attributeType="String" syncable="YES"/>

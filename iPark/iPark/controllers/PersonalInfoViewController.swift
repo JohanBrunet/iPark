@@ -11,6 +11,7 @@ import UIKit
 
 class PersonalInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
+    @IBOutlet weak var filterButton: UISegmentedControl!
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var age: UILabel!
     @IBOutlet weak var adress: UILabel!
@@ -22,9 +23,23 @@ class PersonalInfoViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         displayPatientInfos()
         
+        self.filterButton.selectedSegmentIndex = 0
         self.medecins = MedecinSet(from: CoreDataDAOFactory.getInstance().getMedecinDAO().getAll()!)
+        self.medecins?.sortByName()
         self.medecinTableView.delegate = self
         self.medecinTableView.dataSource = self
+    }
+    
+    @IBAction func filterValues(_ sender: Any) {
+        switch self.filterButton.selectedSegmentIndex {
+            case 0:
+                self.medecins?.sortByName()
+            case 1:
+                self.medecins?.sortBySpecialite()
+            default:
+                self.medecins?.sortByName()
+        }
+        self.medecinTableView.reloadData()
     }
     
     func displayPatientInfos() {
@@ -75,10 +90,26 @@ class PersonalInfoViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @IBAction func unwindFromAddMedecin(segue: UIStoryboardSegue) {
+        switch self.filterButton.selectedSegmentIndex {
+            case 0:
+                self.medecins?.sortByName()
+            case 1:
+                self.medecins?.sortBySpecialite()
+            default:
+                self.medecins?.sortByName()
+        }
         self.medecinTableView.reloadData()
     }
     
     @IBAction func unwindFromDeleteMedecin(segue: UIStoryboardSegue) {
+        switch self.filterButton.selectedSegmentIndex {
+            case 0:
+                self.medecins?.sortByName()
+            case 1:
+                self.medecins?.sortBySpecialite()
+            default:
+                self.medecins?.sortByName()
+        }
         self.medecinTableView.reloadData()
     }
     

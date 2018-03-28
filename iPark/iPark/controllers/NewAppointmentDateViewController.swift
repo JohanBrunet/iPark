@@ -28,5 +28,10 @@ class NewAppointmentDateViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! CalendarViewController
         destinationVC.rdvs?.add(newRDV!)
+        var filter: Int = 0
+        if (newRDV?.dateRDV)! > Date() {
+            filter = 1
+        }
+        destinationVC.filterButton.selectedSegmentIndex = filter
     }
 }

@@ -54,4 +54,16 @@ class MedecinSet {
         return self.medSet.contains(where: {$0==medecin})
     }
     
+    func sortByName() {
+        return self.medSet.sort(by: { (med1, med2) -> Bool in
+            med1.nom <= med2.nom
+        })
+    }
+    
+    func sortBySpecialite() {
+        return self.medSet.sort(by: { (med1, med2) -> Bool in
+            (med1.spe?.label)! <= (med2.spe?.label)!
+        })
+    }
+    
 }

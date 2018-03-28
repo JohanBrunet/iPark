@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-protocol TypeActiviteDAO{
+protocol TypeActiviteDAO {
     
     func save()
     func insert(nomActivite: String) -> TypeActivite
@@ -18,4 +18,4 @@ protocol TypeActiviteDAO{
     func delete(for activite: TypeActivite)
     func add(_ activite: TypeActivite)
 
-  }
+}

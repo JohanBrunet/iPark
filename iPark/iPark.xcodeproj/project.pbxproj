@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040E6C6F206BED7900D4C660 /* TypeActiviteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E6C6E206BED7900D4C660 /* TypeActiviteDAO.swift */; };
 		0411913420667A5700DC4473 /* MedecinSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E69FF72064E413003E9AA4 /* MedecinSet.swift */; };
 		04119136206681CE00DC4473 /* iPark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6F20468FBE00A95DBA /* iPark.xcdatamodeld */; };
 		0432CF50205438DC002845E1 /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432CF4F205438DC002845E1 /* FirstLaunchViewController.swift */; };
@@ -33,7 +34,6 @@
 		04FC93B7206A919A00DFFDB7 /* NewAppointmentDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC93B6206A919A00DFFDB7 /* NewAppointmentDateViewController.swift */; };
 		2D408144206BB5C900F94B1B /* TypeActiviteSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D408143206BB5C900F94B1B /* TypeActiviteSeeder.swift */; };
 		2D408146206BB74000F94B1B /* CoreDataTypeActiviteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D408145206BB74000F94B1B /* CoreDataTypeActiviteDAO.swift */; };
-		2D408148206BB7B400F94B1B /* TypeActiviteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D408147206BB7B400F94B1B /* TypeActiviteDAO.swift */; };
 		2D40814A206BC14500F94B1B /* TypeActiviteSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D408149206BC14500F94B1B /* TypeActiviteSet.swift */; };
 		2DA8AC6920468FBE00A95DBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6820468FBE00A95DBA /* AppDelegate.swift */; };
 		2DA8AC6E20468FBE00A95DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6C20468FBE00A95DBA /* Main.storyboard */; };
@@ -86,6 +86,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040E6C6E206BED7900D4C660 /* TypeActiviteDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypeActiviteDAO.swift; path = iPark/DAOs/TypeActiviteDAO.swift; sourceTree = SOURCE_ROOT; };
 		0432CF4F205438DC002845E1 /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		0432CF5120543A83002845E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		046669A820664C32002E60BA /* FormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidator.swift; sourceTree = "<group>"; };
@@ -111,7 +112,6 @@
 		04FC93B6206A919A00DFFDB7 /* NewAppointmentDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAppointmentDateViewController.swift; sourceTree = "<group>"; };
 		2D408143206BB5C900F94B1B /* TypeActiviteSeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeActiviteSeeder.swift; sourceTree = "<group>"; };
 		2D408145206BB74000F94B1B /* CoreDataTypeActiviteDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTypeActiviteDAO.swift; sourceTree = "<group>"; };
-		2D408147206BB7B400F94B1B /* TypeActiviteDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeActiviteDAO.swift; sourceTree = "<group>"; };
 		2D408149206BC14500F94B1B /* TypeActiviteSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeActiviteSet.swift; sourceTree = "<group>"; };
 		2DA8AC6520468FBE00A95DBA /* iPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA8AC6820468FBE00A95DBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 			children = (
 				04D97EC9206119E8001BFAAA /* CoreDataDAO */,
 				04D97ECC206119E8001BFAAA /* MedecinDAO.swift */,
-				2D408147206BB7B400F94B1B /* TypeActiviteDAO.swift */,
+				040E6C6E206BED7900D4C660 /* TypeActiviteDAO.swift */,
 				D9F99337206675B000814AF3 /* ActiviteDAO.swift */,
 				04A7AA9A2069AF5E00C5A746 /* SpecialiteDAO.swift */,
 				04FC93AE206A7FA200DFFDB7 /* RendezVousDAO.swift */,
@@ -535,6 +535,7 @@
 				D9F993362066753600814AF3 /* CoreDataActiviteDAO.swift in Sources */,
 				04D97ECD206119E8001BFAAA /* CoreDataManager.swift in Sources */,
 				D962249F20629F82003E9D93 /* DoctorViewController.swift in Sources */,
+				040E6C6F206BED7900D4C660 /* TypeActiviteDAO.swift in Sources */,
 				D981D8AC206539F100101FD4 /* NewSymptomsViewController.swift in Sources */,
 				046669A920664C32002E60BA /* FormValidator.swift in Sources */,
 				0432CF5220543A83002845E1 /* HomeViewController.swift in Sources */,
