@@ -16,7 +16,7 @@ extension RendezVous {
     }
     
     var rappelRDV: Date? {
-        return self.rappel! as Date
+        return self.rappel as Date?
     }
     
     var med: Medecin? {

@@ -10,18 +10,28 @@ import UIKit
 
 class NewAppointmentDateViewController: UIViewController {
     
-    @IBOutlet weak var rappel: UITextField!
+    @IBOutlet weak var rappel: UIDatePicker!
     @IBOutlet weak var datePicker: UIDatePicker!
     var medecin: Medecin? = nil
     var newRDV: RendezVous? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.rappel.countDownDuration = 0
     }
     
     @IBAction func submitForm(_ sender: Any) {
         let date = (self.datePicker?.date != nil) ? self.datePicker.date : Date()
-        self.newRDV = RendezVous(for: date, with: self.medecin!)
+        print("\n Date rdv")
+        print(date)
+        let tempsPrep = -self.rappel.countDownDuration
+        print("\n Temps prepa (s)")
+        print(tempsPrep)
+        let dateRappel = date.addingTimeInterval(tempsPrep)
+        print("\n Date rappel")
+        print(dateRappel)
+        print("\n")
+        self.newRDV = RendezVous(for: date, rappel: dateRappel, with: self.medecin!)
         self.performSegue(withIdentifier: "showRDVList", sender: self)
     }
     
