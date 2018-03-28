@@ -22,15 +22,8 @@ class NewAppointmentDateViewController: UIViewController {
     
     @IBAction func submitForm(_ sender: Any) {
         let date = (self.datePicker?.date != nil) ? self.datePicker.date : Date()
-        print("\n Date rdv")
-        print(date)
         let tempsPrep = -self.rappel.countDownDuration
-        print("\n Temps prepa (s)")
-        print(tempsPrep)
         let dateRappel = date.addingTimeInterval(tempsPrep)
-        print("\n Date rappel")
-        print(dateRappel)
-        print("\n")
         self.newRDV = RendezVous(for: date, rappel: dateRappel, with: self.medecin!)
         self.performSegue(withIdentifier: "showRDVList", sender: self)
     }

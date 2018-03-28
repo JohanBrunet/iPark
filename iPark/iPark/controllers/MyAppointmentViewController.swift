@@ -30,7 +30,6 @@ class MyAppointmentViewController:UIViewController{
         
         // Set date format
         dateFormatter.locale = Locale(identifier: "fr_FR")
-        //dateFormatter.timeZone = NSTimeZone(name: "UTC+1") as TimeZone!
         
         // Apply date format
         dateFormatter.dateFormat = "EEEE dd MMMM yyyy à HH:mm"
@@ -39,17 +38,8 @@ class MyAppointmentViewController:UIViewController{
         self.dateRDVLabel.text = dateRDVFormatted
         
         if let rappel = self.rdv?.rappelRDV {
-            print("\n Date rdv")
-            print(self.rdv?.dateRDV)
-            
             let timeToSubstract = -(rappel.timeIntervalSince1970)
             let tempsPrep = self.rdv?.dateRDV.addingTimeInterval(timeToSubstract)
-            print("\n Temps prepa (s)")
-            print(tempsPrep)
-            print("\n Date rappel")
-            print(self.rdv?.rappelRDV)
-            print("\n")
-            // Apply date format
             dateFormatter.dateFormat = "HH"
             dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
             let heures = dateFormatter.string(from: tempsPrep!)
