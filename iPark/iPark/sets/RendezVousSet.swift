@@ -50,6 +50,20 @@ class RendezVousSet {
         return self.rdvSet[i]
     }
     
+    // Récupérer le dernier rendez-vous (avant la date d'aujourd'hui)
+    func getLastForMed(for medecin: Medecin) -> RendezVous? {
+        var lastRDVForMed: RendezVous? = nil
+        let filteredSetMed = self.filterByMedecin(for: medecin)
+        if filteredSetMed.count > 0 {
+            let filteredSetDate = filteredSetMed.filterByDate(for: Date(), before: true)
+            if filteredSetDate.count > 0 {
+                filteredSetDate.sortByDate()
+                lastRDVForMed = filteredSetDate.get(filteredSetDate.count - 1)
+            }
+        }
+        return lastRDVForMed
+    }
+    
     func filterByMedecin(for medecin: Medecin) -> RendezVousSet {
         return RendezVousSet(from: self.rdvSet.filter { $0.medecin == medecin })
     }

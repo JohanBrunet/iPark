@@ -712,6 +712,13 @@
                             <constraint firstItem="fMt-EX-JDV" firstAttribute="leading" secondItem="YqS-Be-VeI" secondAttribute="leading" id="z0b-4X-XjJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adresseLabel" destination="y1c-W6-clm" id="oQ1-OO-0pj"/>
+                        <outlet property="dateRDVLabel" destination="ibJ-N8-mhy" id="5sy-3E-Ytz"/>
+                        <outlet property="medecinLabel" destination="J7q-5q-NTI" id="1eF-aE-rtC"/>
+                        <outlet property="rappelLabel" destination="dls-qs-xVx" id="FBZ-gW-ipe"/>
+                        <outlet property="specialiteMedecinLabel" destination="mkz-Yz-K4J" id="hug-ag-nN3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avn-Qj-see" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

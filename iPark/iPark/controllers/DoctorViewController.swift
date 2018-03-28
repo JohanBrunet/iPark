@@ -20,40 +20,9 @@ class DoctorViewController: UIViewController {
     @IBOutlet weak var specialty: UILabel!
     var medecin: Medecin? = nil
     var posMedecin: Int? = nil
-    var lastRDV: RendezVous? = nil
     
     override func viewDidLoad() {
         let rdvs: RendezVousSet = RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!)
-        let filteredSetMed = rdvs.filterByMedecin(for: self.medecin!)
-        if filteredSetMed.count > 0 {
-            let filteredSetDate = filteredSetMed.filterByDate(for: Date(), before: true)
-            if filteredSetDate.count > 0 {
-                filteredSetDate.sortByDate()
-                self.lastRDV = filteredSetDate.get(filteredSetDate.count - 1)
-                // Create date formatter
-                let dateFormatter: DateFormatter = DateFormatter()
-                
-                // Set date format
-                dateFormatter.locale = Locale(identifier: "fr_FR")
-                dateFormatter.timeZone = NSTimeZone(name: "UTC+1") as TimeZone!
-                
-                dateFormatter.dateFormat = "EEEE dd MMM yyyy"
-                // Apply date format
-                let dateRDV = dateFormatter.string(from: (self.lastRDV?.dateRDV)!)
-                
-                // Change date format
-                dateFormatter.dateFormat = "HH:mm"
-                let heureRDV = dateFormatter.string(from: (self.lastRDV?.dateRDV)!)
-                
-                self.lastAppointment.text = dateRDV + " à " + heureRDV
-            }
-            else {
-                self.lastAppointment.text = "Pas de rendez-vous précédent"
-            }
-        }
-        else {
-            self.lastAppointment.text = "Pas de rendez-vous précédent"
-        }
         
         self.titledName.text = medecin?.titledName
         self.adress.text = medecin?.adr
@@ -64,6 +33,22 @@ class DoctorViewController: UIViewController {
             self.specialty.text = "Non renseigné"
         }
         self.phoneNumber.text = medecin?.tel
+        
+        guard let lastRDVForMed = rdvs.getLastForMed(for: self.medecin!) else {
+            self.lastAppointment.text = "Pas de rendez-vous précédent"
+            return
+        }
+        // Create date formatter
+        let dateFormatter: DateFormatter = DateFormatter()
+        
+        // Set date format
+        dateFormatter.locale = Locale(identifier: "fr_FR")
+        dateFormatter.timeZone = NSTimeZone(name: "UTC+1") as TimeZone!
+        
+        // Apply date format
+        dateFormatter.dateFormat = "EEEE dd MMMM yyyy à HH:mm"
+        let dateRDVFormatted = dateFormatter.string(from: (lastRDVForMed.dateRDV))
+        self.lastAppointment.text = dateRDVFormatted
     }
     
     @IBAction func deleteMedecin(_ sender: Any) {
