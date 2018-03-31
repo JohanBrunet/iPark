@@ -25,6 +25,14 @@ class NewAppointmentDateViewController: UIViewController {
         let tempsPrep = -self.rappel.countDownDuration
         let dateRappel = date.addingTimeInterval(tempsPrep)
         self.newRDV = RendezVous(for: date, rappel: dateRappel, with: self.medecin!)
+        let dateRDVFormatted = DateHelper.formatDate(date: (self.newRDV?.dateRDV)!, pattern: "ddMMyyyyHHmm")
+        let rappelString = DateHelper.getRappelString(rdv: date, rappel: dateRappel)
+        let notifID: String = (self.newRDV?.med?.nom)! + dateRDVFormatted
+        let notifTitle: String = "Rendez-vous"
+        let notifBody: String =  "Vous avez rendez-vous avec " + (self.newRDV?.med?.titledName)! + " dans " + rappelString
+        print("ID : " + notifID)
+        print("Body : " + notifBody)
+        AppDelegate.notification.addNotification(identifier: notifID, title: notifTitle, body: notifBody, date: dateRappel)
         self.performSegue(withIdentifier: "showRDVList", sender: self)
     }
     

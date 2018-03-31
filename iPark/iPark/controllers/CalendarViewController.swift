@@ -97,7 +97,10 @@ class CalendarViewController:UIViewController,  UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.rdvs?.remove((self.rdvs?.get(indexPath.row))!)
+            let rdv: RendezVous = (self.rdvs?.get(indexPath.row))!
+            self.rdvs?.remove(rdv)
+            let notifID: String = (rdv.med?.nom)! + DateHelper.formatDate(date: (rdv.dateRDV), pattern: "ddMMyyyyHHmm")
+            AppDelegate.notification.removeNotification(identifier: [notifID])
             self.rdvTableView.reloadData()
         }
     }
