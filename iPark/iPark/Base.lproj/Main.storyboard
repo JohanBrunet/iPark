@@ -107,7 +107,7 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="klm-aL-BVJ">
                                 <rect key="frame" x="0.0" y="338" width="375" height="239"/>
                                 <date key="date" timeIntervalSinceReferenceDate="542711608.02056301">
-                                    <!--2018-03-14 9:13:28 AM +0000-->
+                                    <!--2018-03-14 09:13:28 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr_FR"/>
                             </datePicker>
@@ -1503,7 +1503,7 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9jm-Dc-c0X">
                                 <rect key="frame" x="0.0" y="199.5" width="375" height="227.5"/>
                                 <date key="date" timeIntervalSinceReferenceDate="543225695.85734999">
-                                    <!--2018-03-20 8:01:35 AM +0000-->
+                                    <!--2018-03-20 08:01:35 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>
@@ -1920,7 +1920,7 @@
                                         <rect key="frame" x="0.0" y="20" width="118" height="92"/>
                                         <state key="normal" image="activites"/>
                                         <connections>
-                                            <segue destination="Zla-P4-kZ7" kind="show" id="ZqY-cf-PGB"/>
+                                            <segue destination="Zla-P4-kZ7" kind="show" identifier="showGeneralActivity" id="ZqY-cf-PGB"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2054,16 +2054,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jQt-1y-Nkf">
                                 <rect key="frame" x="149" y="139" width="200" height="161.5"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="iWj-Yo-8FV">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="56" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="iWj-Yo-8FV" userLabel="Activités proposées" colorLabel="IBBuiltInLabel-Red">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="161.5"/>
-                                        <color key="backgroundColor" red="0.95840754533678751" green="0.16884559368232221" blue="0.084119884376448351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="agR-xj-VFM"/>
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="proposedCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="proposedCell" rowHeight="28" id="7R1-Da-enX" customClass="ActiviteCell" customModule="iPark" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="1" width="200" height="28"/>
+                                                <rect key="frame" x="0.0" y="55.5" width="200" height="28"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="7R1-Da-enX" id="qfn-bp-TDC">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="27.5"/>
@@ -2098,16 +2098,6 @@
                                     <constraint firstAttribute="trailing" secondItem="iWj-Yo-8FV" secondAttribute="trailing" id="HB7-ZE-FnU"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNn-43-jJK">
-                                <rect key="frame" x="149" y="310.5" width="200" height="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Proposer une activité">
-                                    <color key="titleColor" red="0.95840754530000005" green="0.16884559369999999" blue="0.084119884379999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="WjA-q5-7FH" kind="show" id="TSu-jY-hyh"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psZ-Y1-OrI">
                                 <rect key="frame" x="16" y="361.5" width="343" height="20"/>
                                 <subviews>
@@ -2244,10 +2234,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEa-vd-mab">
+                                <rect key="frame" x="176" y="315.5" width="146" height="26"/>
+                                <state key="normal" title="Proposer une activité">
+                                    <color key="titleColor" red="0.62145806349999999" green="0.1871457007" blue="0.1672930645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="WjA-q5-7FH" kind="show" id="3vB-c5-gvd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.7980760643" green="0.84822734239999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="psZ-Y1-OrI" firstAttribute="top" secondItem="iNn-43-jJK" secondAttribute="bottom" constant="50" id="4ZB-a5-2Tp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1zj-ul-ghm" secondAttribute="trailing" id="8Z3-8I-b5Z"/>
                             <constraint firstItem="XbV-bQ-xlB" firstAttribute="leading" secondItem="GgK-ow-rSx" secondAttribute="leadingMargin" id="8gU-dZ-ogD"/>
                             <constraint firstItem="SfL-eR-Vhi" firstAttribute="leading" secondItem="GgK-ow-rSx" secondAttribute="leadingMargin" id="8mF-ML-eVe"/>
@@ -2256,7 +2254,7 @@
                             <constraint firstItem="5z8-L0-Vvj" firstAttribute="top" secondItem="psZ-Y1-OrI" secondAttribute="bottom" constant="5" id="Cnw-xj-R5y"/>
                             <constraint firstItem="6Bz-hS-YZt" firstAttribute="height" secondItem="psZ-Y1-OrI" secondAttribute="height" id="Hbg-Us-ZoR"/>
                             <constraint firstItem="6Bz-hS-YZt" firstAttribute="leading" secondItem="GgK-ow-rSx" secondAttribute="leadingMargin" id="HfY-Gt-c9E"/>
-                            <constraint firstItem="iNn-43-jJK" firstAttribute="leading" secondItem="jQt-1y-Nkf" secondAttribute="leading" id="Hhg-4b-VWJ"/>
+                            <constraint firstItem="DEa-vd-mab" firstAttribute="top" secondItem="jQt-1y-Nkf" secondAttribute="bottom" constant="15" id="I87-4U-UvZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="psZ-Y1-OrI" secondAttribute="trailing" id="K1w-68-gH9"/>
                             <constraint firstItem="5z8-L0-Vvj" firstAttribute="top" secondItem="psZ-Y1-OrI" secondAttribute="bottom" constant="5" id="Kae-jy-voc"/>
                             <constraint firstItem="u00-nJ-tuc" firstAttribute="height" secondItem="psZ-Y1-OrI" secondAttribute="height" id="KsT-MJ-BId"/>
@@ -2269,13 +2267,12 @@
                             <constraint firstItem="5z8-L0-Vvj" firstAttribute="leading" secondItem="GgK-ow-rSx" secondAttribute="leadingMargin" id="RSF-M4-YDI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SfL-eR-Vhi" secondAttribute="trailing" id="San-82-N6j"/>
                             <constraint firstItem="1zj-ul-ghm" firstAttribute="leading" secondItem="GgK-ow-rSx" secondAttribute="leadingMargin" id="TGH-Jt-TbR"/>
+                            <constraint firstItem="psZ-Y1-OrI" firstAttribute="top" secondItem="DEa-vd-mab" secondAttribute="bottom" constant="20" id="TNn-eR-VDz"/>
                             <constraint firstItem="xDB-dd-1NO" firstAttribute="top" secondItem="UuX-QY-vHC" secondAttribute="bottom" constant="10" id="Ydn-aU-cf0"/>
-                            <constraint firstItem="iNn-43-jJK" firstAttribute="top" secondItem="jQt-1y-Nkf" secondAttribute="bottom" constant="10" id="Zmy-Rd-pvz"/>
                             <constraint firstItem="psZ-Y1-OrI" firstAttribute="leading" secondItem="GgK-ow-rSx" secondAttribute="leadingMargin" id="bax-XU-PUL"/>
                             <constraint firstItem="jQt-1y-Nkf" firstAttribute="top" secondItem="xDB-dd-1NO" secondAttribute="bottom" constant="35" id="dw9-jx-cza"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5z8-L0-Vvj" secondAttribute="trailing" id="gHB-9w-ERj"/>
                             <constraint firstItem="SfL-eR-Vhi" firstAttribute="height" secondItem="psZ-Y1-OrI" secondAttribute="height" id="lVk-yl-du3"/>
-                            <constraint firstItem="iNn-43-jJK" firstAttribute="trailing" secondItem="jQt-1y-Nkf" secondAttribute="trailing" id="m86-6x-Wx6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6Bz-hS-YZt" secondAttribute="trailing" id="tcg-II-tG7"/>
                             <constraint firstItem="5z8-L0-Vvj" firstAttribute="height" secondItem="psZ-Y1-OrI" secondAttribute="height" id="uO3-BV-4BJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="u00-nJ-tuc" secondAttribute="trailing" id="vks-yc-x0X"/>
@@ -2292,11 +2289,12 @@
                         <outlet property="lastActivity" destination="Fqx-p1-igX" id="qPc-wi-uTc"/>
                         <outlet property="proposedActivities" destination="iWj-Yo-8FV" id="gDZ-kl-1P2"/>
                         <outlet property="proposedActivity" destination="7MF-wC-WbH" id="fEp-WL-y1r"/>
+                        <outlet property="propositionButton" destination="DEa-vd-mab" id="0x2-9N-SeL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfe-OF-qDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2471.1999999999998" y="1224.737631184408"/>
+            <point key="canvasLocation" x="-2482" y="1219"/>
         </scene>
         <!--My Activities View Controller-->
         <scene sceneID="K0a-ne-vWe">
@@ -2545,7 +2543,7 @@
                                     <constraint firstAttribute="height" constant="130" id="9WE-Zl-rI8"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="543241750.40723705">
-                                    <!--2018-03-20 12:29:10 PM +0000-->
+                                    <!--2018-03-20 12:29:10 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>
@@ -2615,7 +2613,7 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="RJW-VW-k1k">
                                 <rect key="frame" x="16" y="340.5" width="343" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="543193414.20015001">
-                                    <!--2018-03-19 11:03:34 PM +0000-->
+                                    <!--2018-03-19 23:03:34 +0000-->
                                 </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nouvelle prise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGW-HJ-xAG">
@@ -2897,7 +2895,7 @@
                             <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NBY-kb-cNB">
                                 <rect key="frame" x="16" y="165" width="343" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="542714521.85017204">
-                                    <!--2018-03-14 10:02:01 AM +0000-->
+                                    <!--2018-03-14 10:02:01 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr_FR"/>
                             </datePicker>
@@ -2934,7 +2932,7 @@
                                     <constraint firstAttribute="width" secondItem="obr-zY-mF1" secondAttribute="height" multiplier="40:27" id="QX6-84-q19"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="543848916.99181998">
-                                    <!--2018-03-27 1:08:36 PM +0000-->
+                                    <!--2018-03-27 13:08:36 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr_FR"/>
                             </datePicker>
@@ -2972,10 +2970,10 @@
             </objects>
             <point key="canvasLocation" x="-2724" y="2887.1064467766118"/>
         </scene>
-        <!--Activity Proposition View Controller-->
+        <!--New Proposed Activity View Controller-->
         <scene sceneID="zZB-G4-kCN">
             <objects>
-                <viewController storyboardIdentifier="newProposedActivity" id="WjA-q5-7FH" customClass="ActivityPropositionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newProposedActivity" id="WjA-q5-7FH" customClass="NewProposedActivityViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G2M-Fg-bX2"/>
                         <viewControllerLayoutGuide type="bottom" id="u38-ir-KoF"/>
@@ -2984,17 +2982,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fFc-lp-kQ0">
-                                <rect key="frame" x="16" y="186" width="343" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fFc-lp-kQ0">
+                                <rect key="frame" x="16" y="185.5" width="343" height="150"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="nom Activité" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHv-8Y-eaX">
-                                        <rect key="frame" x="124" y="0.0" width="95.5" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nom Activité" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHv-8Y-eaX">
+                                        <rect key="frame" x="124" y="0.0" width="95.5" height="100"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B32-zk-QMr">
-                                        <rect key="frame" x="0.0" y="50" width="343" height="50"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B32-zk-QMr">
+                                        <rect key="frame" x="0.0" y="100" width="343" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Hrr-e2-fwz"/>
                                         </constraints>
@@ -3004,7 +3002,6 @@
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="ByF-Bf-EpB"/>
                                     <constraint firstAttribute="trailing" secondItem="B32-zk-QMr" secondAttribute="trailing" id="ViV-xa-Ihi"/>
                                     <constraint firstItem="B32-zk-QMr" firstAttribute="leading" secondItem="fFc-lp-kQ0" secondAttribute="leading" id="dnn-KR-SXZ"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="vvg-fW-aGk"/>
@@ -3019,7 +3016,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A73-YQ-AoF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A73-YQ-AoF">
                                 <rect key="frame" x="16" y="549" width="343" height="55"/>
                                 <color key="backgroundColor" red="0.0" green="0.34795654339999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="Log in"/>
@@ -3032,12 +3029,13 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="submitForm:" destination="WjA-q5-7FH" eventType="touchUpInside" id="aJU-O8-UJ5"/>
+                                    <action selector="addTypeActivite:" destination="WjA-q5-7FH" eventType="touchUpInside" id="zLK-SY-MzC"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.7980760643" green="0.84822734239999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="fFc-lp-kQ0" firstAttribute="top" secondItem="8k4-2D-IKI" secondAttribute="bottom" constant="61" id="0Vj-6L-KMO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="A73-YQ-AoF" secondAttribute="trailing" id="9Sw-KC-e64"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fFc-lp-kQ0" secondAttribute="trailing" id="GVq-j9-vf8"/>
                             <constraint firstItem="fFc-lp-kQ0" firstAttribute="leading" secondItem="oUA-BN-mdu" secondAttribute="leadingMargin" id="Gvo-va-eet"/>
@@ -3045,17 +3043,18 @@
                             <constraint firstItem="8k4-2D-IKI" firstAttribute="centerX" secondItem="oUA-BN-mdu" secondAttribute="centerX" id="QL8-N3-SMh"/>
                             <constraint firstItem="A73-YQ-AoF" firstAttribute="centerX" secondItem="oUA-BN-mdu" secondAttribute="centerX" id="Stk-Iw-Sj2"/>
                             <constraint firstItem="8k4-2D-IKI" firstAttribute="top" secondItem="G2M-Fg-bX2" secondAttribute="bottom" constant="10" id="iDz-Pk-0Cb"/>
+                            <constraint firstItem="u38-ir-KoF" firstAttribute="top" secondItem="A73-YQ-AoF" secondAttribute="bottom" constant="63" id="tQ2-GY-kYE"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="name" destination="B32-zk-QMr" id="nuk-Bp-e6d"/>
-                        <segue destination="zIs-ju-1DV" kind="unwind" identifier="showPersonalInfos" unwindAction="unwindFromAddMedecinWithSegue:" id="49x-GH-CA8"/>
+                        <outlet property="propositionTextField" destination="B32-zk-QMr" id="wlh-hl-Bm8"/>
+                        <segue destination="zIs-ju-1DV" kind="unwind" identifier="showGeneralActivity" unwindAction="unwindFromAddProposedActivityWithSegue:" id="6kx-JC-V9P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7S-q4-L4C" sceneMemberID="firstResponder"/>
                 <exit id="zIs-ju-1DV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1629.5999999999999" y="1398.3508245877063"/>
+            <point key="canvasLocation" x="-1590" y="1359"/>
         </scene>
     </scenes>
     <resources>
@@ -3068,8 +3067,8 @@
         <segue reference="ZqY-cf-PGB"/>
         <segue reference="l2I-ux-evK"/>
         <segue reference="7gy-6t-LzY"/>
-        <segue reference="u23-VP-67P"/>
-        <segue reference="7uA-0h-x4M"/>
+        <segue reference="LNg-CD-xwD"/>
+        <segue reference="kqH-Ob-Jkj"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.60387165831962519" green="1" blue="0.40962909594737573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

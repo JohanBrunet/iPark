@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		037EA5002071177900273734 /* NewProposedActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037EA4FF2071177900273734 /* NewProposedActivityViewController.swift */; };
+		037EA502207129A500273734 /* TypeActivite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037EA501207129A500273734 /* TypeActivite.swift */; };
 		040E6C6F206BED7900D4C660 /* TypeActiviteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E6C6E206BED7900D4C660 /* TypeActiviteDAO.swift */; };
 		0411913420667A5700DC4473 /* MedecinSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E69FF72064E413003E9AA4 /* MedecinSet.swift */; };
 		04119136206681CE00DC4473 /* iPark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6F20468FBE00A95DBA /* iPark.xcdatamodeld */; };
@@ -88,6 +90,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		037EA4FF2071177900273734 /* NewProposedActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProposedActivityViewController.swift; sourceTree = "<group>"; };
+		037EA501207129A500273734 /* TypeActivite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeActivite.swift; sourceTree = "<group>"; };
 		040E6C6E206BED7900D4C660 /* TypeActiviteDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypeActiviteDAO.swift; path = iPark/DAOs/TypeActiviteDAO.swift; sourceTree = SOURCE_ROOT; };
 		0432CF4F205438DC002845E1 /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		0432CF5120543A83002845E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				0432CF4F205438DC002845E1 /* FirstLaunchViewController.swift */,
+				037EA4FF2071177900273734 /* NewProposedActivityViewController.swift */,
 				0432CF5120543A83002845E1 /* HomeViewController.swift */,
 				D94478CD20610A38006A1521 /* PersonalInfoViewController.swift */,
 				D962249A20629D88003E9D93 /* ActivityViewController.swift */,
@@ -282,6 +287,7 @@
 				04A7AA962069ADAC00C5A746 /* Specialite.swift */,
 				D9F993392066762900814AF3 /* Activite.swift */,
 				04FC93AC206A7E4800DFFDB7 /* RendezVous.swift */,
+				037EA501207129A500273734 /* TypeActivite.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -534,6 +540,7 @@
 				D9F9933B20668F3300814AF3 /* (null) in Sources */,
 				D981D8B02065422700101FD4 /* ProposedActivitiesTableViewController.swift in Sources */,
 				04A7AA9E2069B34700C5A746 /* SpecialiteSeeder.swift in Sources */,
+				037EA5002071177900273734 /* NewProposedActivityViewController.swift in Sources */,
 				04FC93B5206A83E200DFFDB7 /* RendezVousCell.swift in Sources */,
 				2D408146206BB74000F94B1B /* CoreDataTypeActiviteDAO.swift in Sources */,
 				2D408144206BB5C900F94B1B /* TypeActiviteSeeder.swift in Sources */,
@@ -541,6 +548,7 @@
 				04A7AA992069AF4E00C5A746 /* CoreDataSpecialiteDAO.swift in Sources */,
 				D96224AB2062A739003E9D93 /* NewMedicamentViewController.swift in Sources */,
 				D9F993362066753600814AF3 /* CoreDataActiviteDAO.swift in Sources */,
+				037EA502207129A500273734 /* TypeActivite.swift in Sources */,
 				04D97ECD206119E8001BFAAA /* CoreDataManager.swift in Sources */,
 				D962249F20629F82003E9D93 /* DoctorViewController.swift in Sources */,
 				040E6C6F206BED7900D4C660 /* TypeActiviteDAO.swift in Sources */,
