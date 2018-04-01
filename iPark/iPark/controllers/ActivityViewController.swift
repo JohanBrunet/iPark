@@ -42,6 +42,13 @@ class ActivityViewController:UIViewController, UITableViewDelegate, UITableViewD
             self.proposedActivites!.remove((self.proposedActivites!.get(indexPath.row))!)
             self.proposedActivities.reloadData()
         }
+        
+    }
+    
+    
+    @IBAction func unwindFromAddProposedActivity(segue: UIStoryboardSegue) {
+        self.proposedActivites =  TypeActiviteSet(from: CoreDataDAOFactory.getInstance().getTypeActiviteDAO().getAll()!)
+        self.proposedActivities.reloadData()
     }
     
     @IBOutlet weak var durationLastActivity: UILabel!
@@ -50,6 +57,7 @@ class ActivityViewController:UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var proposedActivity: UILabel!
     @IBOutlet weak var activities: UIButton!
+    @IBOutlet weak var propositionButton: UIButton!
     
     @IBOutlet weak var proposedActivities: UITableView!
     
