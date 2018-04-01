@@ -315,6 +315,7 @@
 				037EA501207129A500273734 /* TypeActivite.swift */,
 				0466918320702BCE00550105 /* Medicament.swift */,
 				0466918520702DCD00550105 /* Prise.swift */,
+				037EA501207129A500273734 /* TypeActivite.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
