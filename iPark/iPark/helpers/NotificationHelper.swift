@@ -21,7 +21,6 @@ class MyNotificationCenter {
                                               actions: [snoozeAction,deleteAction],
                                               intentIdentifiers: [], options: [])
         AppDelegate.center.setNotificationCategories([category])
-        //AppDelegate.center.setNotificationCategories([category])
     }
     
     func addNotification(identifier:String, title:String,body:String,date:Date) {
