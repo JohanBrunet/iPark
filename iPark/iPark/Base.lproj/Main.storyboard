@@ -2044,15 +2044,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jQt-1y-Nkf">
-                                <rect key="frame" x="149" y="139" width="200" height="161.5"/>
+                                <rect key="frame" x="16" y="139" width="200" height="172.5"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="56" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="iWj-Yo-8FV" userLabel="Activités proposées" colorLabel="IBBuiltInLabel-Red">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="161.5"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="172.5"/>
+                                        <color key="backgroundColor" red="0.7582780116580311" green="0.15767547748619748" blue="0.12388814549349519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="agR-xj-VFM"/>
                                         </constraints>
+                                        <color key="separatorColor" red="0.62145806349999999" green="0.1871457007" blue="0.1672930645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="sectionIndexBackgroundColor" red="0.62145806349999999" green="0.1871457007" blue="0.1672930645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="sectionIndexTrackingBackgroundColor" red="0.62145806349999999" green="0.1871457007" blue="0.1672930645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="proposedCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="proposedCell" rowHeight="28" id="7R1-Da-enX" customClass="ActiviteCell" customModule="iPark" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="55.5" width="200" height="28"/>
@@ -2225,8 +2228,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEa-vd-mab">
-                                <rect key="frame" x="176" y="315.5" width="146" height="26"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEa-vd-mab">
+                                <rect key="frame" x="16" y="321.5" width="200" height="15"/>
                                 <state key="normal" title="Proposer une activité">
                                     <color key="titleColor" red="0.62145806349999999" green="0.1871457007" blue="0.1672930645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -2245,24 +2248,27 @@
                             <constraint firstItem="5z8-L0-Vvj" firstAttribute="top" secondItem="psZ-Y1-OrI" secondAttribute="bottom" constant="5" id="Cnw-xj-R5y"/>
                             <constraint firstItem="6Bz-hS-YZt" firstAttribute="height" secondItem="psZ-Y1-OrI" secondAttribute="height" id="Hbg-Us-ZoR"/>
                             <constraint firstItem="6Bz-hS-YZt" firstAttribute="leading" secondItem="GgK-ow-rSx" secondAttribute="leadingMargin" id="HfY-Gt-c9E"/>
-                            <constraint firstItem="DEa-vd-mab" firstAttribute="top" secondItem="jQt-1y-Nkf" secondAttribute="bottom" constant="15" id="I87-4U-UvZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="psZ-Y1-OrI" secondAttribute="trailing" id="K1w-68-gH9"/>
+                            <constraint firstItem="DEa-vd-mab" firstAttribute="leading" secondItem="jQt-1y-Nkf" secondAttribute="leading" id="K3u-wn-nVg"/>
                             <constraint firstItem="5z8-L0-Vvj" firstAttribute="top" secondItem="psZ-Y1-OrI" secondAttribute="bottom" constant="5" id="Kae-jy-voc"/>
                             <constraint firstItem="u00-nJ-tuc" firstAttribute="height" secondItem="psZ-Y1-OrI" secondAttribute="height" id="KsT-MJ-BId"/>
                             <constraint firstItem="u00-nJ-tuc" firstAttribute="leading" secondItem="GgK-ow-rSx" secondAttribute="leadingMargin" id="LAR-Ge-ANy"/>
                             <constraint firstItem="1zj-ul-ghm" firstAttribute="centerX" secondItem="GgK-ow-rSx" secondAttribute="centerX" id="LSs-fr-eE1"/>
                             <constraint firstItem="SfL-eR-Vhi" firstAttribute="top" secondItem="u00-nJ-tuc" secondAttribute="bottom" constant="5" id="MP6-mA-3Gh"/>
                             <constraint firstItem="1zj-ul-ghm" firstAttribute="top" secondItem="XbV-bQ-xlB" secondAttribute="bottom" constant="50" id="Mb5-2v-p3K"/>
+                            <constraint firstItem="DEa-vd-mab" firstAttribute="trailing" secondItem="jQt-1y-Nkf" secondAttribute="trailing" id="NAf-Vt-5pp"/>
                             <constraint firstItem="6Bz-hS-YZt" firstAttribute="top" secondItem="SfL-eR-Vhi" secondAttribute="bottom" constant="25" id="PeR-eS-nnG"/>
                             <constraint firstItem="xDB-dd-1NO" firstAttribute="top" secondItem="UuX-QY-vHC" secondAttribute="bottom" constant="10" id="QFf-h1-x2D"/>
                             <constraint firstItem="5z8-L0-Vvj" firstAttribute="leading" secondItem="GgK-ow-rSx" secondAttribute="leadingMargin" id="RSF-M4-YDI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SfL-eR-Vhi" secondAttribute="trailing" id="San-82-N6j"/>
                             <constraint firstItem="1zj-ul-ghm" firstAttribute="leading" secondItem="GgK-ow-rSx" secondAttribute="leadingMargin" id="TGH-Jt-TbR"/>
-                            <constraint firstItem="psZ-Y1-OrI" firstAttribute="top" secondItem="DEa-vd-mab" secondAttribute="bottom" constant="20" id="TNn-eR-VDz"/>
                             <constraint firstItem="xDB-dd-1NO" firstAttribute="top" secondItem="UuX-QY-vHC" secondAttribute="bottom" constant="10" id="Ydn-aU-cf0"/>
+                            <constraint firstItem="jQt-1y-Nkf" firstAttribute="leading" secondItem="GgK-ow-rSx" secondAttribute="leadingMargin" id="Zn0-Z0-SOw"/>
                             <constraint firstItem="psZ-Y1-OrI" firstAttribute="leading" secondItem="GgK-ow-rSx" secondAttribute="leadingMargin" id="bax-XU-PUL"/>
                             <constraint firstItem="jQt-1y-Nkf" firstAttribute="top" secondItem="xDB-dd-1NO" secondAttribute="bottom" constant="35" id="dw9-jx-cza"/>
+                            <constraint firstItem="psZ-Y1-OrI" firstAttribute="top" secondItem="DEa-vd-mab" secondAttribute="bottom" constant="25" id="eQa-WZ-HzT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5z8-L0-Vvj" secondAttribute="trailing" id="gHB-9w-ERj"/>
+                            <constraint firstItem="DEa-vd-mab" firstAttribute="top" secondItem="jQt-1y-Nkf" secondAttribute="bottom" constant="10" id="kG4-h4-rE1"/>
                             <constraint firstItem="SfL-eR-Vhi" firstAttribute="height" secondItem="psZ-Y1-OrI" secondAttribute="height" id="lVk-yl-du3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6Bz-hS-YZt" secondAttribute="trailing" id="tcg-II-tG7"/>
                             <constraint firstItem="5z8-L0-Vvj" firstAttribute="height" secondItem="psZ-Y1-OrI" secondAttribute="height" id="uO3-BV-4BJ"/>
@@ -2270,7 +2276,6 @@
                             <constraint firstItem="xDB-dd-1NO" firstAttribute="centerX" secondItem="GgK-ow-rSx" secondAttribute="centerX" id="xi3-eJ-q9A"/>
                             <constraint firstItem="i3s-Xy-FOd" firstAttribute="top" secondItem="1zj-ul-ghm" secondAttribute="bottom" constant="35" id="xyu-0p-eZs"/>
                             <constraint firstItem="XbV-bQ-xlB" firstAttribute="height" secondItem="psZ-Y1-OrI" secondAttribute="height" id="yfo-qe-5Pe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jQt-1y-Nkf" secondAttribute="trailing" constant="10" id="zqh-mz-YyF"/>
                         </constraints>
                     </view>
                     <connections>
@@ -2286,7 +2291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfe-OF-qDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2482" y="1219"/>
+            <point key="canvasLocation" x="-2482.4000000000001" y="1218.440779610195"/>
         </scene>
         <!--My Activities View Controller-->
         <scene sceneID="K0a-ne-vWe">
