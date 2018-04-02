@@ -44,7 +44,7 @@ class PriseSet {
     }
     
     func get(_ i: Int) -> Prise? {
-        if(i < 0 || i >= priseSet.count){
+        if(i < 0 || i >= priseSet.count) {
             return nil
         }
         return self.priseSet[i]
@@ -54,9 +54,8 @@ class PriseSet {
         return self.priseSet.contains(where: {$0==prise})
     }
     
-    //TODO: filtrer par jour
-    func filterByDate(for date: Date) -> PriseSet {
-        return PriseSet(from: self.priseSet.filter { $0.rappelPrise > date })
+    func getTodaysPrises() -> PriseSet {
+        return PriseSet(from: self.priseSet.filter { DateHelper.truncateToDay(from: $0.rappelPrise) == DateHelper.truncateToDay(from: Date()) })
     }
     
     func sortByDate() {
