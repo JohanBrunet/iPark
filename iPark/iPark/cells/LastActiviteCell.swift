@@ -10,11 +10,11 @@ import UIKit
 
 class LastActiviteCell: UITableViewCell {
 
-    @IBOutlet weak var DurationLabel: UILabel!
-    @IBOutlet weak var ActivityNameLabel: UILabel!
-    @IBOutlet weak var DateLabel: UILabel!
-    @IBOutlet weak var TimeLabel: UILabel!
+    @IBOutlet weak var nomActiviteLabel: UILabel!
     
+    @IBOutlet weak var dateActiviteLabel: UILabel!
+    
+    @IBOutlet weak var dureeActiviteLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

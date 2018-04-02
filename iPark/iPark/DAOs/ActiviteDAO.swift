@@ -19,7 +19,6 @@ protocol ActiviteDAO {
     func getByType(for typeActivite: TypeActivite) -> [Activite]?
     func getAll() -> [Activite]?
     func delete(for Activite: Activite)
-    func search( nomActivite: String, date: NSDate,  duree: Int32) -> Activite?
-    func search( typeActivite: TypeActivite, date: NSDate,  duree: Int32) -> Activite?
+    func search( date: NSDate) -> Activite?
     func add(activite: Activite)
 }

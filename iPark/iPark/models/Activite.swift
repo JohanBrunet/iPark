@@ -11,7 +11,7 @@ extension Activite {
     
     var nomActivite: String? {
         get {
-            return self.libelle!
+            return self.libelle
         }
         set {
             self.libelle = newValue

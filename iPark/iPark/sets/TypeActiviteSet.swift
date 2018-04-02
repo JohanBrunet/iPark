@@ -54,5 +54,11 @@ class TypeActiviteSet {
     func contains(_ typeActivite: TypeActivite) -> Bool {
         return self.typActSet.contains(where: {$0==typeActivite})
     }
+    
+    func sortByName() {
+        return self.typActSet.sort(by: { (typ1, typ2) -> Bool in
+            typ1.libelle! <= typ2.libelle!
+        })
+    }
 
 }

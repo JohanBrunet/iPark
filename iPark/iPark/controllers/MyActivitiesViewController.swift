@@ -23,7 +23,7 @@ class MyActivitiesViewController:UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.activites = ActiviteSet(from: CoreDataDAOFactory.getInstance().getActiviteDAO().getAll()!)
+        self.activites = ActiviteSet(from: CoreDataDAOFactory.getInstance().getActiviteDAO().getAll())
         self.LastActivities.delegate = self
         self.LastActivities.dataSource = self
     }
@@ -60,10 +60,15 @@ class MyActivitiesViewController:UIViewController, UITableViewDataSource, UITabl
         
         let cell: LastActiviteCell = LastActivities.dequeueReusableCell(withIdentifier: "activiteCell", for: indexPath) as! LastActiviteCell
         let act = self.activites!.get(indexPath.row)!
-        cell.ActivityNameLabel.text! = act.nomActivite!
+        if (act.nomActivite != nil){
+            cell.nomActiviteLabel.text! = act.nomActivite!
+        }
+        else {
+            cell.nomActiviteLabel.text! = act.typeActivite!.libelle!
+        }
         let date = formatDate.string(from : (act.dateActivite as Date))
-        cell.DateLabel.text! = date
-        cell.DurationLabel.text! = String (act.dureeActivite)
+        cell.dateActiviteLabel.text! = date
+        cell.dureeActiviteLabel.text! = String (act.dureeActivite)
         
         return cell
     }
@@ -76,12 +81,15 @@ class MyActivitiesViewController:UIViewController, UITableViewDataSource, UITabl
     }
     
     @IBAction func unwindFromAddActivite(segue: UIStoryboardSegue) {
+        self.activites =  ActiviteSet(from: CoreDataDAOFactory.getInstance().getActiviteDAO().getAll())
         self.LastActivities.reloadData()
     }
     
-    @IBAction func unwindFromDeleteMedecin(segue: UIStoryboardSegue) {
+    @IBAction func unwindFromDeleteActivite(segue: UIStoryboardSegue) {
         self.LastActivities.reloadData()
     }
+    
+    
 }
 
 

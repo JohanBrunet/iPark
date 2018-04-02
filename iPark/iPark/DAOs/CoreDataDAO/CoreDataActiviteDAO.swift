@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class CoreDataActiviteDAO: ActiviteDAO {
+class CoreDataActiviteDAO: ActiviteDAO {    
     
      private let request : NSFetchRequest<Activite> = Activite.fetchRequest()
     
@@ -73,6 +73,7 @@ class CoreDataActiviteDAO: ActiviteDAO {
         }
     }
     
+    
     func delete(for Activite: Activite) {
         CoreDataManager.context.delete(Activite)
     }
@@ -80,11 +81,11 @@ class CoreDataActiviteDAO: ActiviteDAO {
    
     
     func add(activite: Activite) {
-        if let _ = self.search(nomActivite: activite.nomActivite!,  date: activite.dateActivite, duree: activite.dureeActivite) {
+        if let _ = self.search(date: activite.dateActivite) {
             self.save()
         }
         else {
-            if let nomActivite = activite.nomActivite {
+            if activite.nomActivite != nil{
                 let _ = self.insert(nomActivite: activite.nomActivite!, duree: activite.dureeActivite, date: activite.dateActivite, remarque: activite.remarqueActivite)
             }
             else{
@@ -94,8 +95,8 @@ class CoreDataActiviteDAO: ActiviteDAO {
         }
     }
     
-    func search(nomActivite: String, date: NSDate, duree: Int32) -> Activite? {
-        self.request.predicate = NSPredicate(format: "libelle== %@ AND date == %@ AND duree == %@ ", nomActivite, date, duree)
+    func search(date: NSDate) -> Activite? {
+        self.request.predicate = NSPredicate(format: "date == %@ ", date)
         do{
             let result = try CoreDataManager.context.fetch(request) as [Activite]
             guard result.count != 0 else { return nil }
@@ -106,17 +107,6 @@ class CoreDataActiviteDAO: ActiviteDAO {
         }
     }
     
-    func search(typeActivite: TypeActivite, date: NSDate, duree: Int32) -> Activite? {
-        self.request.predicate = NSPredicate(format: "type== %@ AND date == %@ AND duree == %@ ", typeActivite, date, duree)
-        do{
-            let result = try CoreDataManager.context.fetch(request) as [Activite]
-            guard result.count != 0 else { return nil }
-            return result[0]
-        }
-        catch{
-            return nil
-        }
-    }
     }
     
 

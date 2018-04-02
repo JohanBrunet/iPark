@@ -48,4 +48,16 @@ class CoreDataTypeActiviteDAO: TypeActiviteDAO {
         self.save()
     }
     
+    func search(name: String) -> TypeActivite? {
+        self.request.predicate = NSPredicate(format: "libelle == %@", name)
+        do{
+            let result = try CoreDataManager.context.fetch(self.request) as! [TypeActivite]
+            guard result.count != 0 else { return nil }
+            return result[0]
+        }
+        catch{
+            return nil
+        }
+    }
+    
 }

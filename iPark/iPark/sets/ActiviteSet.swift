@@ -59,4 +59,31 @@ class ActiviteSet {
     //
     //    }
     
+    // Récupérer le dernier rendez-vous (avant la date d'aujourd'hui)
+    func getLastActivite() -> Activite? {
+        var lastActivite: Activite? = nil
+        if self.count > 0 {
+            let dateSet = self.filterByDate(for: Date(), before: true)
+            if dateSet.count > 0 {
+                dateSet.sortByDate()
+                lastActivite = dateSet.get(dateSet.count - 1)
+            }
+        }
+        return lastActivite
+    }
+    
+    func filterByDate(for date: Date, before: Bool) -> ActiviteSet {
+        if before {
+            return ActiviteSet(from: self.actSet.filter { ($0.dateActivite! as Date) <= date })
+        }
+        else {
+            return ActiviteSet(from: self.actSet.filter { ($0.dateActivite! as Date) > date })
+        }
+    }
+    
+    func sortByDate() {
+        return self.actSet.sort(by: { (act1, act2) -> Bool in
+            (act1.dateActivite! as Date) < (act2.dateActivite as Date)
+        })
+    }
 }

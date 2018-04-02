@@ -17,5 +17,6 @@ protocol TypeActiviteDAO {
     func getAll() -> [TypeActivite]?
     func delete(for activite: TypeActivite)
     func add(_ activite: TypeActivite)
+    func search( name : String ) -> TypeActivite?
 
 }
