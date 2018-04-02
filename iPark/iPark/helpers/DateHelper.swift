@@ -13,17 +13,39 @@ class DateHelper {
     static var cal = NSCalendar.current
     static var days = NSDateComponents()
     
-    static func getDates(dateD: NSDate, dateF: NSDate) -> [NSDate] {
-        var dates: [NSDate] = []
-        var dayCount = 1
+    static func getDates(dateD: Date, dateF: Date) -> [Date] {
+        var dates: [Date] = []
+        var dayCount = 0
         repeat {
             days.day = dayCount
-            var date:NSDate = cal.date(byAdding : days as DateComponents, to: dateD as Date)! as NSDate
-            date = DateHelper.removeSeconds(from: date as Date) as NSDate
+            var date: Date = cal.date(byAdding : days as DateComponents, to: dateD)!
+            date = DateHelper.removeSeconds(from: date)
             dayCount += 1
             dates.append(date)
-        } while (dates[dates.count - 1] as Date) <= (dateF as Date)
+        } while truncateToDay(from: dates[dates.count - 1]) < truncateToDay(from: dateF)
         return dates
+    }
+    
+    static func changeHour(date: Date, heureMin: Date) -> Date {
+        var component1 = cal.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        var component2 = cal.dateComponents([.hour, .minute, .second], from: heureMin)
+        component1.hour = component2.hour
+        component1.minute = component2.minute
+        component1.second = component2.second
+        let date = cal.date(from: component1)!
+        return date
+    }
+    
+    static func truncateToDay(from date: Date) -> Date {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        return calendar.date(from: components)!
+    }
+    
+    static func truncateToHour(from date: Date) -> Date {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day, .hour], from: date)
+        return calendar.date(from: components)!
     }
     
     static func removeSeconds(from date: Date) -> Date {

@@ -11,31 +11,27 @@ import Foundation
 public class DataHelper {
     
     fileprivate static let specDAO: SpecialiteDAO = CoreDataDAOFactory.getInstance().getSpecialiteDAO()
-    
     fileprivate static let typeActDAO: TypeActiviteDAO = CoreDataDAOFactory.getInstance().getTypeActiviteDAO()
+    fileprivate static let medicamentDAO: MedicamentDAO = CoreDataDAOFactory.getInstance().getMedicamentDAO()
 
     
     /// Lancer les seeds pour remplir la base de données
     static func seedCoreData() {
-        //seedMedicament()
+        seedMedicament()
         seedSpecialite()
-        specDAO.save()
         seedTypeActivite()
-        typeActDAO.save()
+        CoreDataManager.save()
+        print("\n CoreData seeded \n")
     }
     
     /// Remplir la base avec la liste des médicaments
-//    fileprivate static func seedMedicament(){
-//        let medicaments = MedicamentSeeder().medicaments
-//
-//        for medicament in medicaments {
-//            do{
-//                let _: Medicament = try Medicament.insert()
-//            }catch {
-//                fatalError("Error cannot populate DB")
-//            }
-//        }
-//    }
+    fileprivate static func seedMedicament(){
+        let medicaments = MedicamentSeeder().medicaments
+
+        for medicament in medicaments {
+            let _: Medicament = medicamentDAO.insert(forName: medicament.nom, withDoses: medicament.doses)
+        }
+    }
     
     /// Remplir la base avec la liste des types de soignant
     fileprivate static func seedSpecialite(){

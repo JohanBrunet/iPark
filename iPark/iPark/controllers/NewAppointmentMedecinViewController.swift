@@ -28,21 +28,21 @@ class NewAppointmentMedecinViewController:UIViewController, UIPickerViewDelegate
     
     // The number of columns of data
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-    return 1
+        return 1
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-    return 1
+        return 1
     }
     
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    return self.medecins!.count
+        return self.medecins!.count
     }
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    return self.medecins?.get(row)?.titledName
+        return self.medecins?.get(row)?.titledName
     }
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)  {

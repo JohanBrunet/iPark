@@ -55,7 +55,8 @@ class CoreDataPriseDAO: PriseDAO {
     }
     
     func search(forMed medicament: Medicament, withDose dose: String, withQuant quantity: Int, withRappel rappel: Date) -> Prise? {
-        self.request.predicate = NSPredicate(format: "medicament == %@ AND dose == %@ AND quantity == %@ AND rappel == %@", medicament, dose, quantity, rappel as CVarArg)
+        let quant = Int16(quantity)
+        self.request.predicate = NSPredicate(format: "quantite == %i AND dose == %@  AND medicament == %@ AND rappel == %@", quant, dose, medicament, rappel as CVarArg)
         do{
             let result = try CoreDataManager.context.fetch(self.request) as! [Prise]
             guard result.count != 0 else { return nil }
