@@ -26,6 +26,16 @@ class DateHelper {
         return dates
     }
     
+    static func getPreviousDay(from date: Date) -> Date {
+        days.day = -1
+        return cal.date(byAdding : days as DateComponents, to: date)!
+    }
+    
+    static func getNextDay(from date: Date) -> Date {
+        days.day = 1
+        return cal.date(byAdding : days as DateComponents, to: date)!
+    }
+    
     static func changeHour(date: Date, heureMin: Date) -> Date {
         var component1 = cal.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         var component2 = cal.dateComponents([.hour, .minute, .second], from: heureMin)

@@ -90,6 +90,11 @@ class CoreDataPriseDAO: PriseDAO {
             self.save()
         }
     }
+    
+    func realiserPrise(_ prise: Prise) {
+        prise.estPrise = true
+        self.save()
+    }
 
 }
 

@@ -30,6 +30,7 @@
 		04669182206FF67400550105 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04669181206FF67400550105 /* DateHelper.swift */; };
 		0466918420702BCE00550105 /* Medicament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466918320702BCE00550105 /* Medicament.swift */; };
 		0466918620702DCD00550105 /* Prise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466918520702DCD00550105 /* Prise.swift */; };
+		0482E0D72073D4FD002AEA2E /* PriseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482E0D62073D4FD002AEA2E /* PriseTableViewCell.swift */; };
 		04A7AA972069ADAC00C5A746 /* Specialite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7AA962069ADAC00C5A746 /* Specialite.swift */; };
 		04A7AA992069AF4E00C5A746 /* CoreDataSpecialiteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7AA982069AF4E00C5A746 /* CoreDataSpecialiteDAO.swift */; };
 		04A7AA9B2069AF5E00C5A746 /* SpecialiteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7AA9A2069AF5E00C5A746 /* SpecialiteDAO.swift */; };
@@ -83,7 +84,6 @@
 		D9FE6A832065AA71004D985A /* ActiviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A822065AA71004D985A /* ActiviteCell.swift */; };
 		D9FE6A852065B815004D985A /* AppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A842065B815004D985A /* AppointmentTableViewCell.swift */; };
 		D9FE6A872065BFB2004D985A /* LastActiviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A862065BFB1004D985A /* LastActiviteCell.swift */; };
-		D9FE6A8B2065C522004D985A /* MedicationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A8A2065C522004D985A /* MedicationCollectionViewCell.swift */; };
 		D9FE6A8F2065CBF0004D985A /* SymptomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE6A8E2065CBF0004D985A /* SymptomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +126,7 @@
 		04669181206FF67400550105 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		0466918320702BCE00550105 /* Medicament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicament.swift; sourceTree = "<group>"; };
 		0466918520702DCD00550105 /* Prise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prise.swift; sourceTree = "<group>"; };
+		0482E0D62073D4FD002AEA2E /* PriseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriseTableViewCell.swift; sourceTree = "<group>"; };
 		04A7AA962069ADAC00C5A746 /* Specialite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specialite.swift; sourceTree = "<group>"; };
 		04A7AA982069AF4E00C5A746 /* CoreDataSpecialiteDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSpecialiteDAO.swift; sourceTree = "<group>"; };
 		04A7AA9A2069AF5E00C5A746 /* SpecialiteDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialiteDAO.swift; sourceTree = "<group>"; };
@@ -186,7 +187,6 @@
 		D9FE6A822065AA71004D985A /* ActiviteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiviteCell.swift; sourceTree = "<group>"; };
 		D9FE6A842065B815004D985A /* AppointmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentTableViewCell.swift; sourceTree = "<group>"; };
 		D9FE6A862065BFB1004D985A /* LastActiviteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastActiviteCell.swift; sourceTree = "<group>"; };
-		D9FE6A8A2065C522004D985A /* MedicationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationCollectionViewCell.swift; sourceTree = "<group>"; };
 		D9FE6A8E2065CBF0004D985A /* SymptomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,11 +249,11 @@
 			children = (
 				046669AD20667278002E60BA /* MedecinCell.swift */,
 				D9FE6A8E2065CBF0004D985A /* SymptomTableViewCell.swift */,
-				D9FE6A8A2065C522004D985A /* MedicationCollectionViewCell.swift */,
 				D9FE6A862065BFB1004D985A /* LastActiviteCell.swift */,
 				D9FE6A842065B815004D985A /* AppointmentTableViewCell.swift */,
 				04FC93B4206A83E200DFFDB7 /* RendezVousCell.swift */,
 				D9FE6A822065AA71004D985A /* ActiviteCell.swift */,
+				0482E0D62073D4FD002AEA2E /* PriseTableViewCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -580,6 +580,7 @@
 				037EA50420714D7C00273734 /* NewActivityDateViewController.swift in Sources */,
 				04A7AAA52069B7F800C5A746 /* SpecialiteSet.swift in Sources */,
 				0432CF50205438DC002845E1 /* FirstLaunchViewController.swift in Sources */,
+				0482E0D72073D4FD002AEA2E /* PriseTableViewCell.swift in Sources */,
 				D96224A92062A6FA003E9D93 /* MyAppointmentViewController.swift in Sources */,
 				0411913420667A5700DC4473 /* MedecinSet.swift in Sources */,
 				D94478CE20610A38006A1521 /* PersonalInfoViewController.swift in Sources */,

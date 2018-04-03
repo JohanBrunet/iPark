@@ -58,6 +58,10 @@ class PriseSet {
         return PriseSet(from: self.priseSet.filter { DateHelper.truncateToDay(from: $0.rappelPrise) == DateHelper.truncateToDay(from: Date()) })
     }
     
+    func filterByDate(forDate date: Date) -> PriseSet {
+        return PriseSet(from: self.priseSet.filter { DateHelper.truncateToDay(from: $0.rappelPrise) == DateHelper.truncateToDay(from: date) })
+    }
+    
     func sortByDate() {
         return self.priseSet.sort(by: { (p1, p2) -> Bool in
             p1.rappelPrise <= p2.rappelPrise

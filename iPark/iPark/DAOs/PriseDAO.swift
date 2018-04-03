@@ -20,5 +20,6 @@ protocol PriseDAO {
     func getAll() -> [Prise]?
     func delete(for prise: Prise)
     func add(_ prise: Prise)
+    func realiserPrise(_ prise: Prise)
     
 }
