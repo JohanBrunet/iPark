@@ -10,6 +10,12 @@
 		037EA5002071177900273734 /* NewProposedActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037EA4FF2071177900273734 /* NewProposedActivityViewController.swift */; };
 		037EA502207129A500273734 /* TypeActivite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037EA501207129A500273734 /* TypeActivite.swift */; };
 		037EA50420714D7C00273734 /* NewActivityDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037EA50320714D7C00273734 /* NewActivityDateViewController.swift */; };
+		03B025362073BAAA00F27152 /* SymptomeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B025352073BAAA00F27152 /* SymptomeDAO.swift */; };
+		03B025382073C0C000F27152 /* CoreDataSymptomeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B025372073C0C000F27152 /* CoreDataSymptomeDAO.swift */; };
+		03B0253A2073C5B400F27152 /* Symptome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B025392073C5B400F27152 /* Symptome.swift */; };
+		03B0253C2073C7A400F27152 /* NewSymptomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B0253B2073C7A400F27152 /* NewSymptomViewController.swift */; };
+		03B0253E2073C7BD00F27152 /* NewSymptomEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B0253D2073C7BD00F27152 /* NewSymptomEventsViewController.swift */; };
+		03B025402073D00E00F27152 /* SymptomeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B0253F2073D00E00F27152 /* SymptomeSet.swift */; };
 		040E6C6F206BED7900D4C660 /* TypeActiviteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E6C6E206BED7900D4C660 /* TypeActiviteDAO.swift */; };
 		0411913420667A5700DC4473 /* MedecinSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E69FF72064E413003E9AA4 /* MedecinSet.swift */; };
 		04119136206681CE00DC4473 /* iPark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8AC6F20468FBE00A95DBA /* iPark.xcdatamodeld */; };
@@ -68,7 +74,6 @@
 		D981D8A42065373F00101FD4 /* NewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981D8A32065373F00101FD4 /* NewActivityViewController.swift */; };
 		D981D8A62065389400101FD4 /* PillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981D8A52065389400101FD4 /* PillsViewController.swift */; };
 		D981D8AA2065396600101FD4 /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981D8A92065396600101FD4 /* SymptomsViewController.swift */; };
-		D981D8AC206539F100101FD4 /* NewSymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981D8AB206539F100101FD4 /* NewSymptomsViewController.swift */; };
 		D981D8AE20653BCB00101FD4 /* NewMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981D8AD20653BCB00101FD4 /* NewMedicationViewController.swift */; };
 		D981D8B02065422700101FD4 /* ProposedActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981D8AF2065422700101FD4 /* ProposedActivitiesTableViewController.swift */; };
 		D9F993362066753600814AF3 /* CoreDataActiviteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F993352066753600814AF3 /* CoreDataActiviteDAO.swift */; };
@@ -103,6 +108,12 @@
 		037EA4FF2071177900273734 /* NewProposedActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProposedActivityViewController.swift; sourceTree = "<group>"; };
 		037EA501207129A500273734 /* TypeActivite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeActivite.swift; sourceTree = "<group>"; };
 		037EA50320714D7C00273734 /* NewActivityDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityDateViewController.swift; sourceTree = "<group>"; };
+		03B025352073BAAA00F27152 /* SymptomeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomeDAO.swift; sourceTree = "<group>"; };
+		03B025372073C0C000F27152 /* CoreDataSymptomeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSymptomeDAO.swift; sourceTree = "<group>"; };
+		03B025392073C5B400F27152 /* Symptome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symptome.swift; sourceTree = "<group>"; };
+		03B0253B2073C7A400F27152 /* NewSymptomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSymptomViewController.swift; sourceTree = "<group>"; };
+		03B0253D2073C7BD00F27152 /* NewSymptomEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSymptomEventsViewController.swift; sourceTree = "<group>"; };
+		03B0253F2073D00E00F27152 /* SymptomeSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomeSet.swift; sourceTree = "<group>"; };
 		040E6C6E206BED7900D4C660 /* TypeActiviteDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypeActiviteDAO.swift; path = iPark/DAOs/TypeActiviteDAO.swift; sourceTree = SOURCE_ROOT; };
 		0427204F2071A42E00F45C31 /* MedicamentSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicamentSet.swift; sourceTree = "<group>"; };
 		042720512071A43C00F45C31 /* PriseSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriseSet.swift; sourceTree = "<group>"; };
@@ -167,7 +178,6 @@
 		D981D8A32065373F00101FD4 /* NewActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityViewController.swift; sourceTree = "<group>"; };
 		D981D8A52065389400101FD4 /* PillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsViewController.swift; sourceTree = "<group>"; };
 		D981D8A92065396600101FD4 /* SymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsViewController.swift; sourceTree = "<group>"; };
-		D981D8AB206539F100101FD4 /* NewSymptomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSymptomsViewController.swift; sourceTree = "<group>"; };
 		D981D8AD20653BCB00101FD4 /* NewMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMedicationViewController.swift; sourceTree = "<group>"; };
 		D981D8AF2065422700101FD4 /* ProposedActivitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposedActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		D9F993352066753600814AF3 /* CoreDataActiviteDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataActiviteDAO.swift; sourceTree = "<group>"; };
@@ -221,11 +231,11 @@
 				D96224A42062A151003E9D93 /* CalendarViewController.swift */,
 				D96224A82062A6FA003E9D93 /* MyAppointmentViewController.swift */,
 				D96224A62062A1D4003E9D93 /* NewAppointmentMedecinViewController.swift */,
-				04FC93B6206A919A00DFFDB7 /* NewAppointmentDateViewController.swift */,
 				D981D8A52065389400101FD4 /* PillsViewController.swift */,
 				D96224AA2062A739003E9D93 /* NewMedicamentViewController.swift */,
 				D981D8A92065396600101FD4 /* SymptomsViewController.swift */,
-				D981D8AB206539F100101FD4 /* NewSymptomsViewController.swift */,
+				03B0253B2073C7A400F27152 /* NewSymptomViewController.swift */,
+				03B0253D2073C7BD00F27152 /* NewSymptomEventsViewController.swift */,
 				D981D8AD20653BCB00101FD4 /* NewMedicationViewController.swift */,
 				D981D8AF2065422700101FD4 /* ProposedActivitiesTableViewController.swift */,
 				04FC93B6206A919A00DFFDB7 /* NewAppointmentDateViewController.swift */,
@@ -252,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				04E69FF72064E413003E9AA4 /* MedecinSet.swift */,
+				03B0253F2073D00E00F27152 /* SymptomeSet.swift */,
 				04A7AAA42069B7F800C5A746 /* SpecialiteSet.swift */,
 				04FC93B2206A826D00DFFDB7 /* RendezVousSet.swift */,
 				D963BDCC206A71FD009B1466 /* ActiviteSet.swift */,
@@ -277,6 +288,7 @@
 			children = (
 				04D97EC9206119E8001BFAAA /* CoreDataDAO */,
 				04D97ECC206119E8001BFAAA /* MedecinDAO.swift */,
+				03B025352073BAAA00F27152 /* SymptomeDAO.swift */,
 				040E6C6E206BED7900D4C660 /* TypeActiviteDAO.swift */,
 				D9F99337206675B000814AF3 /* ActiviteDAO.swift */,
 				04A7AA9A2069AF5E00C5A746 /* SpecialiteDAO.swift */,
@@ -291,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				046669AA20665355002E60BA /* CoreDataMedecinDAO.swift */,
+				03B025372073C0C000F27152 /* CoreDataSymptomeDAO.swift */,
 				D9F993352066753600814AF3 /* CoreDataActiviteDAO.swift */,
 				04A7AA982069AF4E00C5A746 /* CoreDataSpecialiteDAO.swift */,
 				04FC93B0206A804900DFFDB7 /* CoreDataRendezVousDAO.swift */,
@@ -313,12 +326,10 @@
 			isa = PBXGroup;
 			children = (
 				04E69FF52064E3FE003E9AA4 /* Medecin.swift */,
+				03B025392073C5B400F27152 /* Symptome.swift */,
 				04A7AA962069ADAC00C5A746 /* Specialite.swift */,
 				D9F993392066762900814AF3 /* Activite.swift */,
 				04FC93AC206A7E4800DFFDB7 /* RendezVous.swift */,
-				037EA501207129A500273734 /* TypeActivite.swift */,
-				0466918320702BCE00550105 /* Medicament.swift */,
-				0466918520702DCD00550105 /* Prise.swift */,
 				037EA501207129A500273734 /* TypeActivite.swift */,
 				0466918320702BCE00550105 /* Medicament.swift */,
 				0466918520702DCD00550105 /* Prise.swift */,
@@ -552,10 +563,12 @@
 				04FC93B3206A826D00DFFDB7 /* RendezVousSet.swift in Sources */,
 				D9FE6A852065B815004D985A /* AppointmentTableViewCell.swift in Sources */,
 				04EA50D02070CE06005E5804 /* PriseDAO.swift in Sources */,
+				03B0253E2073C7BD00F27152 /* NewSymptomEventsViewController.swift in Sources */,
 				0466918420702BCE00550105 /* Medicament.swift in Sources */,
 				D9FE6A872065BFB2004D985A /* LastActiviteCell.swift in Sources */,
 				D962249D20629F37003E9D93 /* MyActivitiesViewController.swift in Sources */,
 				04119136206681CE00DC4473 /* iPark.xcdatamodeld in Sources */,
+				03B0253A2073C5B400F27152 /* Symptome.swift in Sources */,
 				04D97ED220611A43001BFAAA /* CoreDataDAOFactory.swift in Sources */,
 				D9FE6A8F2065CBF0004D985A /* SymptomTableViewCell.swift in Sources */,
 				042720522071A43C00F45C31 /* PriseSet.swift in Sources */,
@@ -592,12 +605,15 @@
 				D96224AB2062A739003E9D93 /* NewMedicamentViewController.swift in Sources */,
 				D9F993362066753600814AF3 /* CoreDataActiviteDAO.swift in Sources */,
 				037EA502207129A500273734 /* TypeActivite.swift in Sources */,
+				03B0253C2073C7A400F27152 /* NewSymptomViewController.swift in Sources */,
 				04D97ECD206119E8001BFAAA /* CoreDataManager.swift in Sources */,
 				D962249F20629F82003E9D93 /* DoctorViewController.swift in Sources */,
+				03B025362073BAAA00F27152 /* SymptomeDAO.swift in Sources */,
 				040E6C6F206BED7900D4C660 /* TypeActiviteDAO.swift in Sources */,
-				D981D8AC206539F100101FD4 /* NewSymptomsViewController.swift in Sources */,
+				03B025382073C0C000F27152 /* CoreDataSymptomeDAO.swift in Sources */,
 				046669A920664C32002E60BA /* FormValidator.swift in Sources */,
 				0432CF5220543A83002845E1 /* HomeViewController.swift in Sources */,
+				03B025402073D00E00F27152 /* SymptomeSet.swift in Sources */,
 				04D9A08A20726F5E008D1912 /* NewMedicationRappelViewController.swift in Sources */,
 				D963BDCD206A71FD009B1466 /* ActiviteSet.swift in Sources */,
 				04A7AA972069ADAC00C5A746 /* Specialite.swift in Sources */,
