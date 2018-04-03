@@ -74,11 +74,15 @@ class RendezVousSet {
     
     func filterByDate(for date: Date, before: Bool) -> RendezVousSet {
         if before {
-            return RendezVousSet(from: self.rdvSet.filter { $0.dateRDV <= date })
+            return RendezVousSet(from: self.rdvSet.filter { DateHelper.truncateToDay(from: $0.dateRDV) < DateHelper.truncateToDay(from: date) })
         }
         else {
-            return RendezVousSet(from: self.rdvSet.filter { $0.dateRDV > date })
+            return RendezVousSet(from: self.rdvSet.filter { DateHelper.truncateToDay(from: $0.dateRDV) > DateHelper.truncateToDay(from: date) })
         }
+    }
+    
+    func getTodaysRDV() -> RendezVousSet {
+        return RendezVousSet(from: self.rdvSet.filter { DateHelper.truncateToDay(from: $0.dateRDV) == DateHelper.truncateToDay(from: Date()) })
     }
     
     func sortByDate() {

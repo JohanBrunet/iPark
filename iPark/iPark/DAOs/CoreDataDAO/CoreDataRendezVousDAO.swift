@@ -71,6 +71,7 @@ class CoreDataRendezVousDAO: RendezVousDAO {
     
     func delete(for rdv: RendezVous) {
         CoreDataManager.context.delete(rdv)
+        self.save()
     }
     
     func add(_ rdv: RendezVous) {

@@ -12,6 +12,7 @@ import UIKit
 class CalendarViewController:UIViewController,  UITableViewDelegate, UITableViewDataSource {
     
     let PAST_TITLE: String = "Vos précédents rendez-vous"
+    let TODAY_TITLE: String = "Vos rendez-vous aujourd'hui"
     let FUTUR_TITLE: String = "Vos prochains rendez-vous"
 
     @IBOutlet weak var filterButton: UISegmentedControl!
@@ -23,23 +24,26 @@ class CalendarViewController:UIViewController,  UITableViewDelegate, UITableView
         super.viewDidLoad()
         
         self.filterButton.selectedSegmentIndex = 1
-        self.rdvs = RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: false)
+        self.rdvs = RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).getTodaysRDV()
         self.rdvs?.sortByDate()
         self.rdvTableView.delegate = self
         self.rdvTableView.dataSource = self
     }
-    
+
     @IBAction func filterResults(_ sender: Any) {
         switch self.filterButton.selectedSegmentIndex {
-            case 0:
-                self.pageTitle.text = PAST_TITLE
-                self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: true)
-            case 1:
-                self.pageTitle.text = FUTUR_TITLE
-                self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: false)
-            default:
-                self.pageTitle.text = PAST_TITLE
-                self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: true)
+        case 0:
+            self.pageTitle.text = PAST_TITLE
+            self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: true)
+        case 1:
+            self.pageTitle.text = TODAY_TITLE
+            self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).getTodaysRDV()
+        case 2:
+            self.pageTitle.text = FUTUR_TITLE
+            self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: false)
+        default:
+            self.pageTitle.text = TODAY_TITLE
+            self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).getTodaysRDV()
         }
         
         self.rdvs?.sortByDate()
@@ -70,6 +74,7 @@ class CalendarViewController:UIViewController,  UITableViewDelegate, UITableView
         if let med = rdv.med {
             cell.nomMedecin.text! = med.titledName
         }
+        
         // Create date formatter
         let dateFormatter: DateFormatter = DateFormatter()
         
@@ -98,24 +103,27 @@ class CalendarViewController:UIViewController,  UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let rdv: RendezVous = (self.rdvs?.get(indexPath.row))!
-            self.rdvs?.remove(rdv)
             let notifID: String = (rdv.med?.nom)! + DateHelper.formatDate(date: (rdv.dateRDV), pattern: "ddMMyyyyHHmm")
             AppDelegate.notification.removeNotification(identifier: [notifID])
+            self.rdvs?.remove(rdv)
             self.rdvTableView.reloadData()
         }
     }
     
     @IBAction func unwindFromAddRDV(segue: UIStoryboardSegue) {
         switch self.filterButton.selectedSegmentIndex {
-            case 0:
-                self.pageTitle.text = PAST_TITLE
-                self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: true)
-            case 1:
-                self.pageTitle.text = FUTUR_TITLE
-                self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: false)
-            default:
-                self.pageTitle.text = PAST_TITLE
-                self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: true)
+        case 0:
+            self.pageTitle.text = PAST_TITLE
+            self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: true)
+        case 1:
+            self.pageTitle.text = TODAY_TITLE
+            self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).getTodaysRDV()
+        case 2:
+            self.pageTitle.text = FUTUR_TITLE
+            self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).filterByDate(for: Date(), before: false)
+        default:
+            self.pageTitle.text = TODAY_TITLE
+            self.rdvs =  RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()!).getTodaysRDV()
         }
         
         self.rdvs?.sortByDate()

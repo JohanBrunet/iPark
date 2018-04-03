@@ -41,4 +41,12 @@ class CoreDataDAOFactory {
         return CoreDataTypeActiviteDAO()
     }
     
+    func getMedicamentDAO() -> MedicamentDAO {
+        return CoreDataMedicamentDAO()
+    }
+    
+    func getPriseDAO() -> PriseDAO {
+        return CoreDataPriseDAO()
+    }
+    
 }

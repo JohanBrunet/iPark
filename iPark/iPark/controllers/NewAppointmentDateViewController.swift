@@ -18,6 +18,7 @@ class NewAppointmentDateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.rappel.countDownDuration = 0
+        self.rappel .locale = Locale(identifier: "fr_FR")
     }
     
     @IBAction func submitForm(_ sender: Any) {
@@ -25,14 +26,11 @@ class NewAppointmentDateViewController: UIViewController {
         let tempsPrep = -self.rappel.countDownDuration
         let dateRappel = date.addingTimeInterval(tempsPrep)
         self.newRDV = RendezVous(for: date, rappel: dateRappel, with: self.medecin!)
-        let dateRDVFormatted = DateHelper.formatDate(date: (self.newRDV?.dateRDV)!, pattern: "ddMMyyyyHHmm")
-        let rappelString = DateHelper.getRappelString(rdv: date, rappel: dateRappel)
-        let notifID: String = (self.newRDV?.med?.nom)! + dateRDVFormatted
+        
+        let notifID: String = (self.newRDV?.med?.nom)! + DateHelper.formatDate(date: (self.newRDV?.dateRDV)!, pattern: "ddMMyyyyHHmm")
         let notifTitle: String = "Rendez-vous"
-        let notifBody: String =  "Vous avez rendez-vous avec " + (self.newRDV?.med?.titledName)! + " dans " + rappelString
-        print("ID : " + notifID)
-        print("Body : " + notifBody)
-        AppDelegate.notification.addNotification(identifier: notifID, title: notifTitle, body: notifBody, date: dateRappel)
+        let notifBody: String =  "Vous avez rendez-vous avec " + (self.newRDV?.med?.titledName)! + " dans " + DateHelper.getRappelString(rdv: date, rappel: dateRappel)
+        AppDelegate.notification.addNotification(identifier: notifID, title: notifTitle, body: notifBody, date: DateHelper.removeSeconds(from: dateRappel))
         self.performSegue(withIdentifier: "showRDVList", sender: self)
     }
     
@@ -40,8 +38,11 @@ class NewAppointmentDateViewController: UIViewController {
         let destinationVC = segue.destination as! CalendarViewController
         destinationVC.rdvs?.add(newRDV!)
         var filter: Int = 0
-        if (newRDV?.dateRDV)! > Date() {
+        if (DateHelper.truncateToDay(from: (newRDV?.dateRDV)!)) == DateHelper.truncateToDay(from: Date()) {
             filter = 1
+        }
+        if (DateHelper.truncateToDay(from: (newRDV?.dateRDV)!)) > DateHelper.truncateToDay(from: Date()) {
+            filter = 2
         }
         destinationVC.filterButton.selectedSegmentIndex = filter
     }
