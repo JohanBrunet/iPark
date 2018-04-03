@@ -1449,7 +1449,7 @@
                                                 <connections>
                                                     <outlet property="dateLabel" destination="tPC-OR-BDk" id="WAM-4e-vPK"/>
                                                     <outlet property="etatLabel" destination="oI1-b7-G5c" id="H11-BR-RZy"/>
-                                                    <segue destination="0wi-KG-aiU" kind="show" id="VXF-0l-MKv"/>
+                                                    <segue destination="0wi-KG-aiU" kind="show" identifier="showSymptom" id="VXF-0l-MKv"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -1504,10 +1504,10 @@
             </objects>
             <point key="canvasLocation" x="-2303.1999999999998" y="-479.01049475262374"/>
         </scene>
-        <!--View Controller-->
+        <!--My Symptom View Controller-->
         <scene sceneID="K7i-LX-ftk">
             <objects>
-                <viewController storyboardIdentifier="monEtat" id="0wi-KG-aiU" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="monEtat" id="0wi-KG-aiU" customClass="MySymptomViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mc4-3Z-Rrd"/>
                         <viewControllerLayoutGuide type="bottom" id="Ebf-Rh-FRl"/>
@@ -1628,6 +1628,15 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cGt-vj-glU" secondAttribute="trailing" constant="20" symbolic="YES" id="sne-yR-FW9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="5tn-YS-9XW" id="gA3-gz-Gve"/>
+                        <outlet property="etatLabel" destination="R4T-P9-6H3" id="CQn-iY-gAc"/>
+                        <outlet property="event1Label" destination="nAZ-A2-gEo" id="Okk-v9-fJP"/>
+                        <outlet property="event2Label" destination="Tdt-va-qvY" id="JXf-gl-iqf"/>
+                        <outlet property="event3Label" destination="hlQ-0w-HoN" id="j9y-T5-gXM"/>
+                        <outlet property="event4Label" destination="pwV-54-9tn" id="3u8-eT-NwO"/>
+                        <outlet property="event5Label" destination="0ZX-an-qP8" id="IpA-LO-ChN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4t-R5-nXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

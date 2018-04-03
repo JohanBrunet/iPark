@@ -10,6 +10,7 @@
 		037EA5002071177900273734 /* NewProposedActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037EA4FF2071177900273734 /* NewProposedActivityViewController.swift */; };
 		037EA502207129A500273734 /* TypeActivite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037EA501207129A500273734 /* TypeActivite.swift */; };
 		037EA50420714D7C00273734 /* NewActivityDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037EA50320714D7C00273734 /* NewActivityDateViewController.swift */; };
+		0393438A207417A500B35427 /* MySymptomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03934389207417A500B35427 /* MySymptomViewController.swift */; };
 		03B025362073BAAA00F27152 /* SymptomeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B025352073BAAA00F27152 /* SymptomeDAO.swift */; };
 		03B025382073C0C000F27152 /* CoreDataSymptomeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B025372073C0C000F27152 /* CoreDataSymptomeDAO.swift */; };
 		03B0253A2073C5B400F27152 /* Symptome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B025392073C5B400F27152 /* Symptome.swift */; };
@@ -108,6 +109,7 @@
 		037EA4FF2071177900273734 /* NewProposedActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProposedActivityViewController.swift; sourceTree = "<group>"; };
 		037EA501207129A500273734 /* TypeActivite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeActivite.swift; sourceTree = "<group>"; };
 		037EA50320714D7C00273734 /* NewActivityDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityDateViewController.swift; sourceTree = "<group>"; };
+		03934389207417A500B35427 /* MySymptomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySymptomViewController.swift; sourceTree = "<group>"; };
 		03B025352073BAAA00F27152 /* SymptomeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomeDAO.swift; sourceTree = "<group>"; };
 		03B025372073C0C000F27152 /* CoreDataSymptomeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSymptomeDAO.swift; sourceTree = "<group>"; };
 		03B025392073C5B400F27152 /* Symptome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symptome.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				0432CF4F205438DC002845E1 /* FirstLaunchViewController.swift */,
+				03934389207417A500B35427 /* MySymptomViewController.swift */,
 				0432CF5120543A83002845E1 /* HomeViewController.swift */,
 				D94478CD20610A38006A1521 /* PersonalInfoViewController.swift */,
 				D962249E20629F82003E9D93 /* DoctorViewController.swift */,
@@ -614,6 +617,7 @@
 				03B025382073C0C000F27152 /* CoreDataSymptomeDAO.swift in Sources */,
 				046669A920664C32002E60BA /* FormValidator.swift in Sources */,
 				0432CF5220543A83002845E1 /* HomeViewController.swift in Sources */,
+				0393438A207417A500B35427 /* MySymptomViewController.swift in Sources */,
 				03B025402073D00E00F27152 /* SymptomeSet.swift in Sources */,
 				04D9A08A20726F5E008D1912 /* NewMedicationRappelViewController.swift in Sources */,
 				D963BDCD206A71FD009B1466 /* ActiviteSet.swift in Sources */,

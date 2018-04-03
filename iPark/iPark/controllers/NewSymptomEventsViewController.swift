@@ -18,7 +18,7 @@ class NewSymptomEventsViewController: UIViewController {
     
     var etat : String? = nil
     var date : NSDate? = nil
-    var evenements : [String]? = nil
+    var evenements : [String] = []
     var newSymptome : Symptome? = nil
 
     override func viewDidLoad() {
@@ -43,20 +43,21 @@ class NewSymptomEventsViewController: UIViewController {
     
     @IBAction func submitForm(_ sender: Any) {
         if somnolence.isOn{
-            evenements?.append("somnolence")
+            self.evenements.append("somnolence")
         }
         if chute.isOn{
-            evenements?.append("chute")
+            self.evenements.append("chute")
         }
         if priseDispersible.isOn{
-            evenements?.append("prise dispersible")
+            self.evenements.append("prise dispersible")
         }
         if hallucination.isOn{
-            evenements?.append("hallucination")
+            self.evenements.append("hallucination")
         }
         if clic.isOn{
-            evenements?.append("clic")
+            self.evenements.append("clic")
         }
+        print(evenements)
         self.newSymptome = Symptome(etat: self.etat!, date: self.date!, ev : self.evenements)
         self.performSegue(withIdentifier: "showAllSymptoms", sender: self)
     }

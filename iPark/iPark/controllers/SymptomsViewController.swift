@@ -35,7 +35,29 @@ class SymptomsViewController:UIViewController, UITableViewDataSource, UICollecti
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let symp: Symptome = (self.symptoms?.get(indexPath.row))!
+            self.symptoms?.remove(symp)
+            self.SymptomsTableView.reloadData()
+        }
+    }
+    
     @IBAction func unwindFromAddSymptom(segue: UIStoryboardSegue){
         SymptomsTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "showSymptom" {
+            if let indexPath = self.SymptomsTableView.indexPathForSelectedRow {
+                let mySymptomViewController = segue.destination as! MySymptomViewController
+                mySymptomViewController.etat = self.symptoms?.get(indexPath.row)?.etatPatient
+                mySymptomViewController.date = self.symptoms?.get(indexPath.row)?.dateSymptome
+                /*if self.symptoms!.get(indexPath.row)!.evenements != nil{
+                    mySymptomViewController.evenements = self.symptoms!.get(indexPath.row)!.evenements as! [String]
+                }*/
+                mySymptomViewController.symptom = self.symptoms!.get(indexPath.row)!
+            }
+        }
     }
 }
