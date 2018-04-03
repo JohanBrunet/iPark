@@ -27,7 +27,6 @@ class NewMedicationRappelViewController: UIViewController {
         let prise: Date = DateHelper.changeHour(date: Date(), heureMin: self.heurePrise.date)
         let rappel: Date = DateHelper.changeHour(date: self.finTraitement.date, heureMin: self.heurePrise.date)
         let datesRappels: [Date] = DateHelper.getDates(dateD: prise, dateF: rappel)
-        print(datesRappels)
         for dr in datesRappels {
             let np = Prise(forMed: self.medicament!, withDose: self.dose!, withQuant: Int(self.quantite!)!, at: dr)
             self.newPrises.append(np)

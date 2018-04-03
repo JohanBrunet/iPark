@@ -82,7 +82,7 @@ class NewMedicationViewController:UIViewController, UIPickerViewDelegate, UIPick
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! NewMedicationRappelViewController
         destinationVC.medicament = self.medicamentPicked
-        destinationVC.dose = self.dosePicked
+        destinationVC.dose = (self.dosePicked != nil) ? self.dosePicked : self.medicamentPicked?.doses[0]
         destinationVC.quantite = Int(self.stepper.value).description
     }
     
