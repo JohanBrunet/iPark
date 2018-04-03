@@ -43,19 +43,19 @@ class NewSymptomEventsViewController: UIViewController {
     
     @IBAction func submitForm(_ sender: Any) {
         if somnolence.isOn{
-            evenements!.append("somnolence")
+            evenements?.append("somnolence")
         }
         if chute.isOn{
-            evenements!.append("chute")
+            evenements?.append("chute")
         }
         if priseDispersible.isOn{
-            evenements!.append("prise dispersible")
+            evenements?.append("prise dispersible")
         }
         if hallucination.isOn{
-            evenements!.append("hallucination")
+            evenements?.append("hallucination")
         }
         if clic.isOn{
-            evenements!.append("clic")
+            evenements?.append("clic")
         }
         self.newSymptome = Symptome(etat: self.etat!, date: self.date!, ev : self.evenements)
         self.performSegue(withIdentifier: "showAllSymptoms", sender: self)

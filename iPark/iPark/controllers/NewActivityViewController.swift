@@ -46,7 +46,7 @@ class NewActivityViewController:UIViewController, UIPickerViewDelegate, UIPicker
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if row == activites!.count + 1 {
+        if row == activites!.count {
             return "Autre Activité"
         }
         else {

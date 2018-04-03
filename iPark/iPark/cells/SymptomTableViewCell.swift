@@ -9,10 +9,10 @@
 import UIKit
 
 class SymptomTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var StateLabel: UILabel!
-    @IBOutlet weak var DateLabel: UILabel!
-    @IBOutlet weak var TimeLabel: UILabel!
+    
+    @IBOutlet weak var etatLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
