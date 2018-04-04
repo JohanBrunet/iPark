@@ -18,8 +18,24 @@ class SymptomsViewController:UIViewController, UITableViewDataSource, UICollecti
     @IBOutlet weak var SymptomsTableView: UITableView!
     
     override func viewDidLoad() {
+        if !rdvNeuroInFiveDays() {
+            self.AddSymptoms.isHidden = true
+        }
         symptoms = SymptomeSet( from : CoreDataDAOFactory.getInstance().getSymptomeDAO().getAll())
         SymptomsTableView.reloadData()
+    }
+    
+    func rdvNeuroInFiveDays() -> Bool{
+        var isBetween: Bool = false
+        let nextRDVsNeuro = RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()).filterBySpecialite(for: "neurologue").filterByDate(for : Date(), before: false)
+        if nextRDVsNeuro.count > 0 {
+            nextRDVsNeuro.sortByDate()
+            let nextRDVNeuro = nextRDVsNeuro.get(0)
+            let nextRDVNeuroDate = DateHelper.truncateToDay(from: (nextRDVNeuro?.dateRDV)!)
+            let fiveDaysBefore = DateHelper.truncateToDay(from: DateHelper.addDays(add: -5, to: (nextRDVNeuro?.dateRDV)!))
+            isBetween = (fiveDaysBefore ... nextRDVNeuroDate).contains(DateHelper.truncateToDay(from: Date()))
+        }
+        return isBetween
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

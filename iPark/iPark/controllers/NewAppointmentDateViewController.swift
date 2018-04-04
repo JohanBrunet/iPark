@@ -30,7 +30,7 @@ class NewAppointmentDateViewController: UIViewController {
         let notifID: String = (self.newRDV?.med?.nom)! + DateHelper.formatDate(date: (self.newRDV?.dateRDV)!, pattern: "ddMMyyyyHHmm")
         let notifTitle: String = "Rendez-vous"
         let notifBody: String =  "Vous avez rendez-vous avec " + (self.newRDV?.med?.titledName)! + " dans " + DateHelper.getRappelString(rdv: date, rappel: dateRappel)
-        AppDelegate.notification.addNotification(identifier: notifID, title: notifTitle, body: notifBody, date: DateHelper.removeSeconds(from: dateRappel))
+        AppDelegate.notification.addNotification(identifier: notifID, title: notifTitle, body: notifBody, date: DateHelper.removeSeconds(from: dateRappel), repeatable: false)
         self.performSegue(withIdentifier: "showRDVList", sender: self)
     }
     

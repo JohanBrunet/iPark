@@ -23,12 +23,12 @@ class MyNotificationCenter {
         AppDelegate.center.setNotificationCategories([category])
     }
     
-    func addNotification(identifier:String, title:String,body:String,date:Date) {
+    func addNotification(identifier:String, title:String,body:String,date:Date, repeatable: Bool) {
         if date > Date() {
             content.title = title
             content.body = body
             content.sound = UNNotificationSound.default()
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: date.timeIntervalSince(Date()), repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: date.timeIntervalSince(Date()), repeats: repeatable)
             let identifier = identifier
             let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
             AppDelegate.center.add(request, withCompletionHandler: { (error) in

@@ -26,6 +26,12 @@ class DateHelper {
         return dates
     }
     
+    static func addDays(add nbDays: Int, to dayD: Date) -> Date {
+        days.day = nbDays
+        days.hour = 0
+        return cal.date(byAdding : days as DateComponents, to: dayD as Date)! as Date
+    }
+    
     static func getPreviousDay(from date: Date) -> Date {
         days.day = -1
         return cal.date(byAdding : days as DateComponents, to: date)!

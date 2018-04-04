@@ -107,7 +107,7 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="klm-aL-BVJ">
                                 <rect key="frame" x="0.0" y="338" width="375" height="239"/>
                                 <date key="date" timeIntervalSinceReferenceDate="542711608.02056301">
-                                    <!--2018-03-14 09:13:28 +0000-->
+                                    <!--2018-03-14 9:13:28 AM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr_FR"/>
                             </datePicker>
@@ -654,7 +654,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 minutes avant" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dls-qs-xVx">
-                                <rect key="frame" x="112" y="509" width="151" height="24"/>
+                                <rect key="frame" x="112" y="509" width="151" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="E0E-A3-zAV"/>
                                 </constraints>
@@ -662,8 +662,8 @@
                                 <color key="textColor" red="0.1412163887" green="0.1520974954" blue="0.77248623699999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7s-sw-RMD">
-                                <rect key="frame" x="310" y="503" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7s-sw-RMD">
+                                <rect key="frame" x="308" y="509" width="51" height="31"/>
                                 <connections>
                                     <action selector="manageNotification:" destination="fM4-7h-u7Q" eventType="valueChanged" id="9bQ-QT-hTn"/>
                                 </connections>
@@ -675,20 +675,22 @@
                             <constraint firstItem="mkz-Yz-K4J" firstAttribute="top" secondItem="YqS-Be-VeI" secondAttribute="bottom" constant="10" id="7N6-ca-31J"/>
                             <constraint firstItem="fMt-EX-JDV" firstAttribute="leading" secondItem="YqS-Be-VeI" secondAttribute="leading" id="7bf-gZ-kce"/>
                             <constraint firstItem="ibJ-N8-mhy" firstAttribute="top" secondItem="JxW-jK-7pD" secondAttribute="bottom" constant="10" id="80T-4w-qnT"/>
-                            <constraint firstItem="d7s-sw-RMD" firstAttribute="centerY" secondItem="dls-qs-xVx" secondAttribute="centerY" id="E6R-P0-LG5"/>
                             <constraint firstItem="JxW-jK-7pD" firstAttribute="leading" secondItem="YqS-Be-VeI" secondAttribute="leading" id="EKa-7N-f0k"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fMt-EX-JDV" secondAttribute="trailing" constant="20" symbolic="YES" id="EZb-Fv-tw2"/>
                             <constraint firstItem="SfC-tc-ews" firstAttribute="leading" secondItem="YqS-Be-VeI" secondAttribute="leading" id="EaR-rS-xI2"/>
                             <constraint firstItem="KcB-Pv-AbR" firstAttribute="centerX" secondItem="vYX-9Q-ugr" secondAttribute="centerX" id="Evz-ql-AhO"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SfC-tc-ews" secondAttribute="trailing" constant="20" symbolic="YES" id="G5Z-MO-IHc"/>
                             <constraint firstItem="y1c-W6-clm" firstAttribute="top" secondItem="fMt-EX-JDV" secondAttribute="bottom" constant="25" id="HfE-Gs-iLZ"/>
+                            <constraint firstItem="d7s-sw-RMD" firstAttribute="leading" secondItem="dls-qs-xVx" secondAttribute="trailing" constant="45" id="HrY-qf-FpH"/>
                             <constraint firstItem="JxW-jK-7pD" firstAttribute="top" secondItem="fMt-EX-JDV" secondAttribute="bottom" constant="80" id="HwJ-5i-4Vc"/>
                             <constraint firstItem="y1c-W6-clm" firstAttribute="centerX" secondItem="vYX-9Q-ugr" secondAttribute="centerX" id="Ito-OI-EbD"/>
+                            <constraint firstItem="d7s-sw-RMD" firstAttribute="bottom" secondItem="dls-qs-xVx" secondAttribute="bottom" id="Lfa-Yf-CUI"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JxW-jK-7pD" secondAttribute="trailing" constant="20" symbolic="YES" id="P6j-px-cBn"/>
                             <constraint firstItem="YqS-Be-VeI" firstAttribute="leading" secondItem="vYX-9Q-ugr" secondAttribute="leadingMargin" id="ULd-0s-kY3"/>
                             <constraint firstItem="dls-qs-xVx" firstAttribute="top" secondItem="cK3-PO-m82" secondAttribute="bottom" constant="10" id="VpJ-Vk-Dee"/>
                             <constraint firstItem="YqS-Be-VeI" firstAttribute="top" secondItem="KcB-Pv-AbR" secondAttribute="bottom" constant="50" id="Ww6-Cm-9Q5"/>
                             <constraint firstItem="KcB-Pv-AbR" firstAttribute="top" secondItem="rPd-o9-Neq" secondAttribute="bottom" constant="10" id="ZDJ-ym-sR4"/>
+                            <constraint firstItem="d7s-sw-RMD" firstAttribute="top" secondItem="dls-qs-xVx" secondAttribute="top" id="c7d-YG-bI9"/>
                             <constraint firstItem="dls-qs-xVx" firstAttribute="centerX" secondItem="vYX-9Q-ugr" secondAttribute="centerX" id="e74-Vh-eth"/>
                             <constraint firstItem="SfC-tc-ews" firstAttribute="top" secondItem="YqS-Be-VeI" secondAttribute="bottom" constant="50" id="koH-jk-k0C"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YqS-Be-VeI" secondAttribute="trailing" constant="20" symbolic="YES" id="lHl-hT-La3"/>
@@ -1448,7 +1450,7 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9jm-Dc-c0X">
                                 <rect key="frame" x="0.0" y="199.5" width="375" height="227.5"/>
                                 <date key="date" timeIntervalSinceReferenceDate="543225695.85734999">
-                                    <!--2018-03-20 08:01:35 +0000-->
+                                    <!--2018-03-20 8:01:35 AM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>
@@ -2550,6 +2552,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dYy-5I-5UO">
+                                <rect key="frame" x="16" y="367" width="343" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="9WE-Zl-rI8"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="543241750.40723705">
+                                    <!--2018-03-20 12:29:10 PM +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="fr"/>
+                            </datePicker>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gAK-P9-pEb">
+                                <rect key="frame" x="152" y="557" width="194" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Hxd-VR-S64"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.7980760643" green="0.84822734239999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -2620,7 +2641,7 @@
                                     <constraint firstAttribute="height" constant="130" id="2e0-6H-GeI"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="543193414.20015001">
-                                    <!--2018-03-19 23:03:34 +0000-->
+                                    <!--2018-03-19 11:03:34 PM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr_FR"/>
                             </datePicker>
@@ -2645,7 +2666,7 @@
                                     <constraint firstAttribute="height" constant="130" id="b9H-nq-9fA"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="543193414.20015001">
-                                    <!--2018-03-19 23:03:34 +0000-->
+                                    <!--2018-03-19 11:03:34 PM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr_FR"/>
                             </datePicker>
@@ -2980,7 +3001,7 @@
                             <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NBY-kb-cNB">
                                 <rect key="frame" x="16" y="165" width="343" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="542714521.85017204">
-                                    <!--2018-03-14 10:02:01 +0000-->
+                                    <!--2018-03-14 10:02:01 AM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr_FR"/>
                             </datePicker>
@@ -3017,7 +3038,7 @@
                                     <constraint firstAttribute="width" secondItem="obr-zY-mF1" secondAttribute="height" multiplier="40:27" id="QX6-84-q19"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="543848916.99181998">
-                                    <!--2018-03-27 13:08:36 +0000-->
+                                    <!--2018-03-27 1:08:36 PM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>
@@ -3192,7 +3213,7 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fO7-g2-K75">
                                 <rect key="frame" x="16" y="194" width="343" height="223"/>
                                 <date key="date" timeIntervalSinceReferenceDate="543241750.40723705">
-                                    <!--2018-03-20 12:29:10 +0000-->
+                                    <!--2018-03-20 12:29:10 PM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>

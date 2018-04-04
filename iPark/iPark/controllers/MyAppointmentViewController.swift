@@ -56,7 +56,7 @@ class MyAppointmentViewController:UIViewController{
                     let notifBody: String =  "Vous avez rendez-vous avec " + (self.rdv?.med?.titledName)! + "dans " + rappelString
                     print("ID : " + notifID)
                     print("Body : " + notifBody)
-                    AppDelegate.notification.addNotification(identifier: notifID, title: notifTitle, body: notifBody, date: DateHelper.removeSeconds(from: rappel))
+                    AppDelegate.notification.addNotification(identifier: notifID, title: notifTitle, body: notifBody, date: DateHelper.removeSeconds(from: rappel), repeatable: false)
                 }
                 else {
                     let notifID: String = (self.rdv?.med?.nom)! + dateFormatted

@@ -29,6 +29,13 @@ class ReporterPriseViewController: UIViewController {
         self.performSegue(withIdentifier: "decalerPrise", sender: self)
     }
     
+    func ajouterNotif() {
+        let notifID: String = self.newPrise!.med.nom + DateHelper.formatDate(date: self.newPrise!.rappelPrise, pattern: "ddMMyyyyHHmm")
+        let notifTitle: String = "Prise de médicament"
+        let notifBody: String =  "Il est l'heure de prendre vos " + self.newPrise!.quantiteMed.description + " comprimés de " + self.newPrise!.med.nom + " " + self.newPrise!.doseMed
+        AppDelegate.notification.addNotification(identifier: notifID, title: notifTitle, body: notifBody, date: DateHelper.removeSeconds(from: (self.newPrise?.rappelPrise)!), repeatable: false)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! PillsViewController
         destinationVC.medications?.add(self.newPrise!)

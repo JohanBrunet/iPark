@@ -81,6 +81,10 @@ class RendezVousSet {
         }
     }
     
+    func filterBySpecialite(for specialite: String) -> RendezVousSet {
+        return RendezVousSet(from: self.rdvSet.filter { $0.medecin?.spe?.label == specialite })
+    }
+    
     func getTodaysRDV() -> RendezVousSet {
         return RendezVousSet(from: self.rdvSet.filter { DateHelper.truncateToDay(from: $0.dateRDV) == DateHelper.truncateToDay(from: Date()) })
     }
