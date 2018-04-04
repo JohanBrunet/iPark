@@ -56,7 +56,7 @@ class MyActivitiesViewController:UIViewController, UITableViewDataSource, UITabl
         let formatDate: DateFormatter = DateFormatter()
         
         //Set date format
-        formatDate.dateFormat = "dd/MM/YY hh:mm a"
+        formatDate.dateFormat = "dd/MM/yyyy à HH:mm "
         
         let cell: LastActiviteCell = LastActivities.dequeueReusableCell(withIdentifier: "activiteCell", for: indexPath) as! LastActiviteCell
         let act = self.activites!.get(indexPath.row)!
@@ -68,7 +68,7 @@ class MyActivitiesViewController:UIViewController, UITableViewDataSource, UITabl
         }
         let date = formatDate.string(from : (act.dateActivite as Date))
         cell.dateActiviteLabel.text! = date
-        cell.dureeActiviteLabel.text! = String (act.dureeActivite)
+        cell.dureeActiviteLabel.text! = String (act.dureeActivite) + " minutes"
         
         return cell
     }
