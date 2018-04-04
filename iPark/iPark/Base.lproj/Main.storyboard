@@ -333,10 +333,10 @@
             </objects>
             <point key="canvasLocation" x="-1780" y="571.66416791604206"/>
         </scene>
-        <!--Calendar View Controller-->
+        <!--Agenda-->
         <scene sceneID="EOg-sK-7v3">
             <objects>
-                <viewController storyboardIdentifier="Agenda" id="QXA-wA-Lhr" customClass="CalendarViewController" customModule="iPark" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Agenda" title="Agenda" id="QXA-wA-Lhr" customClass="CalendarViewController" customModule="iPark" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Qo-N4-zuS"/>
                         <viewControllerLayoutGuide type="bottom" id="mY5-is-g24"/>
@@ -414,7 +414,6 @@
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="DeI-PG-0ol" firstAttribute="centerX" secondItem="NH1-Dj-Dzw" secondAttribute="centerX" id="1sD-rL-ccw"/>
                                                                 <constraint firstItem="mO9-Hf-x6H" firstAttribute="centerX" secondItem="NH1-Dj-Dzw" secondAttribute="centerX" id="lBS-r7-VSp"/>
                                                             </constraints>
                                                         </stackView>
@@ -492,10 +491,10 @@
             </objects>
             <point key="canvasLocation" x="-3287.1999999999998" y="1386.656671664168"/>
         </scene>
-        <!--New Appointment Medecin View Controller-->
+        <!--Choix médecin-->
         <scene sceneID="Pbc-1l-7SN">
             <objects>
-                <viewController storyboardIdentifier="ajoutRDV" id="Z6C-Ft-KlP" customClass="NewAppointmentMedecinViewController" customModule="iPark" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ajoutRDV" title="Choix médecin" id="Z6C-Ft-KlP" customClass="NewAppointmentMedecinViewController" customModule="iPark" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hGF-DA-D5K"/>
                         <viewControllerLayoutGuide type="bottom" id="73c-OZ-jk1"/>
@@ -568,10 +567,10 @@
             </objects>
             <point key="canvasLocation" x="-3614" y="2785"/>
         </scene>
-        <!--My Appointment View Controller-->
+        <!--Rendez-vous-->
         <scene sceneID="7HS-Ke-duK">
             <objects>
-                <viewController storyboardIdentifier="monRDV" id="fM4-7h-u7Q" customClass="MyAppointmentViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="monRDV" title="Rendez-vous" id="fM4-7h-u7Q" customClass="MyAppointmentViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rPd-o9-Neq"/>
                         <viewControllerLayoutGuide type="bottom" id="2gS-Vp-hYn"/>
@@ -616,21 +615,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvV-TN-Oj3">
-                                <rect key="frame" x="16" y="568" width="343" height="55"/>
-                                <color key="backgroundColor" red="0.0" green="0.34795654339999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="7o7-a6-Gq5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <inset key="titleEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" title="Modifier RDV">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Z6C-Ft-KlP" kind="show" id="u23-VP-67P"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neurologue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkz-Yz-K4J">
                                 <rect key="frame" x="136.5" y="185" width="102" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -678,7 +662,7 @@
                                 <color key="textColor" red="0.1412163887" green="0.1520974954" blue="0.77248623699999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7s-sw-RMD">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7s-sw-RMD">
                                 <rect key="frame" x="310" y="503" width="51" height="31"/>
                                 <connections>
                                     <action selector="manageNotification:" destination="fM4-7h-u7Q" eventType="valueChanged" id="9bQ-QT-hTn"/>
@@ -687,10 +671,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.7980760643" green="0.84822734239999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="yvV-TN-Oj3" firstAttribute="centerX" secondItem="vYX-9Q-ugr" secondAttribute="centerX" id="14f-vR-Dwf"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cK3-PO-m82" secondAttribute="trailing" constant="20" symbolic="YES" id="2xa-tQ-SKD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yvV-TN-Oj3" secondAttribute="trailing" id="6eX-sq-FPC"/>
-                            <constraint firstItem="yvV-TN-Oj3" firstAttribute="leading" secondItem="vYX-9Q-ugr" secondAttribute="leadingMargin" id="6oh-jM-nzi"/>
                             <constraint firstItem="mkz-Yz-K4J" firstAttribute="top" secondItem="YqS-Be-VeI" secondAttribute="bottom" constant="10" id="7N6-ca-31J"/>
                             <constraint firstItem="fMt-EX-JDV" firstAttribute="leading" secondItem="YqS-Be-VeI" secondAttribute="leading" id="7bf-gZ-kce"/>
                             <constraint firstItem="ibJ-N8-mhy" firstAttribute="top" secondItem="JxW-jK-7pD" secondAttribute="bottom" constant="10" id="80T-4w-qnT"/>
@@ -703,7 +684,6 @@
                             <constraint firstItem="y1c-W6-clm" firstAttribute="top" secondItem="fMt-EX-JDV" secondAttribute="bottom" constant="25" id="HfE-Gs-iLZ"/>
                             <constraint firstItem="JxW-jK-7pD" firstAttribute="top" secondItem="fMt-EX-JDV" secondAttribute="bottom" constant="80" id="HwJ-5i-4Vc"/>
                             <constraint firstItem="y1c-W6-clm" firstAttribute="centerX" secondItem="vYX-9Q-ugr" secondAttribute="centerX" id="Ito-OI-EbD"/>
-                            <constraint firstItem="yvV-TN-Oj3" firstAttribute="top" secondItem="dls-qs-xVx" secondAttribute="bottom" constant="35" id="Oa9-0D-btr"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JxW-jK-7pD" secondAttribute="trailing" constant="20" symbolic="YES" id="P6j-px-cBn"/>
                             <constraint firstItem="YqS-Be-VeI" firstAttribute="leading" secondItem="vYX-9Q-ugr" secondAttribute="leadingMargin" id="ULd-0s-kY3"/>
                             <constraint firstItem="dls-qs-xVx" firstAttribute="top" secondItem="cK3-PO-m82" secondAttribute="bottom" constant="10" id="VpJ-Vk-Dee"/>
@@ -719,7 +699,6 @@
                             <constraint firstItem="J7q-5q-NTI" firstAttribute="centerX" secondItem="vYX-9Q-ugr" secondAttribute="centerX" id="svU-6A-s8h"/>
                             <constraint firstItem="ibJ-N8-mhy" firstAttribute="centerX" secondItem="vYX-9Q-ugr" secondAttribute="centerX" id="tFA-Vs-Ydu"/>
                             <constraint firstItem="cK3-PO-m82" firstAttribute="top" secondItem="JxW-jK-7pD" secondAttribute="bottom" constant="60" id="tQy-fQ-QEx"/>
-                            <constraint firstItem="d7s-sw-RMD" firstAttribute="trailing" secondItem="yvV-TN-Oj3" secondAttribute="trailing" id="uO2-gX-UYD"/>
                             <constraint firstItem="cK3-PO-m82" firstAttribute="leading" secondItem="YqS-Be-VeI" secondAttribute="leading" id="ye2-3O-2uL"/>
                             <constraint firstItem="fMt-EX-JDV" firstAttribute="leading" secondItem="YqS-Be-VeI" secondAttribute="leading" id="z0b-4X-XjJ"/>
                         </constraints>
@@ -888,10 +867,129 @@
             </objects>
             <point key="canvasLocation" x="-612" y="1426"/>
         </scene>
-        <!--Pills View Controller-->
+        <!--Reporter Prise View Controller-->
+        <scene sceneID="FJ9-ab-fuM">
+            <objects>
+                <viewController id="RrN-6I-l6B" customClass="ReporterPriseViewController" customModule="iPark" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Ie-Ka-MxB"/>
+                        <viewControllerLayoutGuide type="bottom" id="GgF-Yy-jRK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1HT-jT-j35">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="yaU-tD-ygh">
+                                <rect key="frame" x="0.0" y="257" width="375" height="173"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="544490777.174739">
+                                    <!--2018-04-03 11:26:17 PM +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="fr"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJN-4k-uGZ">
+                                <rect key="frame" x="16" y="535" width="343" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.34795654339999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Reporter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reporterPrise:" destination="RrN-6I-l6B" eventType="touchUpInside" id="jCb-FK-gWc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reporter dans combien de temps ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2D-F1-WlZ">
+                                <rect key="frame" x="0.0" y="131" width="375" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7980760643" green="0.84822734239999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="heureDecalagePrise" destination="yaU-tD-ygh" id="Nbu-bz-7UD"/>
+                        <segue destination="scG-ET-BmD" kind="unwind" identifier="decalerPrise" unwindAction="unwindFromReporterPriseWithSegue:" id="hdD-oI-MSd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vgo-na-uMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="scG-ET-BmD" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-5874.3999999999996" y="1080.8095952023989"/>
+        </scene>
+        <!--Valider prise-->
+        <scene sceneID="jBp-uU-fcP">
+            <objects>
+                <viewController title="Valider prise" id="b0e-0o-gBX" customClass="ValiderPriseViewController" customModule="iPark" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3wZ-gJ-Cd5"/>
+                        <viewControllerLayoutGuide type="bottom" id="u3s-oT-fLD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5CH-cR-Luz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Médicament" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQU-10-JMH">
+                                <rect key="frame" x="16" y="168" width="343" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nI-V0-Z6m">
+                                <rect key="frame" x="16" y="320" width="343" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.34795654339999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Valider prise">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="validerPrise:" destination="b0e-0o-gBX" eventType="touchUpInside" id="fNA-e3-OBx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heure" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeJ-RT-ueP">
+                                <rect key="frame" x="137" y="87" width="100" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.077521931870000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ei-9Z-8hn">
+                                <rect key="frame" x="16" y="492" width="343" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.34795654339999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Reporter prise">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RrN-6I-l6B" kind="show" identifier="reporterPrise" id="SQ5-Tg-Tdf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7980760643" green="0.84822734239999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailPrise" destination="IQU-10-JMH" id="4JJ-5B-8hw"/>
+                        <outlet property="heurePrise" destination="YeJ-RT-ueP" id="3Si-Fd-cdJ"/>
+                        <segue destination="kqH-lx-Gnm" kind="unwind" identifier="priseValidee" unwindAction="unwindFromValiderPriseWithSegue:" id="z3M-CE-yxa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYm-3R-sW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kqH-lx-Gnm" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-4972" y="1080.8095952023989"/>
+        </scene>
+        <!--Pilulier-->
         <scene sceneID="Bjd-mX-sNu">
             <objects>
-                <viewController storyboardIdentifier="Pillulier" id="d8D-Fu-x6O" customClass="PillsViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Pillulier" title="Pilulier" id="d8D-Fu-x6O" customClass="PillsViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ytK-Bb-ilh"/>
                         <viewControllerLayoutGuide type="bottom" id="PjS-nF-qoM"/>
@@ -1007,6 +1105,7 @@
                                             <outlet property="heure" destination="yke-F9-P7k" id="3Nl-3h-uq2"/>
                                             <outlet property="imageEtat" destination="sdo-iW-vo6" id="PF0-47-vtJ"/>
                                             <outlet property="medicament" destination="ddh-sg-kUA" id="bDt-BN-Byd"/>
+                                            <segue destination="b0e-0o-gBX" kind="show" identifier="validerPrise" id="HJr-2z-9Eu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1291,7 +1390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jiH-S1-78S" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4966" y="1112"/>
+            <point key="canvasLocation" x="-6476" y="2463"/>
         </scene>
         <!--New Symptom View Controller-->
         <scene sceneID="o4n-D6-3gl">
@@ -1897,10 +1996,10 @@
             </objects>
             <point key="canvasLocation" x="-4314" y="260"/>
         </scene>
-        <!--Activity View Controller-->
+        <!--Activités-->
         <scene sceneID="8kX-gK-c3k">
             <objects>
-                <viewController storyboardIdentifier="Activités" id="Zla-P4-kZ7" customClass="ActivityViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Activités" title="Activités" id="Zla-P4-kZ7" customClass="ActivityViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UuX-QY-vHC"/>
                         <viewControllerLayoutGuide type="bottom" id="i3s-Xy-FOd"/>
@@ -2159,10 +2258,10 @@
             </objects>
             <point key="canvasLocation" x="-2482.4000000000001" y="1218.440779610195"/>
         </scene>
-        <!--My Activities View Controller-->
+        <!--Mes activtés-->
         <scene sceneID="K0a-ne-vWe">
             <objects>
-                <viewController storyboardIdentifier="mesActivites" id="obL-QU-eKk" customClass="MyActivitiesViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mesActivites" title="Mes activtés" id="obL-QU-eKk" customClass="MyActivitiesViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o72-Us-qAg"/>
                         <viewControllerLayoutGuide type="bottom" id="uMw-7s-y53"/>
@@ -2171,17 +2270,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes Activités" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOB-3V-yhx">
-                                <rect key="frame" x="115.5" y="74" width="144.5" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qRd-Of-tEO">
-                                <rect key="frame" x="40" y="154" width="295" height="373"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qRd-Of-tEO">
+                                <rect key="frame" x="40" y="154" width="295" height="412"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jJ8-Ir-EDE">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="373"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jJ8-Ir-EDE">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="412"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="activiteCell" selectionStyle="default" indentationWidth="100" reuseIdentifier="activiteCell" rowHeight="92" id="A1H-qI-0oj" customClass="LastActiviteCell" customModule="iPark" customModuleProvider="target">
@@ -2256,21 +2349,17 @@
                         <color key="backgroundColor" red="0.7980760643" green="0.84822734239999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uMw-7s-y53" firstAttribute="top" secondItem="EsP-Bt-NqV" secondAttribute="bottom" constant="35" id="06F-VT-Vta"/>
-                            <constraint firstItem="eOB-3V-yhx" firstAttribute="top" secondItem="o72-Us-qAg" secondAttribute="bottom" constant="10" id="8ST-AZ-lYG"/>
                             <constraint firstItem="EsP-Bt-NqV" firstAttribute="centerX" secondItem="fhT-QP-TOD" secondAttribute="centerX" id="IhI-5o-8Gt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EsP-Bt-NqV" secondAttribute="trailing" id="Pqq-f1-PpN"/>
                             <constraint firstItem="EsP-Bt-NqV" firstAttribute="leading" secondItem="fhT-QP-TOD" secondAttribute="leadingMargin" id="SfZ-AR-jsW"/>
-                            <constraint firstItem="eOB-3V-yhx" firstAttribute="centerX" secondItem="fhT-QP-TOD" secondAttribute="centerX" id="c7P-wF-0e5"/>
                             <constraint firstItem="qRd-Of-tEO" firstAttribute="leading" secondItem="fhT-QP-TOD" secondAttribute="leadingMargin" constant="24" id="gzH-8e-R5y"/>
                             <constraint firstItem="EsP-Bt-NqV" firstAttribute="top" secondItem="qRd-Of-tEO" secondAttribute="bottom" constant="50" id="hz5-X1-WRF"/>
                             <constraint firstItem="qRd-Of-tEO" firstAttribute="centerX" secondItem="fhT-QP-TOD" secondAttribute="centerX" id="qvH-ts-fnA"/>
-                            <constraint firstItem="qRd-Of-tEO" firstAttribute="top" secondItem="eOB-3V-yhx" secondAttribute="bottom" constant="50" id="yPv-am-jmK"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="AddActivityButton" destination="EsP-Bt-NqV" id="w2L-4D-MGS"/>
                         <outlet property="LastActivities" destination="jJ8-Ir-EDE" id="pRl-EN-isZ"/>
-                        <outlet property="PageLabel" destination="eOB-3V-yhx" id="Jyf-5V-bCE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ufz-f1-taU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2498,12 +2587,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btf-zY-pSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="fgU-li-YiS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-5180" y="2462.5187406296855"/>
+            <point key="canvasLocation" x="-5102" y="1915"/>
         </scene>
-        <!--New Medication View Controller-->
+        <!--Choix médicament-->
         <scene sceneID="shk-hh-WjC">
             <objects>
-                <viewController storyboardIdentifier="newPrise" id="VK6-dH-rpF" customClass="NewMedicationViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newPrise" title="Choix médicament" id="VK6-dH-rpF" customClass="NewMedicationViewController" customModule="iPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sIT-et-7Az"/>
                         <viewControllerLayoutGuide type="bottom" id="oQx-p6-RqS"/>
@@ -3088,7 +3177,6 @@
         <segue reference="ZqY-cf-PGB"/>
         <segue reference="l2I-ux-evK"/>
         <segue reference="mfS-Qm-WrU"/>
-        <segue reference="LNg-CD-xwD"/>
         <segue reference="7uA-0h-x4M"/>
         <segue reference="PDf-hG-O29"/>
     </inferredMetricsTieBreakers>

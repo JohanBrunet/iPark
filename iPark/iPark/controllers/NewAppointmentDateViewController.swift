@@ -18,7 +18,7 @@ class NewAppointmentDateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.rappel.countDownDuration = 0
-        self.rappel .locale = Locale(identifier: "fr_FR")
+        self.rappel.locale = Locale(identifier: "fr_FR")
     }
     
     @IBAction func submitForm(_ sender: Any) {

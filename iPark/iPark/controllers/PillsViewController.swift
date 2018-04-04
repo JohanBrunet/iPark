@@ -92,7 +92,46 @@ class PillsViewController:UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    // MARK: - Segue should be performed
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "validerPrise" {
+            if let indexPath = self.pillsTableView.indexPathForSelectedRow {
+                let prise = self.medications?.get(indexPath.row)
+                if (prise?.estPrise)! || ((prise?.rappelPrise)! > Date()) {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+    
+    // MARK: - Envoyer la prise à la vue suivante
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "validerPrise" {
+            if let indexPath = self.pillsTableView.indexPathForSelectedRow {
+                let validerPriseVC = segue.destination as! ValiderPriseViewController
+                validerPriseVC.priseAValider = self.medications?.get(indexPath.row)
+            }
+        }
+    }
+    
     @IBAction func unwindFromAddPrise(segue: UIStoryboardSegue) {
+        self.day = DateHelper.truncateToDay(from: Date())
+        self.displayDate()
+        self.medications = PriseSet(from: CoreDataDAOFactory.getInstance().getPriseDAO().getAll()!).getTodaysPrises()
+        self.medications?.sortByDate()
+        self.pillsTableView.reloadData()
+    }
+    
+    @IBAction func unwindFromValiderPrise(segue: UIStoryboardSegue) {
+        self.day = DateHelper.truncateToDay(from: Date())
+        self.displayDate()
+        self.medications = PriseSet(from: CoreDataDAOFactory.getInstance().getPriseDAO().getAll()!).getTodaysPrises()
+        self.medications?.sortByDate()
+        self.pillsTableView.reloadData()
+    }
+    
+    @IBAction func unwindFromReporterPrise(segue: UIStoryboardSegue) {
         self.day = DateHelper.truncateToDay(from: Date())
         self.displayDate()
         self.medications = PriseSet(from: CoreDataDAOFactory.getInstance().getPriseDAO().getAll()!).getTodaysPrises()
