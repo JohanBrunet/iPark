@@ -26,6 +26,7 @@ class ReporterPriseViewController: UIViewController {
         let tempsPrep = self.heureDecalagePrise.countDownDuration
         let nouveauRappel = self.priseAReporter?.rappelPrise.addingTimeInterval(tempsPrep)
         self.newPrise = Prise(forMed: (self.priseAReporter?.med)!, withDose: (self.priseAReporter?.doseMed)!, withQuant: (self.priseAReporter?.quantiteMed)!, at: nouveauRappel!)
+        self.ajouterNotif()
         self.performSegue(withIdentifier: "decalerPrise", sender: self)
     }
     

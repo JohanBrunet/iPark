@@ -17,47 +17,45 @@ class HomeViewController:UIViewController {
     @IBOutlet weak var nomActiviteLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    var proposedActivites : TypeActiviteSet? = nil
-    
-    var rdvs : RendezVousSet? = nil
-    
-    var prises : PriseSet? = nil
-
-    
     override func viewDidLoad() {
+        super.viewDidLoad()
+        self.loadData()
+    }
+    
+    func loadData() {
         usernameLabel.text = "Bonjour " + UserDefaults.standard.string(forKey: "prenom")!
-        
-        proposedActivites = TypeActiviteSet(from : CoreDataDAOFactory.getInstance().getTypeActiviteDAO().getAll())
-        
-        rdvs = RendezVousSet(from : CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll())
-        
-        prises = PriseSet(from : CoreDataDAOFactory.getInstance().getPriseDAO().getAll())
-        
-        if proposedActivites != nil{
-            var count = proposedActivites!.count
-            let numeroActivite = Int(arc4random_uniform(UInt32(count)))
-            self.nomActiviteLabel!.text! = proposedActivites!.get(numeroActivite)!.libelle!
+        self.displayNextPrise()
+        self.displayNextRDV()
+        self.displayActiviteProposee()
+    }
+    
+    func displayNextPrise() {
+        let prises = PriseSet(from : CoreDataDAOFactory.getInstance().getPriseDAO().getAll()).getTodaysPrises()
+        prises.sortByDate()
+        let nextPrise = prises.get(prises.count - 1)
+        self.horaireLabel.text = DateHelper.formatDate(date: (nextPrise?.rappelPrise)!, pattern: " HH:mm")
+        self.medicamentLabel.text = nextPrise?.toText
+    }
+    
+    func displayNextRDV() {
+        let rdvs = RendezVousSet(from : CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()).filterByDate(for: Date(), before: false)
+        rdvs.sortByDate()
+        let rdv = rdvs.get(0)
+        if rdv != nil{
+            self.nomDocteurLabel!.text! = " " + rdv!.med!.nom
+            self.dateLabel!.text! = DateHelper.formatDate(date: rdv!.dateRDV, pattern: "dd/MM/yyyy à HH:mm")
+        }
+    }
+    
+    func displayActiviteProposee() {
+        let proposedActivites = TypeActiviteSet(from : CoreDataDAOFactory.getInstance().getTypeActiviteDAO().getAll())
+        if proposedActivites.count > 0 {
+            let numeroActivite = Int(arc4random_uniform(UInt32(proposedActivites.count)))
+            self.nomActiviteLabel!.text! = proposedActivites.get(numeroActivite)!.libelle!
         }
         else{
             self.nomActiviteLabel!.text! = "Sport"
         }
-        let rdv = rdvs?.filterByDate(for: Date(), before: false).get(0)
-        
-        
-        //Create date formatter
-        let formatDate: DateFormatter = DateFormatter()
-        
-        //Set date format
-        formatDate.dateFormat = "dd/MM/yyyy à HH:mm "
-        
-        if rdv != nil{
-            self.nomDocteurLabel!.text! = rdv!.med!.nom
-            
-            
-            self.dateLabel!.text! = formatDate.string(from: rdv!.dateRDV)
-            
-        }
-        
     }
 
 }

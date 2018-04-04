@@ -885,7 +885,7 @@
                                 <rect key="frame" x="0.0" y="257" width="375" height="173"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="544490777.174739">
-                                    <!--2018-04-03 23:26:17 +0000-->
+                                    <!--2018-04-03 11:26:17 PM +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>
