@@ -13,7 +13,7 @@ class HomeViewController:UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     
     override func viewDidLoad() {
-        usernameLabel.text = UserDefaults.standard.string(forKey: "prenom")! + " " + UserDefaults.standard.string(forKey: "nom")!
+        usernameLabel.text = UserDefaults.standard.string(forKey: "prenom")!
     }
 
 }

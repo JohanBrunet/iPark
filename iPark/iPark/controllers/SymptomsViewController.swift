@@ -29,7 +29,7 @@ class SymptomsViewController:UIViewController, UITableViewDataSource, UICollecti
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = SymptomsTableView.dequeueReusableCell(withIdentifier: "SymptomTableViewCell", for : indexPath) as! SymptomTableViewCell
         cell.etatLabel.text! = (symptoms!.get(indexPath.row)?.etat)!
-        let dateFormatted = DateHelper.formatDate(date: (self.symptoms!.get(indexPath.row)?.date as! Date), pattern: "dd MMMM yyyy à HH:mm")
+        let dateFormatted = DateHelper.formatDate(date: (self.symptoms!.get(indexPath.row)?.date as! Date), pattern: "dd/MM/yy à HH:mm")
         cell.dateLabel.text = dateFormatted
         
         return cell
