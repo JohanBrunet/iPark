@@ -37,6 +37,12 @@ class MedecinSet {
     @discardableResult
     func remove(_ medecin: Medecin) -> MedecinSet {
         if self.contains(medecin) {
+            let rdvsMed = RendezVousSet(from: CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()).filterByMedecin(for: medecin)
+            while rdvsMed.count > 0 {
+                let rdv = rdvsMed.get(rdvsMed.count - 1)!
+                rdvsMed.remove(rdv)
+            }
+            
             self.medSet.remove(at: self.medSet.index(of: medecin)!)
             self.medecinDAO.delete(for: medecin)
         }
