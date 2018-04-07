@@ -31,19 +31,23 @@ class HomeViewController:UIViewController {
     
     func displayNextPrise() {
         let prises = PriseSet(from : CoreDataDAOFactory.getInstance().getPriseDAO().getAll()).getTodaysPrises()
-        prises.sortByDate()
-        let nextPrise = prises.get(prises.count - 1)
-        self.horaireLabel.text = DateHelper.formatDate(date: (nextPrise?.rappelPrise)!, pattern: " HH:mm")
-        self.medicamentLabel.text = nextPrise?.toText
+        if prises.count > 0 {
+            prises.sortByDate()
+            let nextPrise = prises.get(prises.count - 1)
+            self.horaireLabel.text = DateHelper.formatDate(date: (nextPrise?.rappelPrise)!, pattern: " HH:mm")
+            self.medicamentLabel.text = nextPrise?.toText
+        }
     }
     
     func displayNextRDV() {
         let rdvs = RendezVousSet(from : CoreDataDAOFactory.getInstance().getRendezVousDAO().getAll()).filterByDate(for: Date(), before: false)
-        rdvs.sortByDate()
-        let rdv = rdvs.get(0)
-        if rdv != nil{
-            self.nomDocteurLabel!.text! = " " + rdv!.med!.nom
-            self.dateLabel!.text! = DateHelper.formatDate(date: rdv!.dateRDV, pattern: "dd/MM/yyyy à HH:mm")
+        if rdvs.count > 0 {
+            rdvs.sortByDate()
+            let rdv = rdvs.get(0)
+            if rdv != nil{
+                self.nomDocteurLabel!.text! = " " + rdv!.med!.nom
+                self.dateLabel!.text! = DateHelper.formatDate(date: rdv!.dateRDV, pattern: "dd/MM/yyyy à HH:mm")
+            }
         }
     }
     

@@ -21,7 +21,7 @@ class CoreDataSymptomeDAO: SymptomeDAO {
         let dto = self.create()
         dto.etat = etat
         dto.date = date
-        dto.evenements = evenements as! NSObject
+        dto.evenements = evenements! as NSObject
         return dto
     }
     
