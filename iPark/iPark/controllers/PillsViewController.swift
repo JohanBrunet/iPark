@@ -36,7 +36,6 @@ class PillsViewController:UIViewController, UITableViewDelegate, UITableViewData
         self.displayDate()
         self.medications = PriseSet(from: CoreDataDAOFactory.getInstance().getPriseDAO().getAll()!).filterByDate(forDate: self.day)
         self.medications?.sortByDate()
-        print("taille set : " + (self.medications?.count.description)!)
         self.pillsTableView.reloadData()
     }
     
@@ -45,18 +44,15 @@ class PillsViewController:UIViewController, UITableViewDelegate, UITableViewData
         self.displayDate()
         self.medications = PriseSet(from: CoreDataDAOFactory.getInstance().getPriseDAO().getAll()!).filterByDate(forDate: self.day)
         self.medications?.sortByDate()
-        print("taille set : " + (self.medications?.count.description)!)
         self.pillsTableView.reloadData()
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("nb cellules : " + (self.medications?.count.description)!)
         return (self.medications?.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("Création cellule n°" + indexPath.row.description)
         let cell: PriseTableViewCell = pillsTableView.dequeueReusableCell(withIdentifier: "priseCell", for: indexPath) as! PriseTableViewCell
         let prise: Prise = (self.medications?.get(indexPath.row))!
         cell.heure.text = DateHelper.formatDate(date: prise.rappelPrise, pattern: "HH:mm")
@@ -70,7 +66,6 @@ class PillsViewController:UIViewController, UITableViewDelegate, UITableViewData
             cell.imageEtat.image = nil
             break
         case "NON_PRISE":
-            print("non prise")
             cell.imageEtat.image = #imageLiteral(resourceName: "error")
             break
         default:

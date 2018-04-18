@@ -24,13 +24,13 @@ class HomeViewController:UIViewController {
     
     func loadData() {
         usernameLabel.text = "Bonjour " + UserDefaults.standard.string(forKey: "prenom")!
-        self.displayNextPrise()
+        self.displayLastPrise()
         self.displayNextRDV()
         self.displayActiviteProposee()
     }
     
-    func displayNextPrise() {
-        let prises = PriseSet(from : CoreDataDAOFactory.getInstance().getPriseDAO().getAll()).getTodaysPrises()
+    func displayLastPrise() {
+        let prises = PriseSet(from : CoreDataDAOFactory.getInstance().getPriseDAO().getAll()).filterByDate(forDate: Date(), before: true)
         if prises.count > 0 {
             prises.sortByDate()
             let nextPrise = prises.get(prises.count - 1)

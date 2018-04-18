@@ -64,10 +64,10 @@ class PriseSet {
     
     func filterByDate(forDate date: Date, before: Bool) -> PriseSet {
         if before {
-            return PriseSet(from: self.priseSet.filter { DateHelper.truncateToDay(from: $0.rappelPrise) < DateHelper.truncateToDay(from: date) })
+            return PriseSet(from: self.priseSet.filter { $0.rappelPrise < date })
         }
         else {
-            return PriseSet(from: self.priseSet.filter { DateHelper.truncateToDay(from: $0.rappelPrise) > DateHelper.truncateToDay(from: date) })
+            return PriseSet(from: self.priseSet.filter { $0.rappelPrise > date })
         }
     }
     

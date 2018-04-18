@@ -40,7 +40,6 @@ class MySymptomViewController: UIViewController {
         let dateFormatted = DateHelper.formatDate(date: (date as! Date), pattern: "dd MMMM yyyy à HH:mm")
         self.dateLabel.text = dateFormatted
         let i = evenements.count
-        print(i)
         if i >= 1{
             event1Label.text! = evenements[0]
             if i >= 2{

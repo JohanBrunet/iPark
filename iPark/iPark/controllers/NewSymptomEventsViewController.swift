@@ -57,7 +57,6 @@ class NewSymptomEventsViewController: UIViewController {
         if clic.isOn{
             self.evenements.append("clic")
         }
-        print(evenements)
         self.newSymptome = Symptome(etat: self.etat!, date: self.date!, ev : self.evenements)
         self.performSegue(withIdentifier: "showAllSymptoms", sender: self)
     }

@@ -48,14 +48,11 @@ class MyAppointmentViewController:UIViewController{
             }
             else {
                 let dateFormatted = DateHelper.formatDate(date: (self.rdv?.dateRDV)!, pattern: "EEEEddMMMMyyyyHH:mm")
-                print("date rdv : " + dateFormatted)
                 if toggleRappel.isOn {
                     let notifID: String = (self.rdv?.med?.nom)! + dateFormatted
                     let notifTitle: String = "Rendez-vous"
                     let rappelString = DateHelper.getRappelString(rdv: (self.rdv?.dateRDV)!, rappel: rappel)
                     let notifBody: String =  "Vous avez rendez-vous avec " + (self.rdv?.med?.titledName)! + "dans " + rappelString
-                    print("ID : " + notifID)
-                    print("Body : " + notifBody)
                     AppDelegate.notification.addNotification(identifier: notifID, title: notifTitle, body: notifBody, date: DateHelper.removeSeconds(from: rappel), repeatable: false)
                 }
                 else {
